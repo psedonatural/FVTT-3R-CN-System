@@ -145,6 +145,15 @@
     font-size: 17px !important;
 }
 
+/*怪物卡生命值大小*/
+.D35E.sheet.actor .sheet-header .hd input {
+    font-size: 26px;
+}
+.D35E.sheet.item .sheet-header ul.attributes li.attribute {
+    font-family: "bold","Nodesto", "Signika", "Palatino Linotype", serif;
+    font-size: 14px;
+}
+
 /*修改技能*/
 .D35E.sheet.actor .details-skills-list .box-name {
     text-align: center;

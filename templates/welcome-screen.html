@@ -95,7 +95,7 @@
     }
 
     .welcome-content h2.news {
-        font-family: "Nodesto", sans-serif;
+        font-family: "OSregular","Nodesto", sans-serif;
         text-align: center;
         border: none;
         flex: 0;
@@ -106,9 +106,9 @@
 
 <h1 style="text-align: center"><img src="systems/D35E/icons/ui/logo.png"
         style="height: 64px; border: none; float: left">
-    <span style='font-family: "Nodesto", sans-serif;
+    <span style='font-family: "OSbold","Nodesto", sans-serif;font-size: 28px;
         text-shadow: 0px 0px 10px rgba(255, 100, 0, 0.76);'>3.5e SRD</span>
-    <br><span style="font-size: 14px">3.5 SRD implementation for Foundry VTT</span></h1>
+    <br><span style="font-size: 14px">FVTT上的3R系统</span></h1>
 <div class="flexrow">
     <nav class="welcome-tabs">
         <a class="item" data-tab="welcome">{{ localize "D35E.Welcome" }}</a>
@@ -121,13 +121,9 @@
 <section class="welcome-content">
     <div class="tab" data-tab="welcome">
 
-        <p>Welcome to 3.5E SRD implementation for Foundry VTT! It was created from love for one of the best versions of
-            most popular Role Playing Game and
-            aims to provide full 3.5E SRD implementation and system flexible enough for anything else.</p>
-
-
-        <p style="font-weight: bold; text-align: right;">Happy GMing,<br>Rughalt</p>
-        <h2>News</h2>
+        <p>欢迎来到FVTT的3.5e系统！这是由一群热爱这款有趣的规则人而创建的系统,旨在提供一套完整实用的3.5eSRD系统。</p>
+        <p style="font-weight: bold; text-align: right;">祝你们玩的开心！<br>系统作者：Rughalt<br>系统汉化者：非瑞克西亚</p>
+        <h2>最新内容</h2>
         <div class="flexrow">
 <!--            <div class="flexcol" style="background: url(systems/D35E/icons/ui/parchment-2.png) repeat;-->
 <!--    border-top-left-radius: 4px;-->
@@ -176,40 +172,38 @@
 
 <!--            </div>-->
             <div class="flexcol" style="max-height: 410px">
-                <h2 class="news" style="padding: 0 0.7rem; flex: 0">Here be Dragons!</h2>
+                <h2 class="news" style="padding: 0 0.7rem; flex: 0">巨龙降临!</h2>
                 <img src="systems/D35E/icons/ui/welcome-screen/2.3.0-dragons.png" style="padding: 0 0.7rem; flex: 0">
                 <p style="padding: 0 0.7rem; flex: 0">
-                    Version 2.3.0 is the first version compatible with Foundry V11 - but that does not mean that it is fully without bugs! If you find anything, please report it on Gitlab or on Discord!<br><br>
+                    Version 2.3.0 版本是与V11兼容的版本 - 然而它仍然可能由错误存在，如果你发现了故障，请去Discord或是Gitlab汇报（尽量用英语），如果是汉化问题你也可以汇报给非瑞或是报在汉化的Github上。<br><br>
 
                 </p>
                 <a class="btn mid" target="_blank"
-                   href="https://gitlab.com/dragonshorn/D35E/-/issues">Report a bug!</a>
+                   href="https://gitlab.com/dragonshorn/D35E/-/issues">有错误!</a>
             </div>
             <div class="flexcol" style="max-height: 410px">
-                <h2 class="news" style="padding: 0 0.7rem; flex: 0">Auras</h2>
+                <h2 class="news" style="padding: 0 0.7rem; flex: 0">光环</h2>
                 <img src="systems/D35E/icons/ui/welcome-screen/0.95-aura.png" style="padding: 0 0.7rem; flex: 0">
                 <p style="padding: 0 0.7rem; flex: 0">
-                    Version 0.95 introduces Auras! Auras allow characters to affect nearby tokens - pass changes and combat
-                    modifiers! Now Paladin can really create an Aura of Courage!<br><br> <em>Auras are a work in progress! They may break and contain bugs!</em>
+                    Version 0.95 版本引入了新的光环系统，它允许一个角色启动光环后让周围的敌人或友军获得相同效果！所以现在圣武士真的能投射出勇气灵光了！<br><br> <em>然而这个系统完成度不高，它有可能出现错误！（非瑞：有时候会重复刷出很多光环给角色，译者建议小规模使用）</em>
 
                 </p>
             </div>
                         <div class="flexcol" style="max-height: 410px">
 
-                            <h2 class="news" style="padding: 0 0.7rem; flex: 0">Community & Help</h2>
+                            <h2 class="news" style="padding: 0 0.7rem; flex: 0">寻求帮助</h2>
                             <p style="padding: 0 0.7rem; flex: 0">
-                                Have trouble using the system? Want to meet other 3.5e SRD users? Visit 3.5e SRD Discord Community server
-                                and read the documentation!
+                                使用系统存在困难？想要认识其他3.5e玩家？你可以访问Rughalt的Discord或是阅读帮助文档！或许非瑞也可以开一个互助频道。
                             </p>
-                            <a class="btn mid" href="https://discord.gg/wDyUaZH"  style="margin-bottom: 2px">Join Community Discord</a>
-                            <a class="btn mid" target="_blank" href="https://docs.legaciesofthedragon.com/">Visit Documentation</a>
-                            <h2 class="news" style="padding: 0 0.7rem; flex: 0">Support us!</h2>
+                            <a class="btn mid" href="https://discord.gg/wDyUaZH"  style="margin-bottom: 2px">加入作者的Discord</a>
+                            <a class="btn mid" target="_blank" href="https://docs.legaciesofthedragon.com/">打开帮助文档</a>
+                            <h2 class="news" style="padding: 0 0.7rem; flex: 0">支持作者!</h2>
                             <p style="padding: 0 0.7rem; flex: 0">
-                                Like the system? You can support the development (and get access to exclusive content) on out Patreon!
+                                喜欢这个系统吗？你可以去Patreon上资助它们！并获得一些独家内容!（例如一个玩家伴侣，它能让你使用移动设备访问角色卡，但译者没有用过）
                             </p>
 
                             <a class="btn mid" target="_blank"
-                               href="https://www.patreon.com/Rughalt">Visit Patreon Page</a>
+                               href="https://www.patreon.com/Rughalt">打开Patreon页面</a>
                             <!--        <h2 class="news" style="padding: 0 0.7rem; flex: 0">Custom Theme</h2>-->
                             <!--        <p style="padding: 0 0.7rem; flex: 0">-->
                             <!--            Did you know DND 3.5E comes with custom skin for Foundry? You - or any of your players - can enable it in options for themselves!-->
@@ -222,12 +216,11 @@
         <div class="flexrow">
             <p style="display: flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start;"><input
                     type="checkbox" class='show-again' id="welcome-screen-show-again" /> <label
-                    for="welcome-screen-show-again">Don't show this screen again until next update.</label></p>
+                    for="welcome-screen-show-again">下次更新前都不要再显示此文本了.</label></p>
             <a href="https://discord.gg/wDyUaZH" class="discord social-button" style="float: right">Discord</a><a
                 class="github social-button" style="float: right"
-                href="https://www.github.com/Rughalt/D35E">GitHub</a><a class="patreon social-button"
-                style="float: right" href="https://www.patreon.com/Rughalt">Become a
-                Patron</a>
+                href="https://gitlab.com/dragonshorn/D35E">Gitlab</a><a class="patreon social-button"
+                style="float: right" href="https://www.patreon.com/Rughalt">前往Patron</a>
         </div>
     </div>
     <div class="tab" data-tab="changelog" style="overflow-y: scroll; height: 570px;">
@@ -2586,7 +2579,7 @@
     </div>
 
     <div class="tab" data-tab="ogl" style="overflow-y: scroll; height: 570px;">
-        <p><strong>Product Identity:</strong><br>The following items are hereby identified as Product Identity, as
+        <p><strong>本文档由海岸巫师塔于2000年授权OLG自由创作，由于是重要的授权，故此不翻译<br>Product Identity:</strong><br>The following items are hereby identified as Product Identity, as
             defined in the Open Game License 1.0a, Section 1(e), and are not Open Content: All trademarks, registered
             trademarks, proper names (characters, deities, etc.), dialogue, plots, storylines, locations, characters,
             artworks, and trade dress. (Elements that have previously been designated as Open Game Content are not
@@ -2672,17 +2665,14 @@
     </div>
 
     <div class="tab" data-tab="licenses" style="overflow-y: scroll; height: 570px;">
-        <p>Copyright © Antoni Sobkowicz / Dragonshorn Studios 2020. 'Legacies of the Dragon` name and logo are copyright
-            by Dragonshorn Studios.</p>
-        <p>Icons used in this system are copyright by J. W. Bjerk (eleazzaar) (www.jwbjerk.com/art, CC-BY 3.0), and
-            various authors at game-icons.net (CC-BY). Rest of icons provided in binary distribution are used with
-            permission of the authors and licensed to use only in this application. Any other use is prohibited.</p>
-        <p>Some artwork © Trevor Armstrong / Grimpress, used with permission. All rights reserved.</p>
-        <p>Some artwork © Daniel Comerci, used with permission. All rights reserved.</p>
-        <p>Some artwork © 2015 Dean Spencer, used with permission. All rights reserved.</p>
-        <p>Trap images by Forgotten Adventures (https://www.forgotten-adventures.net)</p>
-        <p>Some images from Publisher's Choice Quality Stock Art © Rick Hershey / Fat Goblin Games</p>
-        <p>Monster token border by RollAdvantage.</p>
-        <p>Octopus token <a href="https://commons.wikimedia.org/wiki/File:Octopus_vintage_poster.jpg">Free Public Domain Illustrations by rawpixel</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>, via Wikimedia Commons</p>
+        <p>版权属于© Antoni Sobkowicz / Dragonshorn Studios 2020. '巨龙遗产Legacies of the Dragon`的logo和命名版权归属于巨龙工作室 Dragonshorn Studios.</p>
+        <p>本系统中的图标受版权保护，它们由作者J. W. Bjerk (eleazzaar) (www.jwbjerk.com/art, CC-BY 3.0)以及多位游戏作者game-icons.net (CC-BY)创作。发行仅授权在此系统中使用，禁止其他用途。</p>
+        <p>部分艺术作品由© Trevor Armstrong / Grimpress, 授权使用，具有版权。</p>
+        <p>部分艺术作品由© Daniel Comerci,授权使用，具有版权。</p>
+        <p>部分艺术作品由© 2015 Dean Spencer,授权使用，具有版权。</p>
+        <p>陷阱图片源于Forgotten Adventures (https://www.forgotten-adventures.net)</p>
+        <p>部分艺术作品来自出版商艺术库存© Rick Hershey / Fat Goblin Games</p>
+        <p>怪物棋子来自RollAdvantage.</p>
+        <p>章鱼棋子来自<a href="https://commons.wikimedia.org/wiki/File:Octopus_vintage_poster.jpg">rawpixel提供的免费素材库</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a>,维基共享资源。</p>
     </div>
 </section>

@@ -48,9 +48,9 @@
         {{else}}
         <input name="system.abilities.{{id}}.value" type="hidden" value="{{ability.value}}" data-dtype="Number"
           placeholder="10" />
-        <input style="width: calc(100% - 24px);" class="ability-base" name="system.abilities.{{id}}.tempvalue" type="text" value="{{ability.value}}"
+        <input style="width: calc(80% - -5px);float: left;" class="ability-base" name="system.abilities.{{id}}.tempvalue" type="text" value="{{ability.value}}"
           data-dtype="Number" placeholder="10" />
-          <div class="data-selector" style="float: right; width: 24px; line-height: 24px;">
+          <div class="data-selector" style="float: right; width: 22px; line-height: 24px;">
             <a class="configure-ability" for="{{id}}"><i class="fas fa-edit"></i></a>
           </div>
         {{/if}}

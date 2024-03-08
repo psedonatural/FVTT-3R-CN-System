@@ -3,14 +3,14 @@
 <header class="card-header flexrow">
     <img src="{{img}}" title="{{name}}" width="36" height="36"/>
     {{#if (or take10 take20)}}<div class="flexcol">
-    <h4 style='margin-bottom: 0px; line-height: 16px; font-family: "Nodesto", "Signika", "Palatino Linotype", serif; font-size: 18px; opacity: 0.6;'>{{name}}</h4>
+    <h4 style='margin-bottom: 0px; line-height: 16px; font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif; font-size: 18px; opacity: 0.6;'>{{name}}</h4>
         {{#if take10}}<h3 style='line-height: 20px; margin-top: 0'>{{sklName}} {{localize "D35E.Take10"}}</h3>{{/if}}
         {{#if take20}}<h3 style='line-height: 20px; margin-top: 0'>{{sklName}} {{localize "D35E.Take20"}}</h3>{{/if}}
     </div>
         {{/if}}
     {{#unless (or take10 take20)}}
     <div class="flexcol">
-        <h4 style='margin-bottom: 0px; line-height: 16px; font-family: "Nodesto", "Signika", "Palatino Linotype", serif; font-size: 18px; opacity: 0.6;'>{{name}}</h4>
+        <h4 style='margin-bottom: 0px; line-height: 16px; font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif; font-size: 18px; opacity: 0.6;'>{{name}}</h4>
     <h3 style="line-height: 20px; margin-top: 0">{{sklName}} {{localize "D35E.Check"}}</h3>
     </div>
     {{/unless}}

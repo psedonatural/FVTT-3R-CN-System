@@ -1,39 +1,20 @@
 /*@import url(D35EcnFonts.css);*/
-
-/*导入字体*/
-@font-face {
-  font-family: "black";
-  src:url("fonts/HarmonyOS_Sans_SC_Black.ttf"),
-}
+/* -----------------修改css------------------------ */
+/*导入中文字体*/
 
 @font-face {
-  font-family: "bold";
+  font-family: "OSbold";
   src:url("fonts/HarmonyOS_Sans_SC_Bold.ttf"),
 }
 
 @font-face {
-  font-family: "regular";
+  font-family: "OSregular";
   src:url("fonts/HarmonyOS_Sans_SC_Regular.ttf"),
 }
 
 @font-face {
-  font-family: "medium";
+  font-family: "OSmedium";
   src:url("fonts/HarmonyOS_Sans_SC_Medium.ttf"),
-}
-
-/*@font-face {*/
-/*    font-family: "supblack";*/
-/*    src:url("fonts/HarmonyOS_Sans_Condensed_Black.ttf"),*/
-/*}*/
-
-@font-face {
-  font-family: "fzhtj";
-  src:url("fonts/FangZhengHeiTiJianTi-1.ttf"),
-}
-
-@font-face {
-  font-family: "pmzdbtt";
-  src:url("fonts/PangMenZhengDaoBiaoTiTiMianFeiBan-2.ttf"),
 }
 
 @font-face {
@@ -43,294 +24,14 @@
 
 /*修改系统默认字体*/
 :root {
-  --font-primary: "regular","Nodesto",sans-serif !important;
+  --font-primary: "OSregular","Nodesto",sans-serif !important;
   --font-size-12: 0.75rem !important;
   --font-size-20: 1rem !important;
 }
-/*!*————————聊天窗口——————————*!*/
 
-/*再生字体*/
-.d35ecustom .D35E.chat-card .card-buttons button {
-  font-family: "bold", "Signika", "Palatino Linotype", serif !important;
-}
-
-/*专长词条字体*/
-.D35E.sheet.item .tag-list li {
-  font-family: "regular","Signika", "Palatino Linotype", serif !important;
-}
-
-/*修改伤害详述字体*/
-.D35E.chat-card.item-card h2 {
-  padding: 3px 0;
-  border: none;
-  flex: 1;
-  margin: 0;
-  line-height: 36px;
-  font-family: "bold","Nodesto", "Signika", "Palatino Linotype", serif !important;
-  font-size: 20px;
-  color: black;
-  opacity: 0.9;
-  margin-bottom: 4px;
-}
-
-/*修改表头区域*/
-.D35E.sheet .sheet-header {
-  flex: 0 0 100px;
-  border-bottom: 2px groove #eeede0;
-  font-family: "regular","Nodesto", "Signika", "Palatino Linotype", serif !important;
-  font-size: 16px !important;
-  align-items: center;
-}
-
-/*!*种族位调整*!*/
-/*element.style {*/
-/*    font-family: "regular","Signika", sans-serif !important;*/
-/*    font-size: 13px;*/
-/*    opacity: 0.7;*/
-/*}*/
-
-/*.D35E.sheet.actor.character .sheet-header .race-container .race {*/
-/*    height: 25px !important;*/
-/*}*/
-/*修改日志中子标题字体大小*/
+/*日志字体大小*/
 .journal-sheet .journal-header .title {
-  font-size: 24px;
-}
-
-
-/*经验条大小*/
-.D35E.sheet.actor .sheet-header .charlevel .experience {
-  font-size: 13px !important;
-}
-
-/*!*————————能力——————————*!*/
-
-
-/*修改角色卡表单*/
-.D35E.sheet .sheet-navigation {
-  flex: 0 0 30px;
-  margin-bottom: 5px;
-  font-family: "medium","Nodesto", "Signika", "Palatino Linotype", serif !important;
-  font-size: 20px;
-}
-
-/*!*修改角色卡属性字体高低*!*/
-.D35E.sheet.actor h4.box-title {
-  line-height: 20px !important;
-  font-size: 14px !important;
-}
-
-/*修改角色卡属性边栏*/
-.D35E.sheet.actor .ability-scores-simple h4 {
-  line-height: 45px;
-  font-size: 19px !important;
-  font-family: "bold","Nodesto", "Signika", "Palatino Linotype", serif !important;
-}
-
-/*修改角色卡属性基础*/
-.D35E.sheet.actor .ability-scores-simple .ability-base-simple {
-  text-align: center;
-  line-height: 30px;
-  font-size: 18px;
-  font-family: "bold","Nodesto", "Signika", "Palatino Linotype", serif !important;
-  border: 2px groove #eeede0;
-  border-radius: 4px;
-  height: 34px;
-  margin: 4px 0;
-}
-
-/*修改生命值*/
-.D35E.sheet.actor ul.attributes li.attribute {
-  height: 70px;
-  margin: 0 5px;
-  border: 2px groove #eeede0;
-  border-radius: 4px;
-  font-size: 18px !important;
-  font-family: "medium","Nodesto", "Signika", "Palatino Linotype", serif !important;
-  text-align: center;
-}
-
-/*修改生命值字体大小*/
-.D35E.sheet.actor h4.box-title {
-  font-size: 15px !important;
-}
-.D35E.sheet.actor ul.attributes li.attribute .attribute-value input {
-  font-size: 17px !important;
-}
-.D35E.sheet.actor ul.attributes li.attribute .attribute-value div.attribute {
-  font-size: 17px !important;
-}
-
-/*修改技能*/
-.D35E.sheet.actor .details-skills-list .box-name {
-  text-align: center;
-  flex: none;
-  height: 24px;
-  line-height: 24px;
-  font-size: 18px;
-  margin: 4px 8px 2px;
-  font-family: "regular","Nodesto", "Signika", "Palatino Linotype", serif !important;
-}
-
-/*修改休息*/
-.D35E.sheet.actor ul.attributes a.rest {
-  border-radius: 4px;
-  height: 40px;
-  display: block;
-  margin: 0 5px 4px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 18px;
-  font-family: "bold","Nodesto", "Signika", "Palatino Linotype", serif !important;
-}
-
-/*修改属性下的”基础“两个字*/
-.D35E.sheet.actor .ability-scores-simple .ability-simple-header span {
-  flex: 1;
-  font-family: "regular","Nodesto", "Signika", "Palatino Linotype", serif !important;
-}
-
-/*修改临时生命和非致命*/
-.D35E.sheet.actor ul.attributes li.attribute .attribute-footer {
-  flex: 0 0 18px;
-  margin-top: -1px;
-  line-height: 18px;
-  font-family: "regular","Signika", "Palatino Linotype", serif !important;
-  font-size: 12px;
-}
-/*修改行动两个字*/
-.D35E.sheet.actor .details-attack-simple .box-name {
-  text-align: center;
-  flex: none;
-  height: 24px;
-  line-height: 24px;
-  font-size: 17px;
-  margin: 4px 8px 2px;
-  font-family: "regular","Nodesto", "Signika", "Palatino Linotype", serif !important;
-}
-
-/*!*————————属性——————————*!*/
-/*修改左侧标题字*/
-.D35E.sheet.actor h2.block-header {
-  position: relative;
-  flex: 0 0 20px;
-  margin: 0.25rem;
-  font-family: "regular","Nodesto", "Signika", "Palatino Linotype", serif !important;
-  font-size: 18px !important;
-  border: none;
-  display: flex;
-  align-items: center;
-}
-
-/*修改底下战技说明*/
-.D35E.sheet textarea {
-  font-family: "regular",sans-serif !important;
-}
-
-/*!*————————战斗——————————*!*/
-/*战斗属性字体类型*/
-.D35E.sheet.actor h3.block-header {
-  font-family: "regular","Nodesto", "Signika", "Palatino Linotype", serif !important;
-}
-
-/*战斗数字大小*/
-.D35E.sheet.actor ul.attributes li.attribute .attribute-value span.large {
-  font-size: 22px !important;
-}
-
-/*!*————————库存——————————*!*/
-
-/*货币类型文字*/
-.D35E.sheet.actor .inventory-filters h3, .D35E.sheet.actor .inventory-filters .filter-title {
-  font-family: "regular","Nodesto", "Signika", "Palatino Linotype", serif !important;
-  font-size: 15px !important;
-  color: #4b4a44;
-  margin: 0;
-}
-
-/*物品标题名字大小*/
-h3 {
-  display: block;
-  font-size: 16px;
-  font-family: "bold", serif !important;
-  margin-block-start: 0.25em;
-  margin-block-end: 0.15em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-}
-/*物品内部光字标题大小*/
-.D35E .form-header {
-  font-size: 16px !important;
-}
-
-
-/*!*————————特性——————————*!*/
-
-/*职业名字*/
-.D35E.sheet.actor h2.block-header {
-  position: relative;
-  flex: 0 0 20px;
-  margin: 0.25rem;
-  font-family: "bold","Nodesto", "Signika", "Palatino Linotype", serif !important;
-  font-size: 18px !important;
-  border: none;
-  display: flex;
-  align-items: center;
-}
-
-/*专长名字*/
-.D35E.sheet .sheet-header h1 input {
-  height: 50px;
-  font-size: 35px;
-  font-family: "bold","Nodesto", "Signika", "Palatino Linotype", serif !important;
-}
-
-.d35ecustom .sheet.item .header-details h1 input {
-  color: #2C606D;
-  margin: 0px 12px;
-}
-
-/*!*————————怪物卡——————————*!*/
-
-/*!*挑战等级和HD*!*/
-.D35E.sheet.actor .sheet-header .hd label {
-  display: inline;
-  font-size: 28px !important;
-  text-align: right;
-}
-
-.D35E.sheet.actor .sheet-header .charlevel .level label {
-  display: inline;
-  font-size: 15px !important;
-  text-align: right;
-}
-
-/*!*挑战等级和HD*!*/
-.D35E.sheet.actor .sheet-header a.random-hp-roll {
-  border-radius: 4px;
-  height: 40px;
-  display: block;
-  margin: 0 5px 4px;
-  line-height: 36px !important;
-  text-align: center;
-  font-size: 18px;
-  font-family: "bold", "Signika", "Palatino Linotype", serif !important;
-}
-
-
-
-/*!*————————教程窗口——————————*!*/
-.merienda {
-  font-family: "zkklt", "Signika", "Palatino Linotype", serif !important;
-}
-.onboarding .dialogue .content {
-  font-size: 16px !important;
-}
-
-.onboarding .dialogue .tip {
-  font-family: "regular", "Palatino Linotype", serif;
-  font-size: 14px !important;
+  font-size: 24px!important;
 }
 
 /*合集样式变更*/
@@ -341,32 +42,24 @@ h3 {
   flex-direction: row;
   align-items: center;
 }
-/* -----------------这下面是原本的，这上面是译者加的css------------------------ */
+
 
 /* Deprecated vars */
 /* ----------------------------------------- */
 /*  Fonts                                    */
 /* ----------------------------------------- */
-@font-face {
-  font-family: "Nodesto";
-  src: url("../../fonts/modesto-condensed/modesto-condensed-bold.woff2") format("woff2");
-}
+
 .nodesto {
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 20px;
 }
-@font-face {
-  font-family: "Merienda";
-  src: url("fonts/MeriendaRegular.otf");
-}
+
 .merienda {
-  font-family: "Merienda", "Signika", "Palatino Linotype", serif;
+  font-family: "zkklt", "Signika", "Palatino Linotype",serif;
   font-size: 14px;
+  /*!*教程窗口*!*/
 }
-@font-face {
-  font-family: "HandSerif";
-  src: url("fonts/HanSrf.ttf");
-}
+
 .handserif {
   font-family: "HandSerif", "Signika", serif;
   font-size: 20px;
@@ -599,11 +292,11 @@ h3 {
 .D35E .form-header {
   margin: 0 0 0.25em 0;
   padding: 0 2px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: 20px;
-  font-size: 24px;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: 16px;
   border-top: 2px groove #eeede0;
   border-bottom: 2px groove #eeede0;
+  /*物品内部光字标题大小*/
 }
 .D35E .tag {
   display: inline-block;
@@ -679,9 +372,10 @@ h3 {
   border: 1px solid #111;
 }
 .D35E.sheet textarea {
-  font-family: sans-serif;
+  font-family: "OSregular",sans-serif;
   min-height: 16px;
   padding: 1px 5px;
+  /*修改底下战技说明*/
 }
 .D35E.sheet select {
   flex: 1;
@@ -704,8 +398,8 @@ h3 {
 .D35E.sheet .sheet-header {
   flex: 0 0 100px;
   border-bottom: 2px groove #eeede0;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: 20px;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: 16px;
   align-items: center;
   /* Character Name */
   /* Profile Image */
@@ -720,7 +414,8 @@ h3 {
 }
 .D35E.sheet .sheet-header h1 input {
   height: 50px;
-  font-size: 36px;
+  font-size: 35px;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif !important;
 }
 .D35E.sheet .sheet-header .profile {
   position: relative;
@@ -762,7 +457,7 @@ h3 {
 .D35E.sheet .sheet-navigation {
   flex: 0 0 30px;
   margin-bottom: 5px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSmedium","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 20px;
 }
 .D35E.sheet .sheet-navigation .item {
@@ -1103,7 +798,7 @@ h3 {
   padding: 0 22px;
   text-align: center;
   font-size: 18px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   float: left;
   box-shadow: 0 0 8px red;
   border-color: #ff6400;
@@ -1119,11 +814,11 @@ h3 {
   text-align: center;
   font-size: 18px;
   float: right;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
 }
 .D35E.sheet.actor a.roll-psionic-focus {
   padding: 4px 8px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 16px;
 }
 .D35E.sheet.actor .toggle-psionic-focus {
@@ -1142,7 +837,7 @@ h3 {
 }
 .D35E.sheet.actor .working h1 {
   text-align: center;
-  font-family: "Nodesto", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Palatino Linotype", serif;
   border-bottom: none;
   color: #b1d8e0;
 }
@@ -1153,11 +848,12 @@ h3 {
   position: relative;
   flex: 0 0 20px;
   margin: 0.25rem;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: 20px;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype",serif;
+  font-size: 18px !important;
   border: none;
   display: flex;
   align-items: center;
+  /*职业名字、左侧标题字*/
 }
 .D35E.sheet.actor h2.block-header::after {
   content: '';
@@ -1171,7 +867,7 @@ h3 {
   position: relative;
   flex: 0 0 20px;
   margin: 0.25rem;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 18px;
   border: none;
   display: flex;
@@ -1311,7 +1007,8 @@ h3 {
   line-height: 40px;
   text-align: center;
   font-size: 18px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSbold", "Nodesto", "Signika", "Palatino Linotype", serif;
+  /*!*挑战等级和HD*!*/
 }
 .D35E.sheet.actor .sheet-header div.profile {
   flex: 0 0 120px;
@@ -1372,16 +1069,18 @@ h3 {
 }
 .D35E.sheet.actor .sheet-header .hd label {
   display: inline;
-  font-size: 32px;
+  font-size: 28px;
   text-align: right;
+  /*!*挑战等级和HD*!*/
 }
 .D35E.sheet.actor .sheet-header .hd input {
   display: inline;
   width: 36px;
-  font-size: 32px;
+  font-size: 26px;
   text-align: center;
   flex: 0 0 40px;
   height: 44px;
+  /*怪物卡生命值大小*/
 }
 .D35E.sheet.actor .sheet-header .charlevel {
   flex: 0 0 120px;
@@ -1398,8 +1097,9 @@ h3 {
 }
 .D35E.sheet.actor .sheet-header .charlevel .level label {
   display: inline;
-  font-size: 24px;
+  font-size: 15px;
   text-align: right;
+  /*!*挑战等级和HD*!*/
 }
 .D35E.sheet.actor .sheet-header .charlevel .level input {
   display: inline;
@@ -1422,7 +1122,7 @@ h3 {
   width: 100%;
   height: 22px;
   padding-right: 5px;
-  font-size: 16px;
+  font-size: 13px;
   color: #4b4a44;
 }
 .D35E.sheet.actor .attributes input[type="text"] {
@@ -1432,10 +1132,11 @@ h3 {
   width: 48%;
 }
 .D35E.sheet.actor h4.box-title {
-  line-height: 16px;
+  line-height: 17px;
   margin: 4px 8px 2px;
-  font-size: 18px;
+  font-size: 15px;
   border-bottom: 1px solid #b5b3a4;
+  /*修改生命值字体大小*/
 }
 .D35E.sheet.actor section {
   overflow-y: auto;
@@ -1448,7 +1149,7 @@ h3 {
   text-align: center;
   font-size: 18px;
   margin-top: 4px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
 }
 .D35E.sheet.actor ul.attributes.misc-base .attribute-footer input,
 .D35E.sheet.actor ul.attributes.misc-defenses .attribute-footer input {
@@ -1473,7 +1174,8 @@ h3 {
   line-height: 40px;
   text-align: center;
   font-size: 18px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype",  serif;
+  /*修改休息*/
 }
 .D35E.sheet.actor ul.attributes li.attribute.health {
   height: 80px;
@@ -1492,9 +1194,10 @@ h3 {
   margin: 0 5px;
   border: 2px groove #eeede0;
   border-radius: 4px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSmedium","Nodesto", "Signika", "Palatino Linotype",  serif;
   font-size: 20px;
   text-align: center;
+  /*修改生命值*/
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-name {
   flex: 0 0 18px;
@@ -1504,20 +1207,24 @@ h3 {
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value {
   height: 28px;
-  line-height: 20px;
+  line-height: 24px;
+  font-size: 18px;
+  /*战斗属性和豁免*/
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value input {
   display: inline;
   max-width: 80%;
   margin: 0;
-  font-size: 24px;
+  font-size: 17px;
+  /*生命值字体大小*/
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value div.attribute {
   display: inline-block;
   min-width: 24px;
   max-width: 33%;
-  font-size: 24px;
+  font-size: 17px;
   width: calc(100% - 2px);
+  /*生命值字体*/
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value span.sep {
   display: inline;
@@ -1528,7 +1235,7 @@ h3 {
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value span.large {
   line-height: 40px;
-  font-size: 1.8rem;
+  font-size: 22px !important;
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value .add-prestige-cl,
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value .add-prestige-cl-deck,
@@ -1551,8 +1258,9 @@ h3 {
   flex: 0 0 18px;
   margin-top: -1px;
   line-height: 18px;
-  font-family: "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Signika", "Palatino Linotype",  serif;
   font-size: 12px;
+  /*修改临时生命和非致命*/
 }
 .D35E.sheet.actor .defenses .attributes {
   flex: 0;
@@ -1567,7 +1275,7 @@ h3 {
 }
 .D35E.sheet.actor .defenses .defense-rolls label h3,
 .D35E.sheet.actor .defenses .defense-notes label h3 {
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 20px;
   font-size: 18px;
 }
@@ -1609,7 +1317,8 @@ h3 {
   line-height: 24px;
   font-size: 18px;
   margin: 4px 8px 2px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
+  /*修改技能*/
 }
 .D35E.sheet.actor .details-attack-simple {
   border: 2px groove #eeede0;
@@ -1630,9 +1339,10 @@ h3 {
   flex: none;
   height: 24px;
   line-height: 24px;
-  font-size: 18px;
+  font-size: 17px;
   margin: 4px 8px 2px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
+  /*修改行动两个字*/
 }
 .D35E.sheet.actor .ability-scores-simple {
   border: 2px groove #eeede0;
@@ -1644,7 +1354,8 @@ h3 {
 }
 .D35E.sheet.actor .ability-scores-simple .ability-simple-header span {
   flex: 1;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
+  /*修改属性下的”基础“两个字*/
 }
 .D35E.sheet.actor .ability-scores-simple .ability-box-name {
   text-align: center;
@@ -1661,9 +1372,10 @@ h3 {
   text-align: center;
 }
 .D35E.sheet.actor .ability-scores-simple h4 {
-  line-height: 40px;
-  font-size: 22px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  line-height: 45px;
+  font-size: 19px;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif;
+  /*修改角色卡属性边栏*/
 }
 .D35E.sheet.actor .ability-scores-simple h4.box-title {
   border-bottom: none;
@@ -1677,32 +1389,35 @@ h3 {
 .D35E.sheet.actor .ability-scores-simple h4.ability-value-text {
   text-align: center;
   height: 34px;
-  font-size: 22px;
-  line-height: 40px;
+  font-size: 16px;
+  line-height: 44px;
+  /*主属性后续数字大小*/
 }
 .D35E.sheet.actor .ability-scores-simple h4.ability-mod-text {
   text-align: center;
   height: 34px;
-  line-height: 40px;
-  font-size: 18px;
+  line-height: 46px;
+  font-size: 16px;
   color: #7a7971;
+  /*属性调整位置*/
 }
 .D35E.sheet.actor .ability-scores-simple .ability-base-simple {
   text-align: center;
   line-height: 30px;
-  font-size: 22px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: 18px;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif;
   border: 2px groove #eeede0;
   border-radius: 4px;
   height: 34px;
   margin: 4px 0;
+  /*修改角色卡属性基础*/
 }
 .D35E.sheet.actor .ability-scores {
   flex: none;
   list-style: none;
   margin: 0;
   padding: 0;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 20px;
 }
 .D35E.sheet.actor .ability-scores .ability {
@@ -1920,7 +1635,7 @@ h3 {
 .D35E.sheet.actor .counters .counter h4 {
   flex: auto;
   margin: 0;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 20px;
   font-size: 14px;
 }
@@ -2166,11 +1881,11 @@ h3 {
 }
 .D35E.sheet.actor .inventory-filters h3,
 .D35E.sheet.actor .inventory-filters .filter-title {
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: 20px;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: 15px;
   color: #4b4a44;
-  font-size: 18px;
   margin: 0;
+  /*货币类型文字*/
 }
 .D35E.sheet.actor .inventory-filters.spellbook-filters {
   flex: 0 0 40px;
@@ -2331,7 +2046,7 @@ h3 {
 }
 .D35E.sheet.actor .inventory-list .item .class-level-box {
   opacity: 0.7;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
 }
 .D35E.sheet.actor .inventory-list .item input[type="checkbox"] {
   height: 12px;
@@ -2544,7 +2259,7 @@ h3 {
   line-height: 30px;
   text-align: center;
   font-size: 18px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
 }
 .D35E.sheet.actor .spell-slots,
 .D35E.sheet.actor .spell-comps,
@@ -2833,9 +2548,10 @@ h3 {
   margin: 0 5px;
   border: 2px groove #eeede0;
   border-radius: 4px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: 20px;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: 14px;
   text-align: center;
+  /*怪物卡HD大小*/
 }
 .D35E.sheet.item .sheet-header ul.attributes li.attribute .attribute-name {
   flex: 0 0 18px;
@@ -2885,7 +2601,7 @@ h3 {
   text-align: left;
 }
 .D35E.sheet.item .tag-list li {
-  font-family: "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Signika", "Palatino Linotype", serif;
 }
 .D35E.sheet.item .sheet-navigation {
   margin-bottom: 5px;
@@ -3845,7 +3561,7 @@ h3 {
   flex: 1;
   margin: 0;
   line-height: 36px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif !important;
   font-size: 20px;
   color: black;
   opacity: 0.9;
@@ -3864,9 +3580,10 @@ h3 {
   flex: 1;
   margin: 0;
   line-height: 36px;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: 20px;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: 16px;
   color: #4b4a44;
+  /*战斗卡名字大小*/
 }
 .D35E.chat-card .card-content {
   margin: 5px 0;
@@ -3952,9 +3669,9 @@ h3 {
   margin-top: 12px;
 }
 #chat-log .message .chat-attack:not(.compact) .dice-roll:first-child > .dice-flavor {
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif;
   color: #782e22;
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
 }
 #chat-log .message .property-group {
@@ -4088,7 +3805,7 @@ h3 {
   -webkit-box-shadow: 0px 0px 2px 0px rgb(0 0 0%);
   -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 2px 0px rgb(0 0 0%);
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 20px;
   text-align: center;
 }
@@ -4181,9 +3898,9 @@ h3 {
   padding: 0 0 0 6px;
 }
 .D35E.sheet.actor.character .sheet-header .race-container .race {
-  flex: 0 0 22px;
+  flex: 0 0 32px;
   background-size: contain;
-  line-height: 24px;
+  line-height: 22px;
   text-align: center;
   vertical-align: baseline;
   margin-right: 4px;
@@ -4574,7 +4291,7 @@ input[type=range]:disabled {
   line-height: 60px !important;
   background-position: center !important;
   box-shadow: none !important;
-  font-family: "Nodesto", serif !important;
+  font-family: "OSregular","Nodesto", serif !important;
   font-size: 44px!important;
 }
 .rolled-defense {
@@ -4584,7 +4301,7 @@ input[type=range]:disabled {
   line-height: 60px !important;
   background-position: center !important;
   box-shadow: none !important;
-  font-family: "Nodesto", serif !important;
+  font-family: "OSregular","Nodesto", serif !important;
   font-size: 44px!important;
 }
 .rolled-fortify-value {
@@ -4594,7 +4311,7 @@ input[type=range]:disabled {
   line-height: 50px !important;
   background-position: center !important;
   box-shadow: none !important;
-  font-family: "Nodesto", serif !important;
+  font-family: "OSregular","Nodesto", serif !important;
   font-size: 34px!important;
 }
 .rolled-roll {
@@ -4604,7 +4321,7 @@ input[type=range]:disabled {
   line-height: 50px !important;
   background-position: center !important;
   box-shadow: none !important;
-  font-family: "Nodesto", serif !important;
+  font-family: "OSregular","Nodesto", serif !important;
   font-size: 34px!important;
 }
 .rolled-versus {
@@ -4614,7 +4331,7 @@ input[type=range]:disabled {
   line-height: 50px !important;
   background-position: center !important;
   box-shadow: none !important;
-  font-family: "Nodesto", serif !important;
+  font-family: "OSregular","Nodesto", serif !important;
   font-size: 34px!important;
 }
 span.bold {
@@ -5343,6 +5060,9 @@ h1,
 h2,
 h3 {
   border-bottom: none;
+  font-size: 16px;
+  font-family: "OSbold", serif !important;
+  /*物品标题名字大小*/
 }
 .level-up-data .header {
   background: url(ui/parchment.jpg) repeat;
@@ -5355,7 +5075,7 @@ h3 {
   position: relative;
   flex: 0 0 20px;
   margin: 0.25rem;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 2rem;
   border-bottom: none;
 }
@@ -5363,7 +5083,7 @@ h3 {
   position: relative;
   flex: 0 0 20px;
   margin: 0.25rem;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 20px;
   border: none;
   display: flex;
@@ -5381,7 +5101,7 @@ h3 {
   position: relative;
   flex: 0 0 20px;
   margin: 0.25rem;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 18px;
   border: none;
   display: flex;
@@ -5905,12 +5625,13 @@ h3 {
   border: 1px solid rgba(0, 0, 0, 0.7) !important;
   color: rgba(255, 255, 255, 0.9) !important;
   border-radius: 2px !important;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: 19px;
+  font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif;
+  font-size: 16px;
   cursor: pointer;
   color: white;
   line-height: 32px;
   padding: 0;
+  /*特殊行动按钮字体大小*/
 }
 .d35ecustom .D35E.chat-card .card-buttons button:hover:not(:disabled) {
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%), linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, rgba(255, 255, 255, 0.3) 100%), url("icons/ui/button-texture.png") repeat !important;
@@ -6520,7 +6241,7 @@ h3 {
 }
 .d35ecustom .sheet.item .header-details h1 input {
   color: #2C606D;
-  margin: 8px 0;
+  margin: 0px 12px;
 }
 .d35ecustom .level-up-data .window-header {
   background: url("icons/background/paper.png"), url("ui/parchment.jpg") repeat;
@@ -6775,7 +6496,8 @@ h3 {
   top: 0;
 }
 .onboarding .dialogue .content {
-  font-size: 14px;
+  font-size: 16px;
+  /*教程字体大小*/
 }
 .onboarding .dialogue .content img {
   display: inline;
@@ -6787,8 +6509,8 @@ h3 {
   position: absolute;
   padding: 1em;
   background: black;
-  font-family: "Signika", "Palatino Linotype", serif;
-  font-size: unset;
+  font-family: "OSregular", "Palatino Linotype", serif;
+  font-size: 14px;
   top: -94px;
   margin-right: 1rem;
   border: 2px solid #946C54;
@@ -6796,6 +6518,7 @@ h3 {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  /*教程中的提示*/
 }
 .introjs-helperNumberLayer {
   background: black;
@@ -6869,7 +6592,7 @@ a.inline-roll {
   text-align: center;
   border-top: 1px solid #CCC;
   border-bottom: 1px solid #CCC;
-  font-family: "Nodesto", "Signika", "Palatino Linotype", serif;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   font-size: 20px;
   color: #4b4a44;
   font-size: 18px;
