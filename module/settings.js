@@ -153,9 +153,9 @@ export const registerSystemSettings = function() {
     default: "medium",
     type: String,
     choices: {
-      "slow": "Slow",
-      "medium": "Medium",
-      "fast": "Fast",
+      "slow": "慢",
+      "medium": "中",
+      "fast": "快",
     },
     onChange: () => {
       [...game.actors.contents, ...Object.values(game.actors.tokens)].filter(o => {
@@ -178,8 +178,8 @@ export const registerSystemSettings = function() {
     default: "imperial",
     type: String,
     choices: {
-      "imperial": "Imperial (feet, lbs)",
-      "metric": "Metric (meters, kg)"
+      "imperial": "英制单位(英尺,磅)",
+      "metric": "公制单位(米，千克)"
     },
     onChange: () => {
       [...game.actors.contents, ...Object.values(game.actors.tokens)].filter(o => {

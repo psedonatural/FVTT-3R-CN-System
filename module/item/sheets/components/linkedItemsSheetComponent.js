@@ -15,7 +15,7 @@ export class LinkedItemsSheetComponent extends ItemSheetComponent {
   registerTab(sheetData) {
     sheetData.registeredTabs.push({
       id: "links",
-      name: "Links",
+      name: "链接",
       sheet: "systems/D35E/templates/items/parts/item-links.html",
     });
   }

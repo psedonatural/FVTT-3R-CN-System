@@ -6,7 +6,7 @@ import { ItemSheetComponent } from "./itemSheetComponent.js";
 export class NotesSheetComponent extends ItemSheetComponent {
 
     registerTab(sheetData) {
-        sheetData.registeredTabs.push({id:'notes',name:"Notes",sheet:'systems/D35E/templates/items/parts/item-notes.html'})
+        sheetData.registeredTabs.push({id:'notes',name:"笔记",sheet:'systems/D35E/templates/items/parts/item-notes.html'})
     }
 
     activateListeners(html) {

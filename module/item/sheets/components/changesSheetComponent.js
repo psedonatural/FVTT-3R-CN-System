@@ -7,7 +7,7 @@ export class ChangesSheetComponent extends ItemSheetComponent {
   registerTab(sheetData) {
     sheetData.registeredTabs.push({
       id: "changes",
-      name: "Changes",
+      name: "调整",
       sheet: "systems/D35E/templates/items/parts/item-changes.html",
     });
   }

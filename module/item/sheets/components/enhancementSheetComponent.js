@@ -47,7 +47,7 @@ export class EnhancementSheetComponent extends ItemSheetComponent {
   registerTab(sheetData) {
     sheetData.registeredTabs.push({
       id: "enhancements",
-      name: "Enhancements",
+      name: "增强附魔",
       sheet: "systems/D35E/templates/items/parts/item-enhancement.html",
     });
   }

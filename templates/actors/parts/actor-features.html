@@ -168,6 +168,7 @@
 
           </div>
           {{else}}
+
           <div class="item-name flexrow">
             <div class="item-image class-icon rollable" style="background-image: url('{{item.img}}')"></div>
             <div class="flexcol">
@@ -266,7 +267,7 @@
           {{/if}}
           {{else if section.isClass}}
           <div class="flexcol item-feat-level class-level-box tooltip" style="text-align: center">
-            <p style="font-size: 1.2rem;flex: 0; margin: 0">Level</p>
+            <p style="font-size: 1rem;flex: 0; margin: 0">等级</p>
             <p style="font-size: 2rem; ">{{item.system.levels}}</p>
             <span class="tooltipcontent">@classes.{{item.system.tag}}.level : {{item.system.levels}}</span>
           </div>

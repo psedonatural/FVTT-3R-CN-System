@@ -19,6 +19,15 @@ D35E.abilities = {
   "cha": "D35E.AbilityCha"
 };
 
+D35E.abilities = {
+  "str": "D35E.AbilityStr",
+  "dex": "D35E.AbilityDex",
+  "con": "D35E.AbilityCon",
+  "int": "D35E.AbilityInt",
+  "wis": "D35E.AbilityWis",
+  "cha": "D35E.AbilityCha"
+};
+
 D35E.abilitiesShort = {
   "str": "D35E.AbilityShortStr",
   "dex": "D35E.AbilityShortDex",
@@ -80,7 +89,7 @@ D35E.classBAB = {
 
 D35E.classSavingThrows = {
   "low": "D35E.Poor",
-  "med": "D35.Medium",
+  "med": "D35E.Medium",
   "high": "D35E.Good",
 };
 
