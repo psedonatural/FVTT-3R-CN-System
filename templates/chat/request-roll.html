@@ -1,0 +1,38 @@
+<div class="D35E chat-card item-card">
+    <header class="card-header flexrow">
+        <h3 class="item-name">{{name}}
+        </h3>
+    </header>
+
+    <div class="card-content item">
+        {{#if shouldDisplayTarget}}
+        <div style="{{#unless revealed}}opacity: 0.8{{/unless}}">
+            <h4>
+                {{#if targetText}}
+                {{#if isGM}}
+                {{#unless revealed}}
+                <a class="reveal-roll roll-display-toggle" data-id="{{id}}" style="float: right; float: right;
+    width: unset;
+    line-height: unset;margin: 0;
+    padding: 0;
+    font-size: var(--font-size-13);"><i class="fas fa-eye-slash"></i>
+                </a>
+                {{else}}
+                <a class="hide-roll roll-display-toggle" data-id="{{id}}" style="float: right; float: right;
+    font-size: 10px;
+    width: unset;
+    line-height: unset;margin: 0;
+    padding: 0;
+    font-size: var(--font-size-13);"><i class="fas fa-eye"></i>
+                </a>
+                {{/unless}}
+                {{/if}}
+                {{/if}}
+            </h4>
+            {{{targetText}}}
+        </div>
+        {{/if}}
+        {{{text}}}
+    </div>
+
+</div>

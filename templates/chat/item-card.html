@@ -1,0 +1,32 @@
+<div class="D35E chat-card item-card" data-actor-id="{{actor._id}}" data-item-id="{{item._id}}" {{#if tokenId}}data-token-id="{{tokenId}}"{{/if}}>
+  <header class="card-header flexrow">
+    <img src="{{item.img}}" title="{{name}}" width="36" height="36"/>
+    <h3 class="item-name">{{name}}</h3>
+  </header>
+
+  <div class="card-content item">
+    {{{data.description.value}}}
+  </div>
+
+  <footer class="card-footer">
+    {{#if isSpell}}
+    {{#if spellFailure}}
+    <div class="spell-failure">
+      <h3>{{localize "D35E.ArcaneSpellFailure"}}</h3>
+      <div class="dice-roll">
+        <div class="dice-result">
+          <h4 class="dice-total spell-failure {{#unless spellFailureSuccess}}failure{{/unless}}">{{spellFailure}}</h4>
+        </div>
+      </div>
+    </div>
+    {{/if}}
+    {{/if}}
+    {{#if data.components.material}}
+    <p><strong>{{ localize "D35E.ChatReqMats" }}.</strong> {{data.materials.value}}</p>
+    {{/if}}
+
+    {{#each data.properties}}
+    <span>{{{this}}}</span>
+    {{/each}}
+  </footer>
+</div>

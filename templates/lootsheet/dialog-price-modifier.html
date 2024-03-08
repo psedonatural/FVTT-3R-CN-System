@@ -1,0 +1,29 @@
+<p>
+    {{localize "D35E.ls.priceModifierText"}}
+    <i class='fa fa-question-circle' title='{{localize "D35E.ls.priceModifierTooltip"}}'></i>
+</p>
+<p>
+    <input name="price-modifier-percent" id="price-modifier-percent" type="range" min="0" max="200" value="{{priceModifier}}" class="slider">
+</p>
+<p>
+    <label>{{localize "D35E.ls.sell"}} {{localize "D35E.ls.percentage"}}:</label> <input type=number min="0" max="200" value="{{priceModifier}}" id="price-modifier-percent-display">
+</p>
+
+<p>
+    <input name="price-modifier-percent-buy" id="price-modifier-percent-buy" type="range" min="0" max="200" value="{{priceModifierBuy}}" class="slider">
+</p>
+<p>
+    <label>{{localize "D35E.ls.buy"}} {{localize "D35E.ls.percentage"}}:</label> <input type=number min="0" max="200" value="{{priceModifierBuy}}" id="price-modifier-percent-display-buy">
+</p>
+<script>
+    var pmSlider = document.getElementById("price-modifier-percent");
+    var pmDisplay = document.getElementById("price-modifier-percent-display");
+    pmDisplay.value = pmSlider.value;
+    pmSlider.oninput = function() { pmDisplay.value = this.value; };
+    pmDisplay.oninput = function() { pmSlider.value = this.value; };
+    var pmSliderBuy = document.getElementById("price-modifier-percent-buy");
+    var pmDisplayBuy = document.getElementById("price-modifier-percent-display-buy");
+    pmDisplayBuy.value = pmSliderBuy.value;
+    pmSliderBuy.oninput = function() { pmDisplayBuy.value = this.value; };
+    pmDisplayBuy.oninput = function() { pmSliderBuy.value = this.value; };
+</script>

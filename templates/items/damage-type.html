@@ -1,0 +1,102 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    {{!-- Item Sheet Header --}}
+    <div class="flexrow">
+        <div class="sheet-header-profile">
+            <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+        </div>
+
+        <header class="sheet-header flexrow">
+
+        <div class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="{{localize " D35E.ItemName"}}"/>
+            </h1>
+
+            <div class="item-subtitle">
+                <h4 class="item-type">{{itemType}}</h4>
+                <span class="item-status">{{itemStatus}}</span>
+            </div>
+
+            <ul class="summary">
+                <li>
+                    {{lookup config.attackTypes data.attackType }}
+                </li>
+            </ul>
+        </div>
+    </header>
+    </div>
+
+
+    <section class="sheet-content flexcol sheet-attack">
+        {{!-- Item Sheet Navigation --}}
+        <nav class="sheet-navigation tabs" data-group="primary">
+            <a class="item active" data-tab="description">{{ localize "D35E.Description" }}</a>
+            <a class="item" data-tab="details">{{ localize "D35E.Details" }}</a>
+            <a class="item" data-tab="conditionals">{{localize "D35E.Conditionals"}}</a>
+            <!--      <a class="item" data-tab="links">{{localize "D35E.Links"}}</a>-->
+        </nav>
+
+        {{!-- Item Sheet Body --}}
+        <section class="primary-body">
+
+            {{!-- Description Tab --}}
+            <div class="tab flexcol active" data-group="primary" data-tab="description">
+                {{editor enriched.description.value target="system.description.value" button=true editable=editable}}
+            </div>
+
+            {{!-- Details Tab --}}
+            <div class="tab details" data-group="primary" data-tab="details">
+                <div class="form-group stacked">
+                    <div class="data-selector">
+                        <a class="entry-selector" for="system.identifiers" data-fields="{{localize " D35E.Identifiers"}}"
+                        data-dtypes="String"><i class="fas fa-edit"></i></a>
+                        <label for="system.identifiers">{{localize "D35E.Identifiers"}}</label>
+                    </div>
+
+                    {{!-- Attack Type --}}
+                    <div class="form-group">
+                        <label>{{localize "D35E.DamageType"}}</label>
+                        <select name="system.damageType">
+                            {{#select data.system.damageType}}
+                            {{#each config.damageTypes as |name type|}}
+                            <option value="{{type}}">{{name}}</option>
+                            {{/each}}
+                            {{/select}}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>{{localize "D35E.BaseDamageTypeEquivalent"}}</label>
+                    </div>
+                    <div class="flexrow">
+                        <div class="form-group" style="flex: 1">
+                            <div class="toggle" style="width: 165px">
+                                <input id="{{randomUuid}}-data.slashing" type="checkbox" name="system.isSlashing" {{checked data.system.isSlashing}}/>
+                                <label style="width: 165px" for="{{randomUuid}}-data.slashing">{{#if data.system.isSlashing}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize "D35E.DRSlashing"}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1">
+                            <div class="toggle" style="width: 165px">
+                                <input id="{{randomUuid}}-data.bludgeoning" type="checkbox" name="system.isBludgeoning" {{checked data.system.isBludgeoning}}/>
+                                <label style="width: 165px" for="{{randomUuid}}-data.bludgeoning">{{#if data.system.isBludgeoning}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize "D35E.DRBludgeoning"}}</label>
+                            </div>
+                        </div>
+                        <div class="form-group" style="flex: 1">
+                            <div class="toggle" style="width: 165px">
+                                <input id="{{randomUuid}}-data.piercing" type="checkbox" name="system.isPiercing" {{checked data.system.isPiercing}}/>
+                                <label style="width: 165px" for="{{randomUuid}}-data.piercing">{{#if data.system.isPiercing}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize "D35E.DRPiercing"}}</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{#if isGM}}
+                    <h3 class="form-header">系统属性</h3>
+                    {{> "systems/D35E/templates/items/components/uid-input.html"}}
+                    {{/if}}
+                </div>
+            </div>
+
+        </section>
+    </section>
+</form>

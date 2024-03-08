@@ -1,0 +1,21 @@
+# Issues fixed
+- [#1468](https://gitlab.com/dragonshorn/D35E/-/issues/1468) - Add @DynamicField enricher that allows to display text based on a roll in descriptions
+- [#1466](https://gitlab.com/dragonshorn/D35E/-/issues/1466) - Some spell icons point to Forge
+- [#1463](https://gitlab.com/dragonshorn/D35E/-/issues/1463) - Add text enricher for requesting skill and save rolls
+- [#1462](https://gitlab.com/dragonshorn/D35E/-/issues/1462) - Add a way for requesting skill check and saving throw rolls
+- [#1461](https://gitlab.com/dragonshorn/D35E/-/issues/1461) - Add text enrichers for rolling damage
+- [#1459](https://gitlab.com/dragonshorn/D35E/-/issues/1459) - Class Features display "[object Promise]" on Progression and Features tab of Class
+- [#1455](https://gitlab.com/dragonshorn/D35E/-/issues/1455) - Automattic DC calculation on feat attacks causes DC to fail calculation
+- [#1450](https://gitlab.com/dragonshorn/D35E/-/issues/1450) - Combat changes doesn't parse modification formula correctly
+- [#1449](https://gitlab.com/dragonshorn/D35E/-/issues/1449) - Bug: Spell description is not displayed for spells coming from custom compendiums
+- [#1448](https://gitlab.com/dragonshorn/D35E/-/issues/1448) - Feature Request: update remove button click area to match Remove text
+- [#1446](https://gitlab.com/dragonshorn/D35E/-/issues/1446) - [v11.313/2.3.2] Missing Description Info for Spell Cards
+- [#1443](https://gitlab.com/dragonshorn/D35E/-/issues/1443) - Bug: v11.308/2.3.2 Error in language files
+- [#1440](https://gitlab.com/dragonshorn/D35E/-/issues/1440) - Searing Light formula
+- [#1439](https://gitlab.com/dragonshorn/D35E/-/issues/1439) - [object Promise] shown in attack chat card if notes are available
+- [#1438](https://gitlab.com/dragonshorn/D35E/-/issues/1438) - Attack bonus display in combat tab displays BAB-Y instead of calculated bonus
+- [#1436](https://gitlab.com/dragonshorn/D35E/-/issues/1436) - [v11 2.3.2] Monk Unarmed Strike dont work as it should
+- [#1433](https://gitlab.com/dragonshorn/D35E/-/issues/1433) - "lamp, common" has light that cannot be extinguished
+- [#1432](https://gitlab.com/dragonshorn/D35E/-/issues/1432) - Mark unidentified items when GM is seeing a character sheet
+- [#1428](https://gitlab.com/dragonshorn/D35E/-/issues/1428) - Improved Multi-Attack not negating attack penalties.
+- [#1409](https://gitlab.com/dragonshorn/D35E/-/issues/1409) - Spell Icons missing

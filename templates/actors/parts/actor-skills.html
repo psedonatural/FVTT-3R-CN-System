@@ -1,0 +1,158 @@
+{{!-- Skills --}}
+<ul class="skills-list sub-scroll scroll-skillset" data-background="{{isBackgroundSkills}}">
+  {{#each skillset as |skill s|}}
+  {{#if skill.arbitrary}}
+  <li class="skill arbitrary flexrow" data-skill="{{s}}">
+    <div class="skill-name">
+      <a class="skill-control skill-create" title="{{ localize 'D35E.AddSkill' }}">
+        <i class="fas fa-plus"></i>
+      </a>
+      <h4>{{skill.label}}</h4>
+    </div>
+  </li>
+  {{#each skill.subSkills as |subSkill b|}}
+  <li class="sub-skill flexrow" data-skill="{{b}}" data-main-skill="{{s}}" draggable="true" data-type="skill" data-uuid="{{../uuid}}" data-id="{{b}}.{{s}}">
+    <input type="hidden" name="system.skills.{{s}}.subSkills.{{b}}.value" value="{{subSkill.value}}" data-dtype="Number"/>
+    <div class="skill-name tooltip">
+      <span class="tooltipcontent">
+        @skills.{{s}}.subSkills.{{b}}.mod : {{subSkill.mod}}<br>
+        @skills.{{s}}.subSkills.{{b}}.points : {{subSkill.points}}<br>
+
+        {{#if subSkill.sourceDetails.length}}
+        <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+        {{#each subSkill.sourceDetails as |src|}}
+        {{src.name}}: {{src.value}}<br/>
+        {{/each}}
+        {{/if}}
+      </span>
+      <input type="text" name="system.skills.{{s}}.subSkills.{{b}}.name" value="{{subSkill.name}}" placeholder="{{ localize 'D35E.SkillName' }}" style="width: 100%; margin-bottom: 3px; margin-right: 4px;"/>
+    </div>
+
+    <div class="skill-mod-total flexrow rollable skill-roll">
+      <div class="rollable image-d20"></div>
+      <input type="text" class="rollable"  value="{{numberFormat subSkill.mod decimals=0 sign=true}}" disabled data-dtype="Number"/>
+    </div>
+    <input {{#if ../../system.details.levelUpProgression}}readonly{{/if}} type="text" class="skill-rank" name="system.skills.{{s}}.subSkills.{{b}}.points" value="{{#if subSkill.points}}{{subSkill.points}}{{/if}}" placeholder="{{ localize 'D35E.Points' }}" data-dtype="Number"/>
+    <div class="toggle small" style="width: 40px">
+      <input id="{{randomUuid}}-{{s}}-{{b}}-class" type="checkbox" {{checked subSkill.cs}} disabled/>
+      <label style="width: 40px" for="{{randomUuid}}-{{s}}-{{b}}-class">{{#if subSkill.cs}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize 'D35E.CS'}}</label>
+    </div>
+    <div class="toggle small" style="width: 40px; margin-left: 2px">
+      <input id="{{randomUuid}}-{{s}}-{{b}}-acp" name="system.skills.{{s}}.subSkills.{{b}}.acp" type="checkbox" {{checked subSkill.acp}}/>
+      <label style="width: 40px; padding: 1px 8px" for="{{randomUuid}}-{{s}}-{{b}}-acp">{{#if subSkill.acp}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize 'D35E.ACP'}}</label>
+    </div>
+    <div class="toggle small" style="width: 40px; margin-left: 2px">
+      <input id="{{randomUuid}}-{{s}}-{{b}}-rt" name="system.skills.{{s}}.subSkills.{{b}}.rt" type="checkbox" {{checked subSkill.rt}}/>
+      <label style="width: 40px" for="{{randomUuid}}-{{s}}-{{b}}-rt">{{#if subSkill.rt}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize 'D35E.RT'}}</label>
+    </div>
+    <div class="form-group skill-ability">
+      <select class="skill-ability" name="system.skills.{{s}}.subSkills.{{b}}.ability" data-dtype="String">
+        {{#select subSkill.ability}}
+        <option value="">{{ localize 'D35E.None-FrF' }}</option>
+        {{#each ../../config.abilitiesShort as |ability a|}}
+        <option value="{{a}}">{{ability}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+    <a title="{{ localize 'D35E.Notes' }}" style="flex: 0"  class="note-editor small tooltip" for="system.skills.{{s}}.subSkills.{{b}}.notes">
+  
+      {{#if subSkill.notes}}
+        <span class="tooltipcontent">
+          {{subSkill.notes}}
+        </span>
+      {{/if}}
+      {{#if subSkill.notes}}
+      <i class="fas fa-comment-alt"></i>
+      {{else}}
+      <i class="far fa-comment-alt"></i>
+      {{/if}}
+    </a>
+    <div class="skill-controls" style="flex: 0 24px">
+      <a class="skill-control skill-delete" title="{{ localize 'D35E.DeleteSkill' }}"><i class="fas fa-trash"></i></a>
+    </div>
+  </li>
+  {{/each}}
+  {{else}}
+  <li class="skill flexrow" data-skill="{{s}}" draggable="true" data-type="skill" data-uuid="{{../uuid}}" data-id="{{s}}">
+    <input type="hidden" name="system.skills.{{s}}.value" value="{{skill.value}}" data-dtype="Number"/>
+    <div class="skill-name tooltip {{#if skill.rt}}{{#unless skill.points}}skill-untrained{{/unless}}{{/if}}">
+      <span class="tooltipcontent">
+        @skills.{{s}}.mod : {{skill.mod}}<br>
+        @skills.{{s}}.points : {{skill.points}}<br>
+
+        {{#if skill.sourceDetails.length}}
+        <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+        {{#each skill.sourceDetails as |src|}}
+        {{src.name}}: {{src.value}}<br/>
+        {{/each}}
+        {{/if}}
+      </span>
+      {{#if skill.custom}}
+      {{#if skill.worldCustom}}
+      <h4>{{skill.name}}</h4>
+      {{else}}
+      <input type="text" name="system.skills.{{s}}.name" value="{{skill.name}}" placeholder="{{ localize 'D35E.Name' }}"/>
+      {{/if}}
+      {{else}}
+      <h4>{{skill.label}}</h4>
+      {{/if}}
+    </div>
+    <div class="skill-mod-total flexrow rollable skill-roll {{#if skill.rt}}{{#unless skill.points}}roll-untrained{{/unless}}{{/if}}">
+      <div class="rollable image-d20"></div>
+      <input type="text" class="rollable"  value="{{numberFormat skill.mod decimals=0 sign=true}}" disabled data-dtype="Number"/>
+    </div>
+    <input {{#if ../system.details.levelUpProgression}}readonly{{/if}} type="text" class="skill-rank" name="system.skills.{{s}}.points" value="{{#if skill.points}}{{skill.points}}{{/if}}" placeholder="{{ localize 'D35E.Points' }}" data-dtype="Number"/>
+    <div class="toggle small" style="width: 40px">
+        <input id="{{randomUuid}}-{{s}}-class" type="checkbox" {{checked skill.cs}} disabled/>
+        <label style="width: 40px" for="{{randomUuid}}-{{s}}-class">{{#if skill.cs}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize 'D35E.CS'}}</label>
+      </div>
+    <div class="toggle small" style="width: 40px; margin-left: 2px">
+      <input id="{{randomUuid}}-{{s}}-acp" name="system.skills.{{s}}.acp" type="checkbox" {{checked skill.acp}}/>
+      <label style="width: 40px; padding: 1px 8px" for="{{randomUuid}}-{{s}}-acp">{{#if skill.acp}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize 'D35E.ACP'}}</label>
+    </div>
+    <div class="toggle small" style="width: 40px; margin-left: 2px">
+      <input id="{{randomUuid}}-{{s}}-rt" name="system.skills.{{s}}.rt" type="checkbox" {{checked skill.rt}}/>
+      <label style="width: 40px" for="{{randomUuid}}-{{s}}-rt">{{#if skill.rt}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize 'D35E.RT'}}</label>
+    </div>
+    <div class="form-group skill-ability">
+      <select class="skill-ability" name="system.skills.{{s}}.ability" data-dtype="String">
+        {{#select skill.ability}}
+        <option value="">{{ localize 'D35E.None-FrF' }}</option>
+        {{#each ../config.abilitiesShort as |ability a|}}
+        <option value="{{a}}">{{ability}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+    <a title="{{ localize 'D35E.Notes' }}" style="flex: 0"  class="note-editor small tooltip" for="system.skills.{{s}}.notes">
+      {{#if skill.notes}}
+      <span class="tooltipcontent">
+        {{skill.notes}}
+      </span>
+      {{/if}}
+      {{#if skill.notes}}
+      <i class="fas fa-comment-alt"></i>
+      {{else}}
+      <i class="far fa-comment-alt"></i>
+      {{/if}}
+    </a>
+    <div class="skill-controls" style="flex: 0 24px" >
+      {{#if ../owner}}{{#if skill.custom}}
+      {{#unless skill.worldCustom}}
+      <a class="skill-control skill-delete" title="{{ localize 'D35E.DeleteSkill' }}"><i class="fas fa-trash"></i></a>
+      {{/unless}}
+      {{/if}}{{/if}}
+    </div>
+
+  </li>
+  {{/if}}
+  {{/each}}
+  <div class="skill-controls skills">
+    {{#if owner}}
+    <a class="skill-control skill-create" title="{{ localize 'D35E.AddSkill' }}">
+      <i class="fas fa-plus"></i>
+    </a>
+    {{/if}}
+  </div>
+</ul>

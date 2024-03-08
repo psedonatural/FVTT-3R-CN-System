@@ -1,0 +1,16 @@
+# Issues fixed
+- [#1391](https://gitlab.com/dragonshorn/D35E/-/issues/1391) - Change how adding class abilities that appear on multiple levels work
+- [#1387](https://gitlab.com/dragonshorn/D35E/-/issues/1387) - The -Disable button is not working.
+- [#1383](https://gitlab.com/dragonshorn/D35E/-/issues/1383) - Monk Unarmed attack
+- [#1382](https://gitlab.com/dragonshorn/D35E/-/issues/1382) - Can't use @self.level in combat changes modification formula on a buff
+- [#1380](https://gitlab.com/dragonshorn/D35E/-/issues/1380) - Attacks created from weapon does not benefit from Weapon Focus feat
+- [#1379](https://gitlab.com/dragonshorn/D35E/-/issues/1379) - Bug: The Improve Monster Button in the NPC sheet is bugged. Foundryvtt v10.291 , 3.5 SRD v 2.2.1
+- [#1377](https://gitlab.com/dragonshorn/D35E/-/issues/1377) - Tiefling not properly set up
+- [#1375](https://gitlab.com/dragonshorn/D35E/-/issues/1375) - Trap CR cannot be changed
+- [#1371](https://gitlab.com/dragonshorn/D35E/-/issues/1371) - Unable to disable class features from PC's class
+- [#1370](https://gitlab.com/dragonshorn/D35E/-/issues/1370) - Feat pools not counting and being created
+- [#1366](https://gitlab.com/dragonshorn/D35E/-/issues/1366) - Self roll not actually rolling to self
+- [#1365](https://gitlab.com/dragonshorn/D35E/-/issues/1365) - Templates cannot be created in V11
+- [#1364](https://gitlab.com/dragonshorn/D35E/-/issues/1364) - Low Light Vision broken in V11
+- [#1363](https://gitlab.com/dragonshorn/D35E/-/issues/1363) - Primary attack not toggled automatically
+- [#1170](https://gitlab.com/dragonshorn/D35E/-/issues/1170) - v10 Damage modifiers for natural attacks do not work properly

@@ -1,0 +1,11 @@
+# Issues fixed
+- [#1261](https://gitlab.com/dragonshorn/D35E/-/issues/1261) - Drag dropping something from a compendium duplicates the entry on the actor
+- [#1260](https://gitlab.com/dragonshorn/D35E/-/issues/1260) - Players able to move loot Tokens on Scene
+- [#1258](https://gitlab.com/dragonshorn/D35E/-/issues/1258) - Coins/Drag not working on Loot Sheet
+- [#1257](https://gitlab.com/dragonshorn/D35E/-/issues/1257) - "object Promise" being seen in Saving Throw chat cards in place of context notes
+- [#1256](https://gitlab.com/dragonshorn/D35E/-/issues/1256) - Bug: Undefined value in CS makes CS unable to be opened
+- [#1253](https://gitlab.com/dragonshorn/D35E/-/issues/1253) - Items dragged from Items Browser double-add to character
+- [#1252](https://gitlab.com/dragonshorn/D35E/-/issues/1252) - Bug (10.291 2.2.1) Creating custom skills display NaN as the skill value.
+- [#1249](https://gitlab.com/dragonshorn/D35E/-/issues/1249) - Bug: (foundryvtt 10.291/ SRD 2.1.1) The vision checkbox is greyed out in the token/prototype token menus.
+- [#1245](https://gitlab.com/dragonshorn/D35E/-/issues/1245) - Bug: Merchant sheet sell ignoring decimals
+- [#1242](https://gitlab.com/dragonshorn/D35E/-/issues/1242) - Lootsheet merchant | sell tab | item count not checked

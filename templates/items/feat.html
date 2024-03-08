@@ -1,0 +1,274 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+    <span class="uid-warning flexrow">
+  {{#if data.system.uniqueId}}
+      <div class="tooltip">
+      <i class="fas fa-anchor"></i>
+      <div class="tooltipcontent">{{{ localize 'D35E.ItemHasUID' }}}</div>
+    </div>
+    {{/if}}
+    {{#if unmetRequirements}}
+    <div class="tooltip" style="margin-left: 4px">
+        <i class="fas fa-tasks"></i>
+        <div class="tooltipcontent">{{{ localize 'D35E.HasUnmetRequirements' }}}
+
+            {{#each unmetRequirements as |req|}}
+            <p>{{req}}</p>
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+    </span>
+  {{!-- Item Sheet Header --}}
+  <div class="flexrow" style="flex: 0">
+    <div class="sheet-header-profile">
+      <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+    </div>
+
+    <header class="sheet-header flexrow">
+    <div class="flexcol">
+
+      <div class="header-details flexrow">
+        <h1 class="charname">
+          <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "D35E.ItemName"}}"/>
+        </h1>
+
+        <div class="item-subtitle">
+          <h4 class="item-type">{{labels.featType}}</h4>
+          <span class="item-status">{{itemStatus}}</span>
+        </div>
+      </div>
+      <ul class="tag-list">
+        {{#each tags}}
+        <li class="tag">{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </header>
+  </div>
+  <section class="sheet-content flexcol" style="min-height: 400px">
+
+  {{!-- Item Sheet Navigation --}}
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="description">{{ localize "D35E.Description" }}</a>
+    <a class="item active" data-tab="configuration" style="flex: 0 150px;">{{ localize "D35E.Configuration" }}</a>
+  </nav>
+
+  {{!-- Item Sheet Body --}}
+  <section class="primary-body">
+    {{!-- Description Tab --}}
+    {{#if isSpellSpecialization}}
+    <div class="tab flexcol active" data-group="primary" data-tab="description">
+      {{#if data.system.spellSpecialization.isDomain}}
+      <h3 class="form-header" style="flex: 0">{{localize "D35E.SpellSpecializationGrantedPowers"}}</h3>
+      {{/if}}
+      {{editor content=data.system.description.value target="system.description.value" button=true owner=owner
+      editable=editable}}
+        <section class="description-body" style="display: block; height: 100%">
+          <div class="flexcol">
+            {{#if data.system.spellSpecialization.isDomain}}
+              <h3 class="form-header">{{localize "D35E.Spells"}}</h3>
+              <div class="inventory-group flexcol" style="padding-bottom: 8px">
+                <ol class="inventory-list sub-scroll scroll-inventory">
+
+                  <li class="inventory-header flexrow">
+                    <h3 class="item-name flexrow"></h3>
+                    <div style="flex: 0 60px; text-align: center; opacity: 0.7">
+                      {{localize "D35E.Level"}}
+                    </div>
+                    <div class="item-detail item-actions" style="flex: 0 120px">
+                      <span>Action</span></div>
+                  </li>
+                  <ol class="item-list" data-pack="D35E.class-abilities">
+                    {{#each data.system.spellSpecialization.spells as |item level|}}
+                    <li class="item item-box flexrow" data-item-id="{{item.id}}" data-item-pack="{{item.pack}}" data-pack="{{item.pack}}"
+                        data-item-level="{{item.level}}" data-level={{item.level}}>
+                      <div class="item-name child-item flexrow">
+                        <div class="item-image" style="background-image: url('{{item.img}}')"></div>
+                        <h4 class="rollable">
+                          {{item.name~}}
+                        </h4>
+                      </div>
+                      <div style="flex: 0 60px; text-align: center; opacity: 0.7">
+                        <em>{{localize "D35E.Level"}} {{item.level}}</em>
+                      </div>
+                      <div class="item-detail item-enh item-actions"  style="flex: 0 120px">
+                        <a class="item-control item-add" title="Add to Spellbook">+ Add To Spellbook</a>
+                      </div>
+
+                    </li>
+                    {{/each}}
+
+                  </ol>
+                </ol>
+              </div>
+            {{/if}}
+          </div>
+        </section>
+    </div>
+    {{else}}
+    {{> "systems/D35E/templates/items/parts/item-description.html"}}
+    {{/if}}
+    <div class="tab flexcol active" data-group="primary" data-tab="configuration">
+      <nav class="sheet-navigation tabs subtabs configuration" data-group="configuration">
+        <a class="item active" data-tab="details">{{ localize "D35E.Details" }}</a>
+        {{#each registeredTabs as |tab|}}
+        <a class="item" data-tab="{{tab.id}}">{{tab.name}}</a>
+        {{/each}}
+      </nav>
+
+      <div class="flexrow configuration-container" style="overflow: hidden; height: 100%">
+        <section class="configuration-body" style="display: block; height: 100%">
+          {{!-- Details Tab --}}
+          <div class="tab configuration-group details" data-group="configuration" data-tab="details">
+
+              <h3 class="form-header">{{localize "D35E.Details"}}</h3>
+
+              {{!-- Feat Type --}}
+              <div class="form-group select">
+                <label>{{localize "D35E.Type"}}</label>
+                <select name="system.featType" value="{{data.system.featType}}">
+                  {{#select data.system.featType}}
+                  {{#each config.featTypes as |type a|}}
+                  <option value="{{a}}">{{type}}</option>
+                  {{/each}}
+                  {{/select}}
+                </select>
+              </div>
+
+
+              <div class="form-group select">
+                <label>{{localize "D35E.AbilityType"}}</label>
+                <select name="system.abilityType" value="{{data.system.abilityType}}">
+                  {{#select data.system.abilityType}}
+                  <option value="">{{localize "D35E.None"}}</option>
+                  {{#each config.abilityTypes as |type a|}}
+                  <option value="{{a}}">{{type}}</option>
+                  {{/each}}
+                  {{/select}}
+                </select>
+              </div>
+
+              {{!-- Feat Tags --}}
+              <div class="form-group stacked">
+                <div class="data-selector">
+                  <a class="entry-selector" for="system.tags" data-fields="{{localize "D35E.Tags"}}" data-dtypes="String"><i class="fas fa-edit"></i></a>
+                  <label for="system.tags">{{localize "D35E.Tags"}}</label>
+                </div>
+
+                {{#if isClassFeature}}
+                <div class="data-selector">
+                  <a class="entry-selector" for="system.associations.classes" data-fields="{{localize "D35E.ClassPlural"}};{{localize "D35E.Level"}}" data-dtypes="String;Number"><i class="fas fa-edit"></i></a>
+                  <label for="system.associations.classes">{{localize "D35E.ClassPlural"}}</label>
+                </div>
+                {{/if}}
+              </div>
+
+              <div class="form-group stacked">
+                <label class="checkbox">
+                  <input type="checkbox" name="system.showInQuickbar" {{checked data.system.showInQuickbar}}/> {{localize "D35E.ShowInQuickbar"}}
+                </label>
+              </div>
+
+            <div class="form-group">
+              <label>{{localize "D35E.Metamagic"}}</label>
+              <label class="checkbox" style="position: relative; flex: 0 20px">
+                <input type="checkbox" class="stylized" name="system.metamagic.enabled" {{checked data.system.metamagic.enabled}}/>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+            {{#if data.system.metamagic.enabled}}
+              <div class="form-group">
+                <label>{{localize "D35E.ShortDescription"}}</label>
+                <input type="text" name="system.metamagic.shortDesc" value="{{data.system.metamagic.shortDesc}}" data-dtype="String"/>
+              </div>
+              <textarea class="metamagic-editor" style="font-family: monospace; min-height: 120px" name="system.metamagic.code">{{data.system.metamagic.code}}</textarea>
+            {{/if}}
+
+              {{#if isSpellSpecialization}}
+              <h3 class="form-header">{{localize "D35E.FeatTypeSpellSpecialization"}}</h3>
+              <div class="form-group">
+                <label>{{localize "D35E.SpellSpecializationSchool"}}</label>
+                <input type="text" name="system.spellSpecializationName" value="{{data.system.spellSpecializationName}}" data-dtype="String"/>
+              </div>
+              <div class="form-group">
+                <label>{{localize "D35E.SpellSpecializationForbidden"}}</label>
+                <input type="text" name="system.spellSpecializationForbiddenNames" value="{{data.system.spellSpecializationForbiddenNames}}" data-dtype="String"/>
+              </div>
+
+            <div class="form-group">
+              <label>{{localize "D35E.SpellSpecializationIdDomain"}}</label>
+              <label class="checkbox" style="position: relative; flex: 0 20px">
+                <input type="checkbox" class="stylized" name="system.spellSpecialization.isDomain" {{checked data.system.spellSpecialization.isDomain}}/>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+
+              <em>{{localize "D35E.SpellSpecializationDesc"}}</em>
+
+              <h3 class="form-header">{{localize "D35E.SpellSpecializationSpells"}}</h3>
+              <section>
+                {{#each data.system.spellSpecialization.spells as |spell level|}}
+                <div class="spell flexcol" data-spell="{{level}}">
+                  <h4>{{localize "D35E.Level"}} {{spell.level}}</h4>
+                  <div class="form-group">
+                    <img src="{{spell.img}}">
+                    <label>{{spell.name}}</label>
+                    <input type="text" name="system.spellSpecialization.spells.{{level}}.id" value="{{spell.id}}" data-dtype="String"/>
+                    <input type="text" name="system.spellSpecialization.spells.{{level}}.pack" value="{{spell.pack}}" data-dtype="String"/>
+                  </div>
+                  <em style="align-self: flex-end;">{{localize "D35E.SpellSpecializationDropSpell"}}</em>
+                </div>
+                {{/each}}
+              </section>
+
+              {{/if}}
+
+              {{> "systems/D35E/templates/items/parts/item-customization.html"}}
+
+              {{!-- Activation --}}
+              <h3 class="form-header">{{localize "D35E.FeatureUsage"}}</h3>
+
+              {{!-- Item Activation Template --}}
+              {{> "systems/D35E/templates/items/parts/item-activation.html"}}
+
+              {{!-- Action --}}
+              <h3 class="form-header">{{localize "D35E.Attack"}}</h3>
+
+              {{!-- Item Action Template --}}
+              {{> "systems/D35E/templates/items/parts/item-action.html"}}
+
+              {{!-- Measure Template --}}
+              <h3 class="form-header">{{localize "D35E.MeasureTemplate"}}</h3>
+
+              {{!-- Item Measure Template --}}
+              {{> "systems/D35E/templates/items/parts/item-template.html"}}
+
+            {{#if isSpellSpecialization}}
+              {{#if isGM}}
+              <h3 class="form-header">系统属性</h3>
+              {{> "systems/D35E/templates/items/components/uid-input.html"}}
+              {{/if}}
+            {{/if}}
+            </div>
+
+          {{#each registeredTabs as |tab|}}
+          <div class="tab configuration-group flexcol" data-group="configuration" data-tab="{{tab.id}}">
+            {{> (lookup tab 'sheet') ..}}
+          </div>
+          {{/each}}
+        </section>
+      </div>
+    </div>
+  </section>
+  </section>
+  {{#unless showUnidentifiedData}}
+  {{#if data.system.spellSpecialization.isDomain}}
+  {{#if owner}}
+  <div class="form-group" >
+    <button type="button" name="add-domain-spells">{{localize "D35E.AddSpellsToSpellbook"}}</button>
+  </div>
+  {{/if}}
+  {{/if}}
+  {{/unless}}
+</form>

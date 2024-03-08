@@ -1,0 +1,235 @@
+{{!-- Activation Cost --}}
+<div class="form-group input-select">
+  <label>{{localize "D35E.ActivationCost"}}</label>
+  <div class="form-fields">
+    <input type="text" name="system.activation.cost" value="{{data.system.activation.cost}}" data-dtype="Number" placeholder=""/>
+    <select name="system.activation.type">
+      {{#select data.system.activation.type}}
+      <option value=""></option>
+      {{#each config.abilityActivationTypes as |name key|}}
+      <option value="{{key}}">{{name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </div>
+</div>
+{{#if data.system.activation.type}}
+
+{{#unless isAttack}}
+<div class="form-group">
+  <label>{{localize "D35E.Favorite"}}</label>
+  <label class="checkbox" style="position: relative; flex: 0 20px">
+    <input type="checkbox" class="stylized" name="system.favorite" {{checked data.system.favorite}}/>
+    <span class="checkmark"></span>
+  </label>
+</div>
+{{/unless}}
+
+{{!-- Ability Target --}}
+<div class="form-group input-select-select">
+  <label>{{localize "D35E.Target"}}</label>
+  <div class="form-fields">
+    <input type="text" name="system.target.value" value="{{data.system.target.value}}"/>
+  </div>
+</div>
+
+{{!-- Ability Range --}}
+<div class="form-group input-select">
+  <label>{{localize "D35E.Range"}}</label>
+  <div class="form-fields">
+    {{#if canInputRange}}<input type="text" name="system.range.value" value="{{data.system.range.value}}" placeholder="{{#unless isSpell}}{{localize "D35E.Formula"}}{{/unless}}"/>{{/if}}
+    <select name="system.range.units">
+      {{#select data.system.range.units}}
+      <option value=""></option>
+      {{#each config.distanceUnits as |name key|}}
+      <option value="{{key}}">{{name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </div>
+</div>
+
+{{!-- Area --}}
+{{#if isSpell}}
+<div class="form-group input-select-select">
+  <label>{{localize "D35E.Area"}}</label>
+  <div class="form-fields">
+    <input type="text" name="system.spellArea" value="{{data.system.spellArea}}"/>
+  </div>
+</div>
+{{/if}}
+
+{{!-- Effect Duration --}}
+<div class="form-group input-select">
+  <label>{{localize "D35E.Duration"}}</label>
+  <div class="form-fields">
+    {{#if isSpell}}
+    {{#if canInputSpellDuration}}<input type="text" name="system.spellDurationData.value" value="{{data.system.spellDurationData.value}}" placeholder="{{localize "D35E.Formula"}}"/>{{/if}}
+    <select name="system.spellDurationData.units">
+      {{#select data.system.spellDurationData.units}}
+      <option value=""></option>
+      {{#each config.timePeriodsSpells as |name key|}}
+      <option value="{{key}}">{{name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+    {{else}}
+    {{#if canInputDuration}}<input type="text" name="system.duration.value" value="{{data.system.duration.value}}" placeholder="{{localize "D35E.Formula"}}"/>{{/if}}
+    <select name="system.duration.units">
+      {{#select data.system.duration.units}}
+      <option value=""></option>
+      {{#each config.timePeriods as |name key|}}
+      <option value="{{key}}">{{name}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+    {{/if}}
+  </div>
+</div>
+{{#if isSpell}}
+<div class="form-group">
+  <label>{{localize "D35E.SpellDismissable"}}</label>
+  <label class="checkbox" style="position: relative; flex: 0 20px">
+    <input type="checkbox" class="stylized" name="system.spellDurationData.dismissable" {{checked data.system.spellDurationData.dismissable}}/>
+    <span class="checkmark"></span>
+  </label>
+</div>
+<div class="form-group">
+  <label>{{localize "D35E.SpellLegacyDuration"}}</label>
+  <input type="text" class="readonly" readonly value="{{data.system.spellDuration}}" placeholder="{{localize "D35E.SpellDurationExample"}}"/>
+</div>
+{{/if}}
+<div class="form-group">
+  <label>{{localize "D35E.RequiresPsionicFocus"}}</label>
+  <label class="checkbox" style="position: relative; flex: 0 20px">
+    <input type="checkbox" class="stylized" name="system.requiresPsionicFocus" {{checked data.system.requiresPsionicFocus}}/>
+    <span class="checkmark"></span>
+  </label>
+</div>
+{{!-- Limited Uses --}}
+{{#unless isSpell}}
+  <div class="form-group uses-per">
+    <label>{{localize "D35E.LimitedUses"}}</label>
+    <div class="form-fields">
+      {{#if isCharged}}
+      {{#unless data.system.linkedChargeItem.id}}
+      <input type="text" name="system.uses.value" value="{{charges}}" data-dtype="Number"/>
+      {{else}}
+      <input type="text" disabled value="{{charges}}" data-dtype="Number"/>
+      {{/unless}}
+      <span class="sep"> / </span>
+      <input type="text" value="{{maxCharges}}" disabled data-dtype="Number"/>
+      {{/if}}
+      <select name="system.uses.per">
+        {{#select data.system.uses.per}}
+        <option value=""></option>
+        {{#each config.limitedUsePeriods as |name key|}}
+        <option value="{{key}}">{{name}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
+  </div>
+
+<div class="form-group">
+  <label>{{localize "D35E.Resource"}}</label>
+  <label class="checkbox" style="position: relative; flex: 0 20px">
+    <input type="checkbox" class="stylized" name="system.uses.isResource" {{checked data.system.uses.isResource}}/>
+    <span class="checkmark"></span>
+  </label>
+</div>
+<div class="form-group">
+  <label>{{localize "D35E.CanBeLinked"}}</label>
+  <label class="checkbox" style="position: relative; flex: 0 20px">
+    <input type="checkbox" class="stylized" name="system.uses.canBeLinked" {{checked data.system.uses.canBeLinked}}/>
+    <span class="checkmark"></span>
+  </label>
+</div>
+{{#unless data.system.uses.canBeLinked}}
+  {{#unless data.system.linkedChargeItem.id}}
+  {{#if isCharged}}
+  <div class="form-group uses-per">
+    <label>{{localize "D35E.MaximumUsesFormula"}}</label>
+    <input type="text" name="system.uses.maxFormula" value="{{data.system.uses.maxFormula}}" placeholder="{{localize "D35E.MaximumUsesFormula"}}"/>
+  </div>
+
+  <div class="form-group uses-recharge-formula">
+    <label>{{localize "D35E.RechargeFormula"}} <i class="fas fa-info-circle tooltip">
+      <div class="tooltipcontent"><strong>{{localize "D35E.RechargeFormula"}}</strong><br><p style="white-space: normal;"> {{localize "D35E.RechargeFormulaInfo"}}</p></div>
+    </i></label>
+    <input type="text" name="system.uses.rechargeFormula" value="{{data.system.uses.rechargeFormula}}" placeholder="{{localize "D35E.RechargeFormula"}}"/>
+  </div>
+  {{/if}}
+  {{/unless}}
+  <div class="charge-link flexcol">
+    {{#unless data.system.linkedChargeItem.id}}
+      <div style="width: 100%; text-align: center; padding: 12px">
+        {{localize "D35E.DropChargeLinkItem"}}
+      </div>
+    {{else}}
+      <h4>{{localize "D35E.LinkedCharge"}} {{data.system.linkedChargeItem.id}}<a style="float: right" class="colorized-link remove-charge-link">{{localize "D35E.UnlinkCharge"}}</a></h4>
+      <div class="form-group">
+      <img src="{{data.system.linkedChargeItem.img}}">
+      <label>{{data.system.linkedChargeItem.name}}</label>
+
+
+
+      </div>
+      {{/unless}}
+    <em style="align-self: flex-end;">{{localize "D35E.LinkedChargeDescription"}}</em>
+  </div>
+{{/unless}}
+
+  <div class="form-group">
+    <label>{{localize "D35E.AutoDeductCharges"}}</label>
+    <label class="checkbox" style="position: relative; flex: 0 20px">
+      <input type="checkbox" class="stylized" name="system.uses.autoDeductCharges" {{checked data.system.uses.autoDeductCharges}}/>
+      <span class="checkmark"></span>
+    </label>
+  </div>
+
+  <div class="form-group input">
+    <label>{{localize "D35E.ChargesToDeduct"}}</label>
+    <input style="width: 40px" type="text" value="{{data.system.uses.chargesPerUse}}" name="system.uses.chargesPerUse"  data-dtype="Number"/>
+  </div>
+
+  <div class="form-group">
+    <label>{{localize "D35E.AllowMultipleUses"}}</label>
+    <label class="checkbox" style="position: relative; flex: 0 20px">
+      <input type="checkbox" class="stylized" name="system.uses.allowMultipleUses" {{checked data.system.uses.allowMultipleUses}}/>
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  {{#if data.system.uses.allowMultipleUses}}
+  <div class="form-group input">
+    <label>{{localize "D35E.MaxChargesPerUse"}}</label>
+    <input style="flex: 0 140px; margin-right: 1rem" type="text" value="{{data.system.uses.maxPerUseFormula}}" name="system.uses.maxPerUseFormula"  data-dtype="String"/>
+
+    <span class="sep"> Total:  </span>
+    <input style="flex: 0 40px" type="text" value="{{data.system.uses.maxPerUse}}" disabled  data-dtype="Number"/>
+  </div>
+  {{/if}}
+
+
+  {{#if isCharged}}
+  <div class="form-group">
+    <label>{{localize "D35E.RechargeMechanicOnUse"}}</label>
+    <label class="checkbox" style="position: relative; flex: 0 20px">
+      <input type="checkbox" class="stylized" name="system.recharge.enabled" {{checked data.system.recharge.enabled}}/>
+      <span class="checkmark"></span>
+    </label>
+  </div>
+  {{#if data.system.recharge.enabled}}
+  <div class="form-group input">
+    <label>{{localize "D35E.RechargeTimeFormula"}} <i class="fas fa-info-circle tooltip">
+      <div class="tooltipcontent"><strong>{{localize "D35E.RechargeTimeFormula"}}</strong><br><p style="white-space: normal;"> {{localize "D35E.RechargeTimeFormulaInfo"}}</p></div>
+    </i></label>
+    <input style="flex: 0 140px; margin-right: 1rem" type="text" value="{{data.system.recharge.formula}}" name="system.recharge.formula"  data-dtype="String"/>
+
+    <span class="sep"> Current:  </span>
+    <input style="flex: 0 40px" type="text" value="{{data.system.recharge.current}}" name="system.recharge.current"  data-dtype="Number"/>
+  </div>
+  {{/if}}
+  {{/if}}
+{{/unless}}
+{{/if}}

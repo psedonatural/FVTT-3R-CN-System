@@ -1,0 +1,33 @@
+include: '/version.yaml'
+release_job:
+  stage: deploy
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - echo "running release_job"
+  release:
+    name: 'Release $VERSION'
+    description: 'Created using the release-cli.'
+    tag_name: '$CI_COMMIT_TAG'
+    ref: '$CI_COMMIT_TAG'
+    milestones:
+      - '$VERSION'
+    assets:
+      links:
+        - name: 'manifest'
+          url: 'https://www.legaciesofthedragon.com/D35E/tags/$CI_COMMIT_TAG/system.json'
+        - name: 'zip'
+          url: 'https://www.legaciesofthedragon.com/D35E/tags/$CI_COMMIT_TAG/data.zip'
+
+test:
+  stage: test
+  image: node:lts
+  script:
+    - npm ci
+    - npm run test-gitlab
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - junit.xml

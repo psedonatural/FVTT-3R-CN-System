@@ -1,0 +1,641 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  <div class="item-add-overlay item-add-{{randomUuid}}-overlay" style="display: none;">
+
+    <div class="item-add-list flexcol inventory-list">
+      <div class="item-add-close-box"><i class="fas fa-times"></i></div>
+      <h2 class="block-header" style="flex: 0; margin-right: 24px" id="items-add-{{randomUuid}}-label">Add Things</h2>
+      <div class="items-add-{{randomUuid}}-working-item">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block; margin-top: calc(50% - 100px)" width="60px" height="60px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+          <defs>
+            <mask id="ldio-0m4n8qdl07k-mask">
+              <path d="M50 13L75 30L75 70L50 87L25 70L25 30L50 13Z" fill="#fff" stroke="#000" stroke-width="0"></path>
+            </mask>
+          </defs>
+          <path d="M50 13L75 30L75 70L50 87L25 70L25 30L50 13Z" fill="#193f48" stroke="#10808b" stroke-width="0"></path><path d="M50 13L75 30L75 70L50 87L58.3 70L58.3 30Z" mask="url(#ldio-0m4n8qdl07k-mask)" fill="#193f48" stroke="#10808b" stroke-width="0">
+          <animate attributeName="d" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" begin="-0.2s"></animate>
+          <animate attributeName="fill" dur="1s" repeatCount="indefinite" keyTimes="0;0.5;1" values="#193f48;#049bba;#2c606d" begin="-0.2s"></animate>
+        </path><path d="M50 13L75 30L75 70L50 87L58.3 70L58.3 30Z" mask="url(#ldio-0m4n8qdl07k-mask)" fill="#193f48" stroke="#10808b" stroke-width="0">
+          <animate attributeName="d" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" begin="-0.4s"></animate>
+          <animate attributeName="fill" dur="1s" repeatCount="indefinite" keyTimes="0;0.5;1" values="#193f48;#049bba;#2c606d" begin="-0.4s"></animate>
+        </path><path d="M50 13L75 30L75 70L50 87L58.3 70L58.3 30Z" mask="url(#ldio-0m4n8qdl07k-mask)" fill="#193f48" stroke="#10808b" stroke-width="0">
+          <animate attributeName="d" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" begin="-0.6s"></animate>
+          <animate attributeName="fill" dur="1s" repeatCount="indefinite" keyTimes="0;0.5;1" values="#193f48;#049bba;#2c606d" begin="-0.6s"></animate>
+        </path><path d="M50 13L75 30L75 70L50 87L58.3 70L58.3 30Z" mask="url(#ldio-0m4n8qdl07k-mask)" fill="#193f48" stroke="#10808b" stroke-width="0">
+          <animate attributeName="d" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" begin="-0.8s"></animate>
+          <animate attributeName="fill" dur="1s" repeatCount="indefinite" keyTimes="0;0.5;1" values="#193f48;#049bba;#2c606d" begin="-0.8s"></animate>
+        </path><path d="M50 13L75 30L75 70L50 87L58.3 70L58.3 30Z" mask="url(#ldio-0m4n8qdl07k-mask)" fill="#193f48" stroke="#10808b" stroke-width="0">
+          <animate attributeName="d" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="M50 13L90 30L90 70L50 87L75 70L75 30Z;M50 13L25 30L25 70L50 87L10 70L10 30Z" begin="-1s"></animate>
+          <animate attributeName="fill" dur="1s" repeatCount="indefinite" keyTimes="0;0.5;1" values="#193f48;#049bba;#2c606d" begin="-1s"></animate>
+        </path><path d="M25 30L75 30" fill="#193f48" stroke="#10808b" stroke-width="0"></path>
+          <path d="M25 70L75 70" fill="#193f48" stroke="#10808b" stroke-width="0"></path>
+        </svg>
+      </div>
+      <div class="flexcol items-add-{{randomUuid}}-list" style="display: none; position: relative; height: calc(100% - 30px);">
+        <strong class="item-add-label">Filter:</strong>
+        <input type="text" id="{{randomUuid}}-itemList-filter" name="{{randomUuid}}-itemList-filter" class="item-search-input">
+        <ol class="item-list" style="overflow: auto" id="{{randomUuid}}-itemList">
+
+        </ol>
+        <div style="flex: 0">
+          <a class="blue-button open-compendium-browser items-add-{{randomUuid}}-openCompendium" style="text-align: center">Open Browser</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{!-- NPC Sheet Header --}}
+  <header class="sheet-header flexcol" style="flex-direction: column">
+
+    <div class="flexrow" style="width: 100%">
+      {{#if system.master.id}}
+        <div class="master-block flexrow" style="position: relative">
+            <img src="{{system.master.img}}" title="{{system.master.name}}">
+            <div class="flexcol tooltip">  <span class="tooltipcontent">
+                {{{ localize 'D35E.MinionTooltip' }}}
+                    @master.system.attributes.hd.total : {{system.master.system.attributes.hd.total}}
+                  </span>
+                <span class="minion-of">{{ localize 'D35E.MinionOf' }}</span>
+                <span class="minion-name">{{system.master.name}}</span>
+
+                <a class="unbind-minion" title="{{ localize 'D35E.UnbindMinion' }}">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </div>
+        </div>
+      {{/if}}
+      <h1 class="charname">
+          <input name="name" style="margin: 0" type="text" value="{{actor.name}}" placeholder="{{ localize 'D35E.CharacterName' }}"
+          title="{{ localize 'D35E.CharacterName' }}"/>
+      </h1>
+
+      <div class="hd tooltip">
+        <span class="tooltipcontent">
+          @attributes.hd.total : {{system.attributes.hd.total}}
+        </span>
+        <Label>{{ localize 'D35E.HD' }}</label>
+        <input disabled type="text" value="{{system.attributes.hd.total}}" placeholder="1"
+               data-dtype="Number"/>
+      </div>
+
+      <div class="charlevel">
+        <div class="level">
+          <label>{{ localize 'D35E.CR' }} {{labels.totalCr}}</label>
+        </div>
+        <div class="level" style="line-height: 14px">
+          <label style="font-size: 14px;">{{ localize 'D35E.BaseCR' }}</label>
+          <input name="system.details.cr" style="font-size: 14px; height: 16px" type="text" value="{{labels.cr}}" placeholder="1"/>
+        </div>
+        <div class="experience">
+          <span>{{labels.totalExp}} {{ localize 'D35E.XP' }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="flexrow">
+
+      <div class="profile npc">
+        <img class="profile" src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+        <img src="{{actor.system.tokenImg}}" class="token-image" data-edit="system.tokenImg" >
+      </div>
+      <div class="header-details flexcol">
+
+        <div class="flexcol">
+          <ul class="summary">
+            <li>
+              <input type="text" name="system.details.type" value="{{system.details.type}}"
+                     placeholder="{{ localize 'D35E.TypeSubType' }}" title="{{ localize 'D35E.TypeSubType' }}"/>
+            </li>
+            <li>
+              <input type="text" name="system.details.alignment" value="{{system.details.alignment}}"
+                     placeholder="{{ localize 'D35E.Alignment' }}" title="{{ localize 'D35E.Alignment' }}"/>
+            </li>
+            <ol class="item-list race-container" style="margin: 0">
+              <li class="race-container item flexrow" {{#if race}}data-item-id="{{race._id}}"{{/if}} title="{{ localize 'D35E.Race' }}">
+              <div class="race item-image {{#if race}}rollable{{/if}}" style="background-image: url({{race.img}})"
+                   title="{{labels.race}}">
+                {{#unless race}}{{ localize 'D35E.Race' }}{{/unless}}
+              </div>
+              {{#if race}}
+                <span>{{race.name}}</span>
+              {{/if}}
+
+              <div class="item-controls flexrow" style="line-height: 23px;">
+                {{#if owner}}
+                  {{#unless race}}
+                    <a class="item-control add" title="{{ localize 'D35E.CreateItem' }}"><i
+                       class="fas fa-plus"></i></a>
+                  {{/unless}}
+                  {{#if race}}
+                    <a class="item-control edit" title="{{ localize 'D35E.EditItem' }}"><i
+                       class="fas fa-edit"></i></a>
+                    <a class="item-control delete" title="{{ localize 'D35E.DeleteItem' }}"><i
+                       class="fas fa-trash"></i></a>
+                  {{/if}}
+                {{/if}}
+              </div>
+            </ol>
+          </ul>
+        </div>
+
+        {{!-- Attributes --}}
+        <ul class="attributes flexrow">
+          <li class="attribute health">
+              {{#if healthConfig.variants.npc.useWoundsAndVigor}}
+                <h4 class="attribute-name box-title tooltip">
+                  {{ localize 'D35E.Vigor' }}
+                  <div class="tooltipcontent">
+                    @attributes.vigor.min : {{system.attributes.vigor.min}}<br/>
+                    @attributes.vigor.value : {{system.attributes.vigor.value}}<br/>
+                    @attributes.vigor.max : {{system.attributes.vigor.max}}<br/>
+                    @attributes.vigor.temp : {{system.attributes.vigor.temp}}
+
+                    {{#if sourceDetails.system.attributes.vigor.max.length}}
+                      <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+                      {{#each sourceDetails.system.attributes.vigor.max as |src|}}{{src.name}}:
+                      {{src.value}}<br/>{{/each}}
+                    {{/if}}
+                  </div>
+                </h4>
+                <div class="attribute-value multiple">
+                  <input name="system.attributes.vigor.value" type="text"
+                         value="{{system.attributes.vigor.value}}"
+                         data-dtype="Number" placeholder="0"/>
+                  <span class="sep"> / </span>
+                  <div class="attribute">{{system.attributes.vigor.max}}</div>
+                </div>
+                <footer class="attribute-footer">
+                  <input name="system.attributes.vigor.temp" type="text" class="temphp"
+                         placeholder="{{ localize 'D35E.Temporary' }}"
+                         value="{{#if system.attributes.vigor.temp}}{{system.attributes.vigor.temp}}{{/if}}"
+                         data-dtype="Number"/>
+                </footer>
+
+                <h4 class="attribute-name box-title tooltip">
+                  {{ localize 'D35E.Wounds' }}
+                  <div class="tooltipcontent">
+                      @attributes.wounds.min : {{system.attributes.wounds.min}}<br/>
+                      @attributes.wounds.value : {{system.attributes.wounds.value}}<br/>
+                      @attributes.wounds.max : {{system.attributes.wounds.max}}<br/>
+
+                      {{#if sourceDetails.system.attributes.wounds.max.length}}
+                        <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+                        {{#each sourceDetails.system.attributes.wounds.max as |src|}}{{src.name}}:
+                        {{src.value}}<br/>{{/each}}
+                      {{/if}}
+                  </div>
+                </h4>
+                <div class="attribute-value multiple">
+                  <input name="system.attributes.wounds.value" type="text"
+                         value="{{system.attributes.wounds.value}}"
+                         data-dtype="Number" placeholder="0"/>
+                  <span class="sep"> / </span>
+                  <div class="attribute">{{system.attributes.wounds.max}}</div>
+                </div>
+              {{else}}
+                <h4 class="attribute-name box-title tooltip">
+                  {{ localize 'D35E.Health' }}
+                  <div class="tooltipcontent">
+                    @attributes.hp.value : {{system.attributes.hp.value}}<br/>
+                    @attributes.hp.max : {{system.attributes.hp.max}}<br/>
+                    @attributes.hp.temp : {{system.attributes.hp.temp}}<br/>
+                    @attributes.hp.nonlethal : {{system.attributes.hp.nonlethal}}
+
+                    {{#if sourceDetails.system.attributes.hp.max.length}}
+                      <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+                      {{#each sourceDetails.system.attributes.hp.max as |src|}}{{src.name}}: {{src.value}}<br/>{{/each}}
+                    {{/if}}
+                  </div>
+                </h4>
+                <div class="attribute-value multiple">
+                  <input name="system.attributes.hp.value" type="text" value="{{system.attributes.hp.value}}"
+                         data-dtype="String" placeholder="10"/>
+                  <span class="sep"> / </span>
+                  <div class="attribute">{{system.attributes.hp.max}}</div>
+                </div>
+                <footer class="attribute-footer">
+                  <input name="system.attributes.hp.temp" type="text" class="temphp"
+                         placeholder="+{{ localize 'D35E.TempShort' }}"
+                         value="{{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{/if}}"
+                         data-dtype="Number" title="{{ localize 'D35E.TempHP' }}"/>
+                  <input name="system.attributes.hp.nonlethal" type="text" class="temphp"
+                         placeholder="{{ localize 'D35E.Nonlethal' }}"
+                         value="{{#if system.attributes.hp.nonlethal}}{{system.attributes.hp.nonlethal}}{{/if}}"
+                         data-dtype="Number" title="{{ localize 'D35E.Nonlethal' }}"/>
+                  <br>
+
+                  <a class="btn random-hp-roll" onkeydown="e.preventDefault();">{{ localize 'D35E.RandomizeHP' }}</a>
+                </footer>
+              {{/if}}
+          </li>
+
+          <li class="attribute speed">
+            <div class="attribute-speed">
+              <h4 class="attribute-name box-title">{{ localize 'D35E.SpeedLand' }}</h4>
+              <div class="attribute-value" style="line-height: 28px">
+                <div class="attribute" style="max-width: 100%">
+                  {{#if system.attributes.speed.land.total}}{{system.attributes.speed.land.total}} / {{system.attributes.speed.land.run}}{{else}}<span style="opacity: 0.8">&#8212;</span>{{/if}}
+                </div>
+              </div>
+                <footer class="attribute-footer">
+                  <input name="system.attributes.speed.land.base" type="text"
+                         value="{{#if system.attributes.speed.land.base}}{{system.attributes.speed.land.base}}{{/if}}"
+                         data-dtype="Number" placeholder="{{ localize 'D35E.Base' }}"/>
+                </footer>
+            </div>
+            <div class="attribute-speed">
+              <h4 class="attribute-name box-title">{{ localize 'D35E.SpeedClimb' }}</h4>
+              <div class="attribute-value" style="line-height: 28px">
+                <div class="attribute" style="max-width: 100%">
+                  {{#if system.attributes.speed.climb.total}}{{system.attributes.speed.climb.total}} / {{system.attributes.speed.climb.run}}{{else}}<span style="opacity: 0.8">&#8212;</span>{{/if}}
+                </div>
+              </div>
+              <footer class="attribute-footer">
+                <input name="system.attributes.speed.climb.base" type="text"
+                       value="{{#if system.attributes.speed.climb.base}}{{system.attributes.speed.climb.base}}{{/if}}"
+                       data-dtype="Number" placeholder="{{ localize 'D35E.Base' }}"/>
+              </footer>
+            </div>
+            <div class="attribute-speed">
+              <h4 class="attribute-name box-title">{{ localize 'D35E.SpeedSwim' }}</h4>
+              <div class="attribute-value" style="line-height: 28px">
+                <div class="attribute" style="max-width: 100%">
+                  {{#if system.attributes.speed.swim.total}}{{system.attributes.speed.swim.total}} / {{system.attributes.speed.swim.run}}{{else}}<span style="opacity: 0.8">&#8212;</span>{{/if}}
+                </div>
+              </div>
+              <footer class="attribute-footer">
+                <input name="system.attributes.speed.swim.base" type="text"
+                       value="{{#if system.attributes.speed.swim.base}}{{system.attributes.speed.swim.base}}{{/if}}"
+                       data-dtype="Number" placeholder="{{ localize 'D35E.Base' }}"/>
+              </footer>
+            </div>
+            <div class="attribute-speed">
+              <h4 class="attribute-name box-title">{{ localize 'D35E.SpeedBurrow' }}</h4>
+              <div class="attribute-value" style="line-height: 28px">
+                <div class="attribute" style="max-width: 100%">
+                  {{#if system.attributes.speed.burrow.total}}{{system.attributes.speed.burrow.total}} / {{system.attributes.speed.burrow.run}}{{else}}<span style="opacity: 0.8">&#8212;</span>{{/if}}
+                </div>
+              </div>
+              <footer class="attribute-footer">
+                <input name="system.attributes.speed.burrow.base" type="text"
+                       value="{{#if system.attributes.speed.burrow.base}}{{system.attributes.speed.burrow.base}}{{/if}}"
+                       data-dtype="Number" placeholder="{{ localize 'D35E.Base' }}"/>
+              </footer>
+            </div>
+            <div class="attribute-speed">
+              <h4 class="attribute-name box-title">{{ localize 'D35E.SpeedFly' }}</h4>
+              <div class="attribute-value" style="line-height: 28px">
+                <div class="attribute" style="max-width: 100%">
+                  {{#if system.attributes.speed.fly.total}}{{system.attributes.speed.fly.total}} / {{system.attributes.speed.fly.run}}{{else}}<span style="opacity: 0.8">&#8212;</span>{{/if}}
+                </div>
+              </div>
+              <footer class="attribute-footer">
+                <input name="system.attributes.speed.fly.base" type="text"
+                       value="{{#if system.attributes.speed.fly.base}}{{system.attributes.speed.fly.base}}{{/if}}"
+                       data-dtype="Number" placeholder="{{ localize 'D35E.Base' }}"/>
+              </footer>
+            </div>
+            <div class="attribute-speed">
+              <h4 class="attribute-name box-title">{{ localize 'D35E.FlyManeuverabilityShort' }}</h4>
+              <select name="system.attributes.speed.fly.maneuverability">
+                  {{#select system.attributes.speed.fly.maneuverability}}
+                  {{#each config.flyManeuverabilities as |name type|}}
+                    <option value="{{type}}">{{name}}</option>
+                  {{/each}}
+                  {{/select}}
+              </select>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  {{!-- NPC Sheet Navigation --}}
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="attributes">{{ localize 'D35E.Attributes' }}</a>
+    <a class="item" data-tab="attacks">{{ localize 'D35E.Combat' }}</a>
+    <a class="item" data-tab="inventory">{{ localize 'D35E.Inventory' }}</a>
+    <a class="item" data-tab="feats">{{ localize 'D35E.Features' }}</a>
+    <a class="item" data-tab="skills">{{ localize 'D35E.Skills' }}</a>
+    <a class="item" data-tab="buffs">{{ localize 'D35E.Buffs' }}</a>
+    {{#if system.showSpellcastingSheet}}
+    <a class="item" data-tab="spellbook">{{ localize 'D35E.Spells' }}</a>
+    {{/if}}
+    {{#if system.showCardSheet}}
+    <a class="item" data-tab="deck">{{ localize 'D35E.SpellCards' }}</a>
+    {{/if}}
+    <a class="item" data-tab="biography">{{ localize 'D35E.Biography' }}</a>
+    <a class="item" data-tab="notes">{{ localize 'D35E.Notes' }}</a>
+    <a class="item header-button" data-tab="config"><i class="fas fa-cogs"></i></a>
+  </nav>
+
+  {{!-- NPC Sheet Body --}}
+  <section class="primary-body">
+    <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+      <div class="flexrow"><h2 class="block-header" style="flex: 1">{{ localize 'D35E.AbilityScores' }}</h2>
+        <a class="btn point-buy point-buy-button blue-button">{{ localize 'D35E.UsePointBuy' }}</a></div>
+     
+      {{!-- Ability Scores --}}
+      <ul class="ability-scores attributes flexrow"  style="width: 100%">
+        {{#each system.abilities as |ability id|}}
+        <li class="ability attribute"style="height: 75px;">
+          <div class="attribute-speed"  data-ability="{{id}}" >
+            <h4 class="ability-name box-title rollable">{{ability.label}}
+            </h4>
+            <div class="attribute-value" style="line-height: 28px">
+              <div class="attribute" style="max-width: 100%">
+                <span class="ability-score tooltip">
+
+                  {{#if ability.isZero}}
+                  -
+                  {{else}}
+                  <span class="{{#if ability.hasItemBonus}}green{{/if}}{{#if (or ability.drain ability.damage)}}red{{/if}}">{{numberFormat ability.total decimals=0 sign=false}}</span>
+                  (<span class="ability-mod {{#if (or ability.userPenalty ability.penalty)}}red{{/if}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>)
+                  {{/if}}
+                  <span class="tooltipcontent">
+                    @abilities.{{id}}.total : {{ability.total}}<br />
+                    @abilities.{{id}}.value : {{ability.value}}<br />
+                    @abilities.{{id}}.mod : {{ability.mod}}<br />
+                    @abilities.{{id}}.damage : {{ability.damage}}<br />
+                    @abilities.{{id}}.drain : {{ability.drain}}<br />
+                    @abilities.{{id}}.penalty : {{ability.penalty}}<br />
+                    @abilities.{{id}}.userPenalty : {{ability.userPenalty}}<br />
+                    @abilities.{{id}}.origTotal : {{ability.origTotal}}<br />
+                    @abilities.{{id}}.origMod : {{ability.origMod}}
+
+                    {{#if ability.sourceDetails.length}}
+                    <br /><br />{{ localize 'D35E.FromSources' }}:<br />
+                    {{#each ability.sourceDetails as |src|}}{{src.name}}: {{src.value}}<br />{{/each}}
+                    {{/if}}
+                  </span>
+                </span>
+              </div>
+            </div>
+
+            <footer class="attribute-footer">
+              {{#if ability.isZero}}
+              <input type="hidden" value="0" data-dtype="Number" class="readonly" placeholder="10" readonly />
+              <input class="ability-base readonly" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10"
+                readonly />
+              {{else}}
+              <input style="width: calc(100% - 24px);" class="ability-base" name="system.abilities.{{id}}.value" type="text" value="{{ability.value}}"
+                data-dtype="Number" placeholder="10" />
+                <div class="data-selector" style="float: right; width: 24px; line-height: 24px;">
+                  <a class="configure-ability" for="{{id}}"><i class="fas fa-edit"></i></a>
+                </div>
+              {{/if}}
+              
+            </footer>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+
+      {{!-- Misc --}}
+      <div class="flexcol attributes-root">
+
+        <h2 class="block-header"  style="flex: 0">{{ localize 'D35E.SpecialQualities' }}</h2>
+        <ul class="attributes misc-base flexrow">
+          <li class="attribute bab" data-attribute="bab">
+            <h4 class="attribute-name box-title rollable">{{ localize 'D35E.BABAbbr' }}</h4>
+            <div class="attribute-value tooltip">
+              <span>{{numberFormat system.attributes.bab.total decimals=0 sign=false}}</span>
+              <span class="tooltipcontent">
+                @attributes.bab.total : {{system.attributes.bab.total}}
+                {{#if sourceDetails.system.attributes.bab.total.length}}
+                  <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+                  {{#each sourceDetails.system.attributes.bab.total as |src|}}{{src.name}}: {{src.value}}<br/>{{/each}}
+                {{/if}}
+              </span>
+            </div>
+          </li>
+
+            <li class="attribute cmb" data-attribute="cmb">
+                <h4 class="attribute-name box-title rollable">{{ localize 'D35E.CMBAbbr' }}</h4>
+                <div class="attribute-value tooltip">
+                    <span>{{system.attributes.cmb.total}}</span>
+                    <span class="tooltipcontent">
+          @attributes.cmb.total : {{system.attributes.cmb.total}}
+          {{#if sourceDetails.system.attributes.cmb.total.length}}
+            <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+            {{#each sourceDetails.system.attributes.cmb.total as |src|}}{{src.name}}: {{src.value}}<br/>{{/each}}
+          {{/if}}
+        </span>
+                </div>
+            </li>
+        </ul>
+
+          <ul class="attributes misc-base flexrow">
+              <li class="attribute initiative" data-attribute="init">
+                  <h4 class="attribute-name box-title rollable">{{ localize 'D35E.Initiative' }}</h4>
+                  <div class="attribute-value tooltip">
+                      <span>{{system.attributes.init.total}}</span>
+                      <span class="tooltipcontent">
+            @attributes.init.total : {{system.attributes.init.total}}
+            {{#if sourceDetails.system.attributes.init.total.length}}
+              <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+              {{#each sourceDetails.system.attributes.init.total as |src|}}{{src.name}}: {{src.value}}<br/>{{/each}}
+            {{/if}}
+          </span>
+                  </div>
+              </li>
+          </ul>
+
+          <ul class="attributes misc-base2 flexrow">
+              <li class="attribute acp" data-attribute="acp">
+                  <h4 class="attribute-name box-title">{{ localize 'D35E.ACP' }}</h4>
+                  <div class="attribute-value tooltip">
+                      <span>{{system.attributes.acp.total}}</span>
+                      <span class="tooltipcontent">@attributes.acp.total : {{system.attributes.acp.total}}</span>
+                  </div>
+              </li>
+
+              <li class="attribute maxdex" data-attribute="maxdex">
+                  <h4 class="attribute-name box-title">{{ localize 'D35E.MaxDexShort' }}</h4>
+                  <div class="attribute-value tooltip">
+                    {{#if maxDexUnlimited}}
+                    <span>No Limit</span>
+
+                    {{else}}
+                    <span>{{system.attributes.maxDex.total}}</span>
+                    {{/if}}
+                      <span class="tooltipcontent">@attributes.maxDexBonus : {{system.attributes.maxDexBonus}}</span>
+                  </div>
+              </li>
+          </ul>
+
+          <textarea name="system.attributes.cmbNotes" placeholder="CMB {{ localize 'D35E.Notes' }}">{{system.attributes.cmbNotes}}</textarea>
+      </div>
+
+      <section class="center-pane flexcol">
+        <h2 class="block-header" style="flex: 1">{{ localize 'D35E.Advancement' }}</h2>
+
+        <div class="traits">
+        <div class="form-group">
+          <label for="system.advancement">{{ localize 'D35E.Advancement' }}</label>
+          <ul class="traits-list">
+            {{#each system.details.advancement.hd as |k|}}
+            <li class="tag">{{k.lower}}{{#if k.upper}}-{{k.upper}}{{/if}} HD ({{lookup ../config.actorSizes k.size}})</li>
+            {{else}}
+            No advancement information
+            {{/each}}
+          </ul>
+          <a class="advancement-selector entry-selector" for="system.details.advancement.hd" data-fields="low;high;size" data-objectfields="lower;upper;size" data-dtypes="Number;Number;String"><i class="fas fa-edit"></i></a>
+        </div>
+        </div>
+
+        <div class="traits">
+          <div class="form-group">
+            <label></label>
+            <a class="btn advance-monster point-buy-button blue-button">{{ localize 'D35E.ImproveMonster' }}</a>
+          </div>
+        </div>
+        <h2 class="block-header" style="flex: 1">{{ localize 'D35E.Traits' }}</h2>
+        <div class="traits">
+          <div class="form-group">
+            <label>{{ localize 'D35E.BuffTarACNatural' }}</label>
+            <input name="system.attributes.naturalAC" type="text" placeholder="0"
+                   value="{{#if system.attributes.naturalAC}}{{system.attributes.naturalAC}}{{/if}}"/>
+            <span style="flex: 0 80px; text-align: end">{{ localize 'D35E.Total' }}: </span>
+            <input style="flex: 0 30px" disabled type="text"
+                  value="{{system.attributes.naturalACTotal}}"/>
+          </div>
+        </div>
+
+        <div class="traits">
+          <div class="form-group">
+            <label>{{ localize 'D35E.SpellResistance' }}</label>
+            <input style="width: calc(100% - 60px);" name="system.attributes.sr.formula" type="text" placeholder="{{ localize 'D35E.Formula' }}"
+                   value="{{#if system.attributes.sr.formula}}{{system.attributes.sr.formula}}{{/if}}"/>
+            <span style="flex: 0 80px; text-align: end">{{ localize 'D35E.Total' }}: </span>
+            <input style="flex: 0 30px" disabled type="text"
+                   value="{{system.attributes.sr.total}}"/>
+          </div>
+        </div>
+
+        {{#if psionicsAreDifferent}}
+        <div class="traits">
+          <div class="form-group">
+            <label>{{ localize 'D35E.PowerResistance' }}</label>
+            <input style="width: calc(100% - 60px);" name="system.attributes.pr.formula" type="text" placeholder="{{ localize 'D35E.Formula' }}"
+                   value="{{#if system.attributes.pr.formula}}{{system.attributes.pr.formula}}{{/if}}"/>
+            <span style="flex: 0 80px; text-align: end">{{ localize 'D35E.Total' }}: </span>
+            <input style="flex: 0 30px" disabled type="text"
+                   value="{{system.attributes.pr.total}}"/>
+          </div>
+        </div>
+        {{/if}}
+
+        <div class="traits">
+          <div class="form-group">
+            <label>{{ localize 'D35E.Fortification' }}</label>
+            <input style="width: calc(100% - 60px);" name="system.attributes.fortification.value" type="text" placeholder="{{ localize 'D35E.Value' }}"  data-dtype="Number"
+                   value="{{#if system.attributes.fortification.value}}{{system.attributes.fortification.value}}{{/if}}"/>
+            <span style="flex: 0 80px; text-align: end">{{ localize 'D35E.Total' }}: </span>
+            <input style="flex: 0 30px" disabled type="text"
+                   value="{{system.attributes.fortification.total}}"/>
+          </div>
+        </div>
+        <div class="traits">
+          <div class="form-group">
+            <label>{{ localize 'D35E.Concealment' }}</label>
+            <input style="width: calc(100% - 60px);" name="system.attributes.concealment.value" type="text" placeholder="{{ localize 'D35E.Value' }}"  data-dtype="Number"
+                   value="{{#if system.attributes.concealment.value}}{{system.attributes.concealment.value}}{{/if}}"/>
+            <span style="flex: 0 80px; text-align: end">{{ localize 'D35E.Total' }}: </span>
+            <input style="flex: 0 30px" disabled type="text"
+                   value="{{system.attributes.concealment.total}}"/>
+          </div>
+        </div>
+          <div class="traits">
+            <div class="form-group">
+              <label>{{ localize 'D35E.FastHealing' }}</label>
+              <input name="system.traits.fastHealing" type="text" placeholder="0"
+                     value="{{#if system.traits.fastHealing}}{{system.traits.fastHealing}}{{/if}}" data-dtype="Number"/>
+              <span style="flex: 0 80px; text-align: end">{{ localize 'D35E.Total' }}: </span>
+              <input style="flex: 0 30px" disabled type="text"
+                     value="{{system.traits.fastHealingTotal}}"/>
+            </div>
+          </div>
+          <div class="traits">
+            <div class="form-group">
+              <label>{{ localize 'D35E.Regeneration' }}</label>
+              <input name="system.traits.regen" type="text" placeholder="0"
+                     value="{{#if system.traits.regen}}{{system.traits.regen}}{{/if}}" data-dtype="Number"/>
+              <span style="flex: 0 80px; text-align: end">{{ localize 'D35E.Total' }}: </span>
+              <input style="flex: 0 30px" disabled type="text"
+                     value="{{system.traits.regenTotal}}"/>
+            </div>
+          </div>
+
+          {{!-- Traits --}}
+          {{> "systems/D35E/templates/actors/parts/actor-traits.html"}}
+      </section>
+
+
+    </div>
+
+    {{!-- Defenses Tab --}}
+    <div class="tab defenses flexcol" data-group="primary" data-tab="defenses">
+      {{> "systems/D35E/templates/actors/parts/actor-defenses.html"}}
+    </div>
+
+    {{!-- Attacks Tab --}}
+    <div class="tab attacks flexcol" data-group="primary" data-tab="attacks">
+      {{> "systems/D35E/templates/actors/parts/actor-attacks.html" sections=attacks}}
+    </div>
+
+    {{!-- Inventory Tab --}}
+    <div class="tab inventory flexcol" data-group="primary" data-tab="inventory">
+      {{> "systems/D35E/templates/actors/parts/actor-inventory.html" sections=inventory}}
+    </div>
+
+    {{!-- Features Tab --}}
+    <div class="tab features flexcol" data-group="primary" data-tab="feats">
+      {{> "systems/D35E/templates/actors/parts/actor-features.html" sections=features}}
+    </div>
+
+    {{!-- Skills Tab --}}
+    <div class="tab skills flexcol" data-group="primary" data-tab="skills">
+      {{> "systems/D35E/templates/actors/parts/actor-skills-front.html"}}
+    </div>
+
+    {{!-- Buffs Tab --}}
+    <div class="tab buffs flexcol" data-group="primary" data-tab="buffs">
+      {{> "systems/D35E/templates/actors/parts/actor-buffs.html" sections=buffs}}
+    </div>
+
+    {{!-- Spellbook Tab --}}
+    <div class="tab spellbook flexcol" data-group="primary" data-tab="spellbook">
+      {{> "systems/D35E/templates/actors/parts/actor-spellbook-front.html"}}
+    </div>
+
+    {{!-- Decks Tab --}}
+    <div class="tab spellbook flexcol" data-group="primary" data-tab="deck">
+      {{> "systems/D35E/templates/actors/parts/actor-deck-front.html"}}
+    </div>
+
+    {{!-- Biography Tab --}}
+    <div class="tab biography flexcol" data-group="primary" data-tab="biography">
+      {{editor rendered.biography target="system.details.biography.value" button=true owner=owner
+      editable=editable}}
+    </div>
+
+    {{!-- Notes Tab --}}
+    <div class="tab actor-notes flexcol" data-group="primary" data-tab="notes">
+      {{editor rendered.notes target="system.details.notes.value" button=true owner=owner
+      editable=editable}}
+    </div>
+
+    {{!-- Config Tab --}}
+    <div class="tab actor-notes flexcol" data-group="primary" data-tab="config">
+      {{> "systems/D35E/templates/actors/parts/actor-config.html"}}
+    </div>
+  </section>
+
+  <script>
+
+    function modifyInputValue(id, value) {
+      if (parseInt($(`input[name='${id}']`).val() || 1) + value < 1) return;
+      $(`input[name='${id}']`).val(parseInt($(`input[name='${id}']`).val() || 0) + value)
+    }
+  </script>
+</form>

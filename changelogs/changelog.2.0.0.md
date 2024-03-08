@@ -1,0 +1,11 @@
+# Issues fixed
+- [#1150](https://gitlab.com/dragonshorn/D35E/-/issues/1150) - 2.0.0.beta6 - NPC token broken - can't update an already existing NPC
+- [#1149](https://gitlab.com/dragonshorn/D35E/-/issues/1149) - The Feat "Weapon focus" doesn't work correctly now and causes weird errors (FVTT V10 and 3.5e SRD 2.0.0-beta 6)
+- [#1147](https://gitlab.com/dragonshorn/D35E/-/issues/1147) - When you select a class in the Level Data window, Class Hit Die and Skill Points are always zero ( FVTT V10 and 3.5e 2.0.0 beta 6)
+- [#1143](https://gitlab.com/dragonshorn/D35E/-/issues/1143) - Neither "roll all" nor "roll NPCs" buttons (from combat tracker) work (Foundry VTT V10 and 3.5e 2.0.0-beta 5)
+- [#1132](https://gitlab.com/dragonshorn/D35E/-/issues/1132) - Character AC, Touch AC, Fortitude and Reflex bug (v10, b-2.0.4)
+- [#1130](https://gitlab.com/dragonshorn/D35E/-/issues/1130) - Level progression buttons don't work (FVTT V10 and 3.5eSRD 2.0.0-beta.4)
+- [#1128](https://gitlab.com/dragonshorn/D35E/-/issues/1128) - "No active encounter" text is bad aligned in the combat tab. (Foundry V10 286 and 3.5eSRD 2.0.0-beta.4)
+- [#1127](https://gitlab.com/dragonshorn/D35E/-/issues/1127) - actor sheets cannot be opened (v10 b-2.0.4)
+- [#1120](https://gitlab.com/dragonshorn/D35E/-/issues/1120) - Updating boxes (v10 - 2.0.0)
+- [#1119](https://gitlab.com/dragonshorn/D35E/-/issues/1119) - Changes formula broken (v10 - 2.0.0)

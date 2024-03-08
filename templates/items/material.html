@@ -1,0 +1,101 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    {{!-- Item Sheet Header --}}
+    <div class="flexrow" style="flex:0">
+        <div class="sheet-header-profile">
+            <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+        </div>
+
+        <header class="sheet-header flexrow">
+
+        <div class="header-details flexrow">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="{{localize " D35E.ItemName"}}"/>
+            </h1>
+
+            <div class="item-subtitle">
+                <h4 class="item-type">{{itemType}}</h4>
+                <span class="item-status">{{itemStatus}}</span>
+            </div>
+
+            <ul class="summary">
+                <li>
+                    {{lookup config.attackTypes data.attackType }}
+                </li>
+            </ul>
+        </div>
+    </header>
+    </div>
+
+
+    <section class="sheet-content flexcol sheet-attack">
+        {{!-- Item Sheet Navigation --}}
+        <nav class="sheet-navigation tabs" data-group="primary">
+            <a class="item active" data-tab="description">{{ localize "D35E.Description" }}</a>
+            <a class="item" data-tab="details">{{ localize "D35E.Details" }}</a>
+            <a class="item" data-tab="conditionals">{{localize "D35E.Conditionals"}}</a>
+            <!--      <a class="item" data-tab="links">{{localize "D35E.Links"}}</a>-->
+        </nav>
+
+        {{!-- Item Sheet Body --}}
+        <section class="primary-body">
+
+            {{!-- Description Tab --}}
+            <div class="tab flexcol active" data-group="primary" data-tab="description">
+                {{editor content=data.system.description.value target="system.description.value" button=true owner=owner
+                editable=editable}}
+            </div>
+
+            {{!-- Details Tab --}}
+            <div class="tab details" data-group="primary" data-tab="details">
+
+                <div class="form-group">
+                    <label>{{localize "D35E.Hardness"}}</label>
+                    <input type="text" name="system.hardness" value="{{data.system.hardness}}" data-dtype="String"/>
+                </div>
+                <div class="form-group">
+                    <label>{{localize "D35E.HpPerInch"}}</label>
+                    <input type="text" name="system.hpPerInch" value="{{data.system.hpPerInch}}" data-dtype="String"/>
+                </div>
+
+                <h3 class="form-header">{{localize "D35E.MagicEquivalent"}}</h3>
+                <div class="form-group">
+                    <label>{{localize "D35E.MagicEquivalent"}}</label>
+                    <input type="text" name="system.baseWeaponType" value="{{data.system.baseWeaponType}}" data-dtype="String"/>
+                </div>
+                <span><em>{{localize "D35E.MagicEquivalentDescription"}}</em></span>
+
+
+                <div class="form-group">
+                    <label>{{localize "D35E.MaterialAlchemicalSilverEquivalent"}}</label>
+                    <label class="checkbox" style="position: relative; flex: 0 20px">
+                        <input type="checkbox" class="stylized" name="system.isAlchemicalSilverEquivalent" {{checked data.system.isAlchemicalSilverEquivalent}}/>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>{{localize "D35E.MaterialAdamantineEquivalent"}}</label>
+                    <label class="checkbox" style="position: relative; flex: 0 20px">
+                        <input type="checkbox" class="stylized" name="system.isAdamantineEquivalent" {{checked data.system.isAdamantineEquivalent}}/>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>{{localize "D35E.MaterialColdIronEquivalent"}}</label>
+                    <label class="checkbox" style="position: relative; flex: 0 20px">
+                        <input type="checkbox" class="stylized" name="system.isColdIronEquivalent" {{checked data.system.isColdIronEquivalent}}/>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <div class="form-group stacked">
+                    {{#if isGM}}
+                    <h3 class="form-header">系统属性</h3>
+                    {{> "systems/D35E/templates/items/components/uid-input.html"}}
+                    {{/if}}
+                </div>
+            </div>
+
+        </section>
+    </section>
+</form>

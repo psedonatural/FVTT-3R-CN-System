@@ -1,0 +1,344 @@
+<style>
+    .navlink {
+        color: #ffbc00;
+    }
+</style>
+<div>
+    <div class="flexrow dialogue" id="dialogue-box">
+        <div class="portrait">
+
+        </div>
+        <div class="content merienda">
+            <div id="onboarding-welcome">
+                <p>你好旅行者！这里是D35E非瑞中文版教程窗口！</p>
+                <p>我将代替这个系统的作者Rugharlt来为你指引参观这个系统用法，以及如何在这里展开一场伟大的冒险！</p>
+                <p id="char-selector-exists" style="display: none">在继续之前，在中间出现的窗口中选择一个选项，然后单击“保存设置”。</p>
+                <p id="char-selector-gm" style="display: none; color: #d89753">要登记一个玩家账号，首先找到左下角的列表，然后右键单击他的名字，然后在玩家配置中选择一个角色分配给他。你可以在教程结束后再释放控制权。</p>
+                <a class="navlink" onclick="showCharacterMovementTutorial()"><i class="fas fa-chevron-right"></i> 让我看看！ <em style="color: white; opacity: 0.7">(你第一次用FVTT)</em></a><br>
+                <a class="navlink" onclick="showCharacterCardTutorial()"><i class="fas fa-chevron-right"></i> 我感觉我对这里很熟悉 <em style="color: white; opacity: 0.7">(你知道用FVTT，但没用过这里的3.5e系统)</em></a><br>
+                <a class="navlink show-again"><i class="fas fa-chevron-right"></i> 老东西！你的教程最没用了! <em style="color: white; opacity: 0.7">(你不用再看教程)</em></a>
+                <p class="tip" id="gm-tip" style="display: none; top: -110px">提示！为了确保你的玩家能完全看到教程，你可以为每个玩家创建一张空白的角色，然后将其角色链接到左下角的玩家在线窗口的选项中。再创建一个空白场景、或是使用最后合集中【场景】中的介绍场景-并在那里放置玩家角色棋子，这样他们就能充分利用教程。</p>
+            </div>
+            <div id="onboarding-character-movement" style="display: none">
+                <p>首先，你得知道怎么移动 - 寻找代表您的角色的棋子并单击它，在它外面有一个黄框时它就被你选中了。然后你可以使用<strong>方向键</strong>在地图上移动。不过要记住，你的视野是有限的，而且你的移动不能穿墙.</p>
+                <p>如果你遇到了一个像是门一样的图标，你可以点击它来打开或关闭这扇门 - 当然前提是门没有上锁（DM能够通过鼠标右键来锁定一扇门）。</p>
+                <a class="navlink" onclick="showCharacterCardTutorial()"><i class="fas fa-chevron-right"></i> 看来我还没有忘记怎么走路.</a><br>
+            </div>
+            <div id="onboarding-character-card" style="display: none">
+                <p>最重要的事情之一是知道如何访问你的<strong>角色卡</strong>。你可以在右边侧边栏上选择【角色】<i class="{{actorSidebarIcon}}"></i>图标（在默认情况下是第三个），在列表中找到你的角色，然后点击它以打开角色卡页面。此外有一个核心快捷方式，你按下[c]键就能自动打开与你绑定好的角色卡。</p>
+                <p>好好看看这张卡,你的DM可能已经为你设置好了，但如果没有的话，我可以告诉你怎么做。</p>
+                <p style="color: #ff5b41; font-size: 11px">你只能在打开你的角色卡后继续教程！</p>
+                <a class="navlink" id="display-si" onclick="displaySheetIntro()"><i class="fas fa-chevron-right"></i> 我已经打开了，但我想知道这都大概是些什么？ <em style="color: white; opacity: 0.7">(显示关于角色卡的详情)</em></a><br>
+                <a class="navlink" onclick="showAddRaceTutorial()"><i class="fas fa-chevron-right"></i> 卡是空的，我该怎么做?</a><br>
+                <a class="navlink" onclick="showSkillTutorial()"><i class="fas fa-chevron-right"></i> 我的DM帮我打点好了，下一步呢?</a>
+            </div>
+            <div id="onboarding-character-race" style="display: none">
+                <p>你要做的第一件事就是为你的角色加一个<strong>种族</strong>和一个<strong>职业</strong>，以给你的角色设定它们的能力.</p>
+                <p>你可以在<strong>能力</strong>页填入你的属性值</p>
+                <p>设置好后在右边侧边栏处的合集里打开<strong>种族合集(Races Compendium)</strong> (<i class="fas fa-atlas"></i>然后从合集中<strong>拖动</strong>一个种族到角色中。</p>
+                <p style="color: #ff5b41; font-size: 11px">继续开着角色卡!我们还要继续！</p>
+                <a class="navlink" onclick="showAddClassTutorial()"><i class="fas fa-chevron-right"></i>搞定了！接下来是什么？</a>
+                <p class="tip">提示!大多数SRD的资源都在合集中有提供（请注意，3.5e的srd内容包含核心、扩展灵能、传奇书，并不是纯核心），因此如果你只是纯SRD团就不必自己再创建任何内容!不过如果你需要的话，大多数列表都有<strong>+创建（+add）</strong>按钮，让你可以自定义能力.如果你打算如此做，你可以阅读系统自己的帮助文档或是随包一起分发的非瑞的文本教程以知道更多.</p>
+            </div>
+            <div id="onboarding-character-class" style="display: none">
+                <p>要为角色添加职业，你需要先在角色卡上转到<strong>特性</strong>中，然后选择<strong>职业</strong>选项。然后同样地打开右侧边栏的职业合集，从中<strong>拖动</strong>一个职业到角色的职业页下。</p>
+                <p>如您所见，刚拖进来时职业没有等级，你需要利用它来获得相关数据：职业能力、生命值、技能。请点击<strong>详细升级</strong>窗口列表的第一个、有着数字‘1’的方框.</p>
+                <p style="color: #ff5b41; font-size: 11px">继续开着角色卡！打开详细升级窗口后继续!</p>
+                <a class="navlink" id="display-lui" onclick="displayLevelUpIntro()"><i class="fas fa-chevron-right"></i>我有点找不到了，能告诉我在哪吗？<em style="color: white; opacity: 0.7">(显示等级表详情)</em></a><br>
+                <a class="navlink" onclick="showSetClassDetailsTutorial()"><i class="fas fa-chevron-right"></i>好了，我打开了。</a>
+                <p class="tip" style="top: -110px">提示!角色表中绝大多数东西都有着类似的运作方式.你可以把内容放到角色卡里然后点击编辑<i class="fas fa-edit"></i>按钮,以此编辑它们或是删掉一些东西，又或者启动某些效果。要快速展示某个物品，你可以点击物品的图标将其信息发送给其他人(在聊天信息中)，你能够在帮助页面中找到更多提示。</p>
+            </div>
+            <div id="onboarding-character-class-details" style="display: none">
+                <p>在这个页面上，你可以看到所有关于职业等级的信息：你在升级时选择的职业、骰生命骰、技能点分配。然后你可以点开<strong>职业</strong>的下拉菜单,然后在<strong>生命值</strong>处骰你的生命骰。然后你可以在下方的<strong>技能</strong>中分配技能点。如果你某个技能后的数字变成了红色，那就说明你的技能点过等级上限了！</p>
+                <p> 在你保存后，<strong>职业</strong>等级会被更新，<strong>生命骰</strong>和<strong>技能</strong>会反映在你的角色卡中。记住，在这里设置生命值时，它只是职业基础生命值，不包含体质的加值。</p>
+                <p style="color: #ff5b41; font-size: 11px">继续开着角色卡!同时关掉详细升级窗口后继续！</p>
+                <a class="navlink" onclick="showSkillTutorial()"><i class="fas fa-chevron-right"></i>生命值和等级都设置好了，接下来是?</a>
+            </div>
+            <div id="onboarding-character-skills" style="display: none">
+                <p>你的角色最重要的一点就是技能。你可以在<strong>技能</strong>表中看到以及调整技能的等级。切换过去看看吧 - 前面步骤填入的技能会在这里显示，而第一个等级应该已经设置好了。</p>
+                <p>点击按钮<i class="fas fa-dice-d20"></i>来进行技能检定。你还能够在检定前自定义调整，并可以选择是取10以及取20！试试吧！</p>
+                <p style="color: #ff5b41; font-size: 11px">继续开着角色卡！我们进行下一步！</p>
+                <a class="navlink" onclick="showAddWeaponTutorial()"><i class="fas fa-chevron-right"></i>棒极了！这看起来很简单！</a>
+            </div>
+            <div id="onboarding-character-weapons" style="display: none">
+                <p>让我们为你的角色添加一把<strong>武器</strong>。转到角色卡的<strong>库存</strong>页面，然后点击[获取物品]按钮，再点击[add]按钮以添加一把匕首（你可以进行搜索）。<br>你也可以从右侧边栏中打开<strong>武器和护甲Weapons and Ammo</strong>合集，然后从中拖动一把<strong>匕首</strong>放入你的角色卡库存中。</p>
+                <p style="color: #ff5b41; font-size: 11px">继续开着角色卡来进行下一步！</p>
+                <a class="navlink" onclick="showAddAttackTutorial()"><i class="fas fa-chevron-right"></i>我有一把武器了！我该如何用它攻击？</a>
+            </div>
+            <div id="onboarding-character-attacks" style="display: none">
+                <p>首先，打开<strong>武器详情</strong>窗口(同样地点击编辑<i class="fas fa-edit"></i>按钮，它位于武器名称的最右方 - 在本教程中将使用<strong>匕首Dagger</strong>。打开之后，点击这个详情窗口顶部的<strong>创建攻击</strong>按钮来创建一个攻击。</p>
+                <p>然后，关闭武器详情窗口，转到角色的<strong>能力</strong>页。然后你应该在角色的行动表单中能看到一个名为<strong>匕首Dagger</strong> 的<strong>攻击</strong> ，在它右边有一个<img src="systems/D35E/icons/actions/gladius.svg">按钮。点击<img src="systems/D35E/icons/actions/gladius.svg">按钮来发起一次攻击！随后你会出现一个窗口，在窗口中选择【执行动作】便会在聊天窗口中打出攻击！</p>
+                <p style="color: #ff5b41; font-size: 11px">继续开着角色卡来进行下一步！</p>
+                <a class="navlink" onclick="showHotbarTutorial()"><i class="fas fa-chevron-right"></i>太棒了！让敌人感受我的愤怒！</a>
+                <p class="tip">提示！在FVTT中像是武器和其他非角色的能力：比如专长、职业、攻击、法术等等，它们都属于<strong>物品Items</strong> - 它们的设置窗口十分类似，你可以阅读系统自己的帮助文档或是随包一起分发的非瑞的文本教程以知道更多。</p>
+            </div>
+            <div id="onboarding-character-hotbar" style="display: none">
+                <p>为了更方便地使用<strong>物品</strong>和<strong>攻击</strong>。你可以使用<strong>宏快捷栏</strong>。默认情况下宏快捷栏位于你的浏览器窗口下方。试着把你刚刚创建的攻击拖到宏快捷栏上，然后点击它，它就可以自动使用，同时你可以使用快捷键来使用它们(数字键 1~9)</p>
+                <p style="color: #ff5b41; font-size: 11px">你可以在那之后关闭你的角色表。</p>
+                <a class="navlink" onclick="showRollingChatTutorial()"><i class="fas fa-chevron-right"></i>它用起来更方便了。</a>
+            </div>
+            <div id="onboarding-rolling-chat" style="display: none">
+                <p>还有一件事：如果你想掷骰子，不管是你的DM要求你掷，还是说你只是喜欢掷着玩，你都可以在聊天窗口中进行。切换到右侧边栏的<strong>聊天信息</strong><i class="fas fa-comments"></i>)，然后在此输入投骰公式。.</p>
+                <p>举例来说，你打算进行一个：1d20+4，那么就在聊天窗口输入 <pre>/r 1d20+4</pre>然后按下回车键发送，就这样！另外非瑞也推荐你可以安装一个叫“Dice Tray”的模组，它可以在聊天窗口下创建数个骰子按钮来快捷输入。</p>
+                <a class="navlink" onclick="showDocumentationHub()"><i class="fas fa-chevron-right"></i>这很简单，还有其他的吗？</a>
+            </div>
+            <div id="onboarding-documentation-hub" style="display: none">
+                <p>目前就这些了 - 除非你还有疑问。你可以先去看看系统的帮助文档，就在右侧边栏的设置页面，选择[Documentation]按钮便可以查看系统作者Rugharlt的帮助窗口，但这里自然是没有汉化，你也可以查看非瑞随汉化发的教程包。同时你如果会英语也可以加入Rugharlt的Discord。</p>
+
+                <a class="navlink" href="https://docs.legaciesofthedragon.com" style="text-decoration: none"><i class="fas fa-chevron-right"></i> 那就带我去看帮助文档！我渴望知道更多！<em style="color: #ffd14e; opacity: 0.7">(这会打开一个网站，没有中文)</em></a><br>
+                <a class="navlink" href="https://discord.gg/wDyUaZH" style="text-decoration: none"><i class="fas fa-chevron-right"></i>我想见见其他玩家，带我去Discord<em style="color: #ffd14e; opacity: 0.7">(打开Discord，大陆通常无法直接访问)</em></a><br>
+                <a class="navlink show-again"><i class="fas fa-chevron-right"></i>我想知道的都知道了！谢谢你！陌生人！<em style="color: white; opacity: 0.7">(关闭教程)</em></a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function showSetClassDetailsTutorial() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        // User character is null
+        if((userCharacter === null || $(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length) && $(`.entry.level-up-data`).length){
+            $('#onboarding-character-class').hide();
+            $('#onboarding-character-class-details').show();
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}角色卡与详细升级窗口才能继续！`)
+        }
+    }
+
+    function showRollingChatTutorial() {
+        $('#onboarding-character-hotbar').hide();
+        $('#onboarding-rolling-chat').show();
+    }
+
+
+    function showHotbarTutorial() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        if((userCharacter === null || $(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length)
+            && game.user.character.data.items.some(i => i.type === "attack" && i.name === "匕首Dagger")){
+            $('#onboarding-character-attacks').hide();
+            $('#onboarding-character-hotbar').show();
+        }else{
+            ui.notifications.warn(`创建一个名为"匕首Dagger"的攻击才能继续！`)
+        }
+    }
+
+    function showDocumentationHub() {
+        $('#onboarding-rolling-chat').hide();
+        $('#onboarding-documentation-hub').show();
+    }
+
+    function showAddAttackTutorial() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        if((userCharacter === null || $(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length)
+            && game.user.character.data.items.some(i => i.name === "匕首Dagger")){
+            $('#onboarding-character-weapons').hide();
+            $('#onboarding-character-attacks').show();
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}角色卡并且从合集中添加一个"匕首Dagger"才能继续!`)
+        }
+    }
+
+    function showAddWeaponTutorial() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        if((userCharacter === null || $(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length)){
+            $('#onboarding-character-skills').hide();
+            $('#onboarding-character-weapons').show();
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}角色卡才能继续!`)
+        }
+    }
+
+    function showSkillTutorial() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        if ($(`.entry.level-up-data`).length) {
+            ui.notifications.warn(`关闭等级详情窗口才能继续!`)
+            return;
+        }
+        if((userCharacter === null || $(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length)){
+            $('#onboarding-character-card').hide();
+            $('#onboarding-character-class-details').hide();
+            $('#onboarding-character-skills').show();
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}角色卡才能继续!`)
+        }
+    }
+
+    function showAddClassTutorial() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        if((userCharacter === null ||
+            ($(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length
+                && game.user.character.data.items.some(i => i.type === "race")))){
+            $('#onboarding-character-race').hide();
+            $('#onboarding-character-class').show();
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}角色卡并添加一个种族来继续!`)
+        }
+    }
+
+    function showAddRaceTutorial() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+
+        if (userCharacter === null) {
+            ui.notifications.warn(`你需要为自己分配一个角色!右键单击左下角的玩家在线窗口，然后在下拉列表中选择一个！`)
+        }
+        if(($(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length)){
+            $('#onboarding-character-card').hide();
+            $('#onboarding-character-race').show();
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}角色卡以继续！`)
+        }
+    }
+
+    function showCharacterCardTutorial() {
+        if (!$('#player-config').length && (game.user.character !== null)) {
+            $('#onboarding-welcome').hide();
+            $('#onboarding-character-movement').hide();
+            $('#onboarding-character-card').show();
+        } else{
+            ui.notifications.warn(`在左下角玩家在线窗口中选择一个角色，然后保存设置以继续！`)
+        }
+    }
+
+    function showCharacterMovementTutorial() {
+        if (!$('#player-config').length && (game.user.character !== null)) {
+            $('#onboarding-welcome').hide();
+            $('#onboarding-character-movement').show();
+            canvas.tokens.cycleTokens(1, true);
+        } else{
+            ui.notifications.warn(`在左下角玩家在线窗口中选择一个角色，然后保存设置以继续！`)
+        }
+    }
+
+    function displaySheetIntro() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        if (userCharacter === null) {
+            ui.notifications.warn(`你需要为自己分配一个角色!右键单击左下角的玩家在线窗口，然后在下拉列表中选择一个！`)
+        }
+        if(($(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length)){
+            let intro = introJs()
+            intro.addSteps([
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > header`),
+                    intro: "这里是表头区域，你可以在这里找到并填写一些你角色的基本信息",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter}  > section > form > nav`),
+                    intro: "这里是你的主页面导航，你可以在这里找到你角色所有的子列表",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > section > div.tab.details.flexcol.active`),
+                    intro: "这是你的能力总览。你可以在这里找到最常用的数据，比如角色能力、技能或攻击。蓝色的标签是可点击的，这在角色表上所有的地方都是一样的",
+                    position: 'right'
+                }
+            ]);
+            intro.onbeforechange(function(targetElement) {
+                if ($(targetElement).data("tab") === "details") {
+                    document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > nav > a:nth-child(1)`).click();
+                }
+            });
+            intro.onexit(function() {
+                $('.window-app.onboarding').show()
+            });
+            $('.window-app.onboarding').hide()
+            $('#display-si').css('opacity',0.5)
+            $('#display-si > em').text('(已看)')
+            intro.start()
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}角色表以继续！`)
+        }
+    }
+    function displayLevelUpIntro() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        if (userCharacter === null) {
+            ui.notifications.warn(`你需要为自己分配一个角色!右键单击左下角的玩家在线窗口，然后在下拉列表中选择一个！`)
+        }
+        if(($(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length)){
+            let intro = introJs()
+            intro.addSteps([
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > section > div.tab.feats.flexcol > section > div.tab.feats-group:nth-child(1)`),
+                    intro: "这个子表包含了你的角色职业相关的所有数据。你可以在这里看到职业的能力、当前的职业等级、并在此管理与职业能力相关的所有事务。",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > section > div.tab.feats > section > div.tab.feats-group.flexcol:nth-child(1) > ol`),
+                    intro: "这个区域用于保存角色的职业。<br>您可以点击<strong>[获取]</strong>来打开职业合集并从中拖取一个职业到角色中。<br>你也可以使用<strong>+创建（+Add）</strong>按钮来创建你自己的职业",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > section > div.tab.feats > section > div.tab.feats-group.flexcol:nth-child(1) > div:nth-child(2) > ul > li`),
+                    intro: "这里是你的总职业等级",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > section > div.tab.feats > section > div.tab.feats-group.flexcol:nth-child(1) > div:nth-child(2)`),
+                    intro: "这个区域记录你的升级详情，这个列表包含了你至今为止提升的所有等级。",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter}  > section > form > section > div.tab.feats > section > div.tab.feats-group.flexcol:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(26)`),
+                    intro: "灰色的区域意味着你还未获得这个等级，在升级途中会逐渐解锁。",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > section > div.tab.feats > section > div.tab.feats-group.flexcol:nth-child(1) > div:nth-child(2) > div:nth-child(2) > a`),
+                    intro: "带箭头的区域表示您已经获得但未设置的等级。您可以单击它来设置这个等级，这将弹出一个新的窗口，在调整后记得保存。",
+                    position: 'right'
+                }
+
+
+        ]);
+            intro.onbeforechange(function(targetElement) {
+                if ($(targetElement).hasClass("feats-group")) {
+                    document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > nav > a:nth-child(5)`).click();
+                    document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > section > div.tab.feats.flexcol.active > nav > a:nth-child(1)`).click();
+                }
+            });
+            intro.onexit(function() {
+                $('.window-app.onboarding').show()
+            });
+            $('.window-app.onboarding').hide()
+            $('#display-lui').css('opacity',0.5)
+            $('#display-lui > em').text('(Already viewed)')
+            intro.start()
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}的角色卡以继续！`)
+        }
+    }
+
+    function displayLevelUpDataWindowIntro() {
+        let userCharacter = game.user.character == null ? null : game.user.character.id;
+        if((userCharacter === null || $(`#ActorSheetPFCharacter-Actor-${userCharacter}`).length) && $(`.sheet.level-up-data`).length){
+            let intro = introJs()
+            intro.addSteps([
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter} > section > form > header`),
+                    intro: "这里是表头区域，你可以在这里找到并填写一些你角色的基本信息",
+                    position: 'right'
+                },
+                {
+                    element: document.querySelector(`#ActorSheetPFCharacter-Actor-${userCharacter}  > section > form > nav`),
+                    intro: "这里是主页面导航",
+                    position: 'right'
+                }
+            ]);
+            intro.onexit(function() {
+                $('#dialogue-box').show()
+            });
+            $('#dialogue-box').hide()
+            intro.start()
+        }else{
+            ui.notifications.warn(`打开${game.user.character.name}的角色表与详细升级窗口以继续！`)
+        }
+    }
+
+    if ($('#player-config').length) {
+        $('#char-selector-exists').show();
+    }
+    if (game.user.isGM) {
+        $('#gm-tip').show();
+        $('#char-selector-gm').show();
+    }
+</script>

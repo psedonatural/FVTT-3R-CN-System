@@ -1,0 +1,11 @@
+node_modules
+foundry.js
+foundry/
+
+# Random modules
+module/semver.js
+
+# Built files
+dist/
+docs/
+

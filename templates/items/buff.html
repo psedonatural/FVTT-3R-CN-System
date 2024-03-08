@@ -1,0 +1,201 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Item Sheet Header --}}
+  <div class="flexrow" style="flex: 0">
+    <div class="sheet-header-profile">
+      <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+    </div>
+
+    <header class="sheet-header flexrow">
+
+    <div class="header-details flexrow">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "D35E.BuffName"}}"/>
+      </h1>
+
+      <div class="item-subtitle">
+        <h4 class="item-type">{{itemType}}</h4>
+        <span class="item-status">{{itemStatus}}</span>
+      </div>
+
+      <ul class="summary">
+        <li>
+          {{labels.buffType}}
+        </li>
+        <li class="tooltip">
+          <span class="tooltipcontent">@item.level : {{data.system.level}}<br>@source.level : {{data.system.level}} (use in Combat Actions)</span>
+          <input type="text" name="system.level" value="{{#if data.system.level}}{{data.system.level}}{{/if}}" placeholder="{{localize "D35E.Level"}}"/>
+        </li>
+      </ul>
+    </div>
+  </header>
+  </div>
+
+  <section class="sheet-content flexcol">
+  {{!-- Item Sheet Navigation --}}
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="description">{{ localize "D35E.Description" }}</a>
+    <a class="item" data-tab="timeline">{{ localize "D35E.Automation" }}</a>
+    <a class="item" data-tab="special-actions">{{ localize "D35E.SpecialActions" }}</a>
+    <a class="item" data-tab="changes">{{ localize "D35E.Changes" }}</a>
+  </nav>
+
+  {{!-- Item Sheet Body --}}
+  <section class="primary-body">
+
+    {{!-- Description Tab --}}
+    <div class="tab flexcol active" data-group="primary" data-tab="description">
+      {{editor enriched.description.value target="system.description.value" button=true editable=editable}}
+    </div>
+
+    {{!-- Timeline Tab --}}
+    <div class="tab flexcol" data-group="primary" data-tab="timeline">
+        <em style="flex: none">{{localize "D35E.TimelineInfo"}}</em>
+        <div class="form-group">
+          <label>{{localize "D35E.TimelineEnabled"}}</label>
+          <input type="checkbox" name="system.timeline.enabled" {{checked data.system.timeline.enabled}}/>
+        </div>
+        {{!-- Total time --}}
+        <div class="form-group">
+          <label>{{localize "D35E.TimelineFormula"}}</label>
+          <input type="text" name="system.timeline.formula" value="{{data.system.timeline.formula}}" data-dtype="String" />
+        </div>
+        {{!-- Total time --}}
+        <div class="form-group">
+          <label>{{localize "D35E.TimelineTotal"}}</label>
+          <input type="text" name="system.timeline.total" value="{{data.system.timeline.total}}" data-dtype="Number" disabled />
+        </div>
+
+        {{!-- Elapsed time --}}
+        <div class="form-group">
+          <label>{{localize "D35E.TimelineElapsed"}}</label>
+          <input type="text" name="system.timeline.elapsed" value="{{data.system.timeline.elapsed}}" data-dtype="Number"/>
+        </div>
+
+        <div class="form-group">
+          <label>{{localize "D35E.TimelineDeleteOnExpiry"}}</label>
+          <input type="checkbox" name="system.timeline.deleteOnExpiry" {{checked data.system.timeline.deleteOnExpiry}}/>
+        </div>
+      <div class="form-group">
+        <label>{{localize "D35E.TimelineTickOnEndOfRound"}}</label>
+        <input type="checkbox" name="system.timeline.tickOnEnd" {{checked data.system.timeline.tickOnEnd}}/>
+      </div>
+        <h4>{{localize "D35E.DamagePool"}}</h4>
+        <em style="flex: none">{{localize "D35E.DamagePoolInfo"}}</em>
+        <div class="form-group">
+          <label>{{localize "D35E.DamagePoolEnabled"}}</label>
+          <input type="checkbox" name="system.damagePool.enabled" {{checked data.system.damagePool.enabled}}/>
+        </div>
+        {{!-- Damage pool formula --}}
+        <div class="form-group">
+          <label>{{localize "D35E.DamagePoolFormula"}}</label>
+          <input type="text" name="system.damagePool.formula" value="{{data.system.damagePool.formula}}" data-dtype="String" />
+        </div>
+        {{!-- Total time --}}
+        <div class="form-group">
+          <label>{{localize "D35E.DamagePoolTotal"}}</label>
+          <input type="text" name="system.damagePool.total" value="{{data.system.damagePool.total}}" data-dtype="Number" disabled />
+        </div>
+
+        {{!-- Elapsed time --}}
+        <div class="form-group">
+          <label>{{localize "D35E.DamagePoolCurrent"}}</label>
+          <input type="text" name="system.damagePool.current" value="{{data.system.damagePool.current}}" data-dtype="Number"/>
+        </div>
+
+        <div class="form-group">
+          <label>{{localize "D35E.DamagePoolDeleteOnDepleted"}}</label>
+          <input type="checkbox" name="system.damagePool.deleteOnDamagePoolEmpty" {{checked data.system.damagePool.deleteOnDamagePoolEmpty}}/>
+        </div>
+    </div>
+    <div class="tab flexcol" data-group="primary" data-tab="special-actions">
+      <h4 class="attack-header">
+        {{localize "D35E.Activate"}} {{localize "D35E.SpecialActions"}}
+        <a class="a-special-control add-special"><i class="fas fa-plus"></i></a>
+      </h4>
+      <ol class="special-parts form-group">
+        {{#each data.system.activateActions as |part a|}}
+        <li class="special-part flexcol" data-activate-actions="{{a}}">
+          <div class="flexrow"><span>Name:</span><input type="text" name="system.activateActions.{{a}}.name" placeholder="{{localize "D35E.Name"}}" value="{{lookup this "name"}}"/></div>
+          <div class="flexrow"><span>Action:</span><input type="text" name="system.activateActions.{{a}}.action" placeholder="{{localize "D35E.Action"}}" value="{{lookup this "action"}}"/></div>
+          <div class="flexrow"><span>Condition:</span><input type="text" name="system.activateActions.{{a}}.condition" placeholder="{{localize "D35E.Condition"}}" value="{{lookup this "condition"}}"/></div>
+          <div class="flexrow"><span>Icon path:</span><input type="text" name="system.activateActions.{{a}}.img" placeholder="{{localize "D35E.Image"}}" value="{{lookup this "img"}}"/></div>
+          <div style="width: 100%">
+          <a class="a-special-control delete-special" style="width: auto; float: right"><i class="fas fa-minus"></i>Remove</a>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+      <h4 class="attack-header">
+        {{localize "D35E.Deactivate"}} {{localize "D35E.SpecialActions"}}
+        <a class="d-special-control add-special"><i class="fas fa-plus"></i></a>
+      </h4>
+      <ol class="special-parts form-group">
+        {{#each data.system.deactivateActions as |part a|}}
+        <li class="special-part flexcol" data-deactivate-actions="{{a}}">
+          <div class="flexrow"><span>Name:</span><input type="text" name="system.deactivateActions.{{a}}.name" placeholder="{{localize "D35E.Name"}}" value="{{lookup this "name"}}"/></div>
+          <div class="flexrow"><span>Action:</span><input type="text" name="system.deactivateActions.{{a}}.action" placeholder="{{localize "D35E.Action"}}" value="{{lookup this "action"}}"/></div>
+          <div class="flexrow"><span>Condition:</span><input type="text" name="system.deactivateActions.{{a}}.condition" placeholder="{{localize "D35E.Condition"}}" value="{{lookup this "condition"}}"/></div>
+          <div class="flexrow"><span>Icon path:</span><input type="text" name="system.deactivateActions.{{a}}.img" placeholder="{{localize "D35E.Image"}}" value="{{lookup this "img"}}"/></div>
+          <div style="width: 100%">
+          <a class="d-special-control delete-special" style="width: auto; float: right"><i class="fas fa-minus"></i>Remove</a>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+
+      <h4 class="attack-header">
+        {{localize "D35E.PerRound"}} {{localize "D35E.SpecialActions"}}
+        <a class="r-special-control add-special"><i class="fas fa-plus"></i></a>
+      </h4>
+      <ol class="special-parts form-group">
+        {{#each data.system.perRoundActions as |part a|}}
+        <li class="special-part flexcol" data-per-round-actions="{{a}}">
+          <div class="flexrow"><span>Name:</span><input type="text" name="system.perRoundActions.{{a}}.name" placeholder="{{localize "D35E.Name"}}" value="{{lookup this "name"}}"/></div>
+          <div class="flexrow"><span>Action:</span><input type="text" name="system.perRoundActions.{{a}}.action" placeholder="{{localize "D35E.Action"}}" value="{{lookup this "action"}}"/></div>
+          <div class="flexrow"><span>Condition:</span><input type="text" name="system.perRoundActions.{{a}}.condition" placeholder="{{localize "D35E.Condition"}}" value="{{lookup this "condition"}}"/></div>
+          <div class="flexrow"><span>Icon path:</span><input type="text" name="system.perRoundActions.{{a}}.img" placeholder="{{localize "D35E.Image"}}" value="{{lookup this "img"}}"/></div>
+          <div style="width: 100%">
+          <a class="r-special-control delete-special" style="width: auto; float: right"><i class="fas fa-minus"></i>Remove</a>
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+    </div>
+    <div class="tab flexcol" data-group="primary" data-tab="changes">
+      <div class="form-group select">
+        <label>{{localize "D35E.Type"}}</label>
+        <select name="system.buffType" value="{{data.system.buffType}}">
+          {{#select data.system.buffType}}
+          {{#each config.buffTypes as |type a|}}
+          <option value="{{a}}">{{type}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+      {{#unless isShapechangeBuff}}
+      <div class="form-group">
+        <label>{{localize "D35E.HideBuffFromToken"}}</label>
+        <label class="checkbox" style="position: relative; flex: 0 20px">
+          <input type="checkbox" class="stylized" name="system.hideFromToken" {{checked data.system.hideFromToken}}/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      {{/unless}}
+      {{> "systems/D35E/templates/items/parts/item-changes.html"}}
+
+      <h3 class="form-header">{{localize "D35E.LightItemLight"}}</h3>
+      {{> "systems/D35E/templates/items/parts/item-light.html"}}
+      
+      <h3 class="form-header">{{localize "D35E.Senses"}}</h3>
+      {{> "systems/D35E/templates/items/parts/item-senses.html"}}
+
+      {{> "systems/D35E/templates/items/parts/item-notes.html"}}
+      {{#if isGM}}
+      <h3 class="form-header">系统属性</h3>
+      {{> "systems/D35E/templates/items/components/uid-input.html"}}
+      {{/if}}
+    </div>
+  </section>
+  </section>
+</form>

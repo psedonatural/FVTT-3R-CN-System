@@ -1,0 +1,21 @@
+# Issues fixed
+- [#1234](https://gitlab.com/dragonshorn/D35E/-/issues/1234) - Wrong duration key in spell using hours
+- [#1233](https://gitlab.com/dragonshorn/D35E/-/issues/1233) - updateBaseItemName() results in "undefined +1"
+- [#1232](https://gitlab.com/dragonshorn/D35E/-/issues/1232) - Clicking on "new" to add a new armor/equipment in charactersheet->inventory throws an error
+- [#1231](https://gitlab.com/dragonshorn/D35E/-/issues/1231) - Spell Cards cannot be updated
+- [#1228](https://gitlab.com/dragonshorn/D35E/-/issues/1228) - Familiars bug
+- [#1227](https://gitlab.com/dragonshorn/D35E/-/issues/1227) - V10 Magic items link Spells dont works
+- [#1226](https://gitlab.com/dragonshorn/D35E/-/issues/1226) - Enhacements & Weapon Proporties dont update
+- [#1225](https://gitlab.com/dragonshorn/D35E/-/issues/1225) - Fractional saves not being calculated as expected.
+- [#1224](https://gitlab.com/dragonshorn/D35E/-/issues/1224) - + button modification not active
+- [#1223](https://gitlab.com/dragonshorn/D35E/-/issues/1223) - Tower Shield encumbrance penalty of -2 not used
+- [#1222](https://gitlab.com/dragonshorn/D35E/-/issues/1222) - Bug v10 Spells & Magic School -Domains
+- [#1221](https://gitlab.com/dragonshorn/D35E/-/issues/1221) - Bugged cards in deck
+- [#1220](https://gitlab.com/dragonshorn/D35E/-/issues/1220) - Domain &  Magic School  Description dont update
+- [#1219](https://gitlab.com/dragonshorn/D35E/-/issues/1219) - Custom Attribute List doesn't update the drop down selection
+- [#1217](https://gitlab.com/dragonshorn/D35E/-/issues/1217) - Foundry V10 (290)  SRD 2.0.7 Can't create new spells or items
+- [#1215](https://gitlab.com/dragonshorn/D35E/-/issues/1215) - ACP and RT not working as intended on Custom Skills
+- [#1212](https://gitlab.com/dragonshorn/D35E/-/issues/1212) - Spell Compendium Filtering is broken [V10]
+- [#1202](https://gitlab.com/dragonshorn/D35E/-/issues/1202) - New error make item/spells/npc's not function as v9
+- [#1165](https://gitlab.com/dragonshorn/D35E/-/issues/1165) - V10 Problems with Templates
+- [#1151](https://gitlab.com/dragonshorn/D35E/-/issues/1151) - Multiple errors and warnings with vision modes (FVTT V10 and 3.5e SRD 2.0.0-beta 6)

@@ -1,0 +1,16 @@
+<form autocomplete="off">
+    <p class="notes">{{localize "D35E.AttributeDamageConfigHint"}}</p>
+    <div class="form-group">
+        <label>{{localize "D35E.Damage"}}</label>
+        <input name="system.abilities.{{name}}.damage" type="number" step="0.1" value="{{ability.damage}}"/>
+    </div>
+    <div class="form-group">
+        <label>{{localize "D35E.Drain"}}</label>
+        <input name="system.abilities.{{name}}.drain" type="number" step="0.1" value="{{ability.drain}}"/>
+    </div>
+    <div class="form-group">
+        <label>{{localize "D35E.Penalty"}}</label>
+        <input name="system.abilities.{{name}}.userPenalty" type="number" step="0.1" value="{{ability.userPenalty}}"/>
+    </div>
+    <button type="submit" name="submit" value="1"><i class="far fa-save"></i> {{ localize "Submit"}}</button>
+</form>

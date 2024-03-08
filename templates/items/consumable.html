@@ -1,0 +1,115 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Item Sheet Header --}}
+  <div class="flexrow" style="flex: 0">
+    <div class="sheet-header-profile">
+      <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+    </div>
+
+    <header class="sheet-header flexrow">
+
+    <div class="header-details flexrow">
+      {{#if isGM}}
+      <h3 class="charname">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h3>
+
+      <h3 class="charname">
+        <input name="system.unidentified.name" type="text" value="{{data.system.unidentified.name}}" placeholder="{{localize "D35E.UnidentifiedName"}}"/>
+      </h3>
+      {{else}}
+      {{#if showUnidentifiedData}}
+      <h1 class="charname">
+        <input name="system.unidentified.name" type="text" value="{{itemName}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h1>
+      {{else}}
+      <h1 class="charname">
+        <input name="name" type="text" value="{{itemName}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h1>
+      {{/if}}
+      {{/if}}
+
+      <div class="item-subtitle">
+        <h4 class="item-type">{{localize "D35E.Item"}}</h4>
+        <span class="item-status">{{itemStatus}}</span>
+      </div>
+
+      <ul class="summary">
+        <li>
+          {{itemType}}
+        </li>
+        <li>
+          {{#unless showUnidentifiedData}}{{lookup config.consumableTypes data.consumableType }}{{/unless}}
+        </li>
+      </ul>
+    </div>
+  </header>
+  </div>
+
+  <section class="sheet-content flexcol">
+  {{!-- Item Sheet Navigation --}}
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="description">{{ localize "D35E.Description" }}</a>
+    <a class="item" data-tab="details">{{ localize "D35E.Details" }}</a>
+  </nav>
+
+  {{!-- Item Sheet Body --}}
+  <section class="primary-body">
+
+    {{!-- Description Tab --}}
+    {{> "systems/D35E/templates/items/parts/item-description.html"}}
+
+    {{!-- Details Tab --}}
+    <div class="tab details" data-group="primary" data-tab="details">
+      <h3 class="form-header">{{localize "D35E.Details"}}</h3>
+
+      {{!-- Consumable Type --}}
+      {{#unless showUnidentifiedData}}
+      <div class="form-group">
+        <label>{{localize "D35E.Type"}}</label>
+        <select name="system.consumableType">
+          {{#select data.system.consumableType}}
+          {{#each config.consumableTypes as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+      {{#if isScroll}}
+      <div class="form-group">
+        <label>{{localize "D35E.ScrollType"}}</label>
+        <select name="system.scrollType">
+          {{#select data.system.scrollType}}
+          <option value="">{{localize "D35E.None"}}</option>
+          <option value="arcane">{{localize "D35E.Arcane"}}</option>
+          <option value="divine">{{localize "D35E.Divine"}}</option>
+          {{/select}}
+        </select>
+      </div>
+      {{/if}}
+
+      {{#if isGM}}
+      <label class="checkbox">
+        <input type="checkbox" name="system.identified" {{checked data.system.identified}}/> {{localize "D35E.Identified"}}
+      </label>
+      {{/if}}
+
+      <h3 class="form-header">{{localize "D35E.ConsumableUsage"}}</h3>
+
+      {{!-- Item Activation Template --}}
+      {{> "systems/D35E/templates/items/parts/item-activation.html"}}
+
+      <h3 class="form-header">{{localize "D35E.Action"}}</h3>
+
+      {{!-- Item Action Template --}}
+      {{> "systems/D35E/templates/items/parts/item-action.html"}}
+
+      <h3 class="form-header">{{localize "D35E.MeasureTemplate"}}</h3>
+
+      {{!-- Item Measure Template --}}
+      {{> "systems/D35E/templates/items/parts/item-template.html"}}
+      {{/unless}}
+    </div>
+  </section>
+  </section>
+</form>

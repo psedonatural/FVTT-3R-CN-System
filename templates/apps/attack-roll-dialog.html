@@ -1,0 +1,564 @@
+<form class="attack-form">
+    <div class="flexrow">
+        <section>
+
+    {{#if hasTargets}}
+        <div class="form-group">
+            <label>{{localize "D35E.Targets"}}</label>
+            <div>
+            {{#each targets as |target|}}
+                <img src="{{target.document.texture.src}}" width="36" height="36">
+            {{/each}}</div>
+
+            <input type="hidden" name="target-ids" value="{{#each targets as |target|}}{{target.data._id}};{{/each}}"/>
+        </div>
+    {{/if}}
+    {{#if hasAttack}}
+    <div class="form-group">
+        <label>{{localize "D35E.AttackRollBonus"}} <i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i></label>
+        <input type="text" name="attack-bonus" value="" class="auto-save" placeholder="e.g. +1d4"/>
+    </div>
+    {{/if}}
+    {{#if hasDamage}}
+    <div class="form-group">
+        <label>{{localize "D35E.DamageBonus"}} <i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i></label>
+        <input type="text" name="damage-bonus" value="" class="auto-save" placeholder="e.g. +1d4"/>
+    </div>
+    {{/if}}
+    {{#if hasAttack}}
+    {{#if hasDamage}}
+
+    <div class="form-group">
+    <label class="checkbox" style="margin-right: 8px; position: relative">
+        <span class="label-left">{{localize "D35E.WeaponPropNonLethal"}} <i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i></span>
+        <input type="checkbox" class="stylized auto-save" name="nonLethal" {{#if nonLethal}}checked{{/if}}/>
+        <span class="checkmark"></span>
+    </label>
+    </div>
+    <div class="form-group stacked">
+        <label class="block-header">{{localize "D35E.CombatStatus"}}</label>
+    </div>
+    <div class="flexrow">
+        <div class="form-group">
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <input type="checkbox" class="stylized" name="flanking"/>
+                <span class="checkmark right"></span>
+                <span class="label-right">{{localize "D35E.Flanking"}} (+2)</span>
+            </label>
+        </div>
+        {{#unless isRangedWeapon}}
+        <div class="form-group">
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <input type="checkbox" class="stylized" name="charge"/>
+                <span class="checkmark right"></span>
+                <span class="label-right">{{localize "D35E.Charge"}} (+2)</span>
+            </label>
+        </div>
+        {{else}}
+        <div class="form-group" >
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <input type="checkbox" class="stylized" name="ccshot"/>
+                <span class="checkmark right"></span>
+                <span class="label-right">{{localize "D35E.CloseQuartersShot"}} (-4)
+                <i class="fas fa-info-circle tooltip">
+                    <span class="tooltipcontent"><strong>{{localize "D35E.CloseQuartersShot"}}</strong><br>This penalty applies when the target of your shot is engaged in melee combat.</span>
+
+                </i></span>
+            </label>
+        </div>
+        {{/unless}}
+    </div>
+    <div class="flexrow">
+        <div class="form-group">
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <input type="checkbox" class="stylized" name="defensive"/>
+                <span class="checkmark right"></span>
+                <span class="label-right">{{localize "D35E.DefensiveFighting"}} (-4)</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <input type="checkbox" class="stylized" name="highground"/>
+                <span class="checkmark right"></span>
+                <span class="label-right">{{localize "D35E.HighGround"}} (+1)</span>
+            </label>
+        </div>
+    </div>
+    <div class="flexrow">
+        <div class="form-group">
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <input type="checkbox" class="stylized" name="squeezing"/>
+                <span class="checkmark right"></span>
+                <span class="label-right">{{localize "D35E.Squeezing"}} (-4)</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <input type="checkbox" class="stylized" name="prone" {{#if isAlreadyProne}}checked{{/if}}/>
+                <span class="checkmark right"></span>
+                <span class="label-right">{{localize "D35E.Prone"}} (-4)</span>
+            </label>
+        </div>
+    </div>
+    <div class="form-group stacked">
+        <label class="block-header">{{localize "D35E.FeatPlural"}}</label>
+    </div>
+    {{#unless isRangedWeapon}}
+    <div class="form-group">
+        {{#if canPowerAttack}}
+        <label class="slider">猛力攻击 <i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i>
+        </label>
+        <input type="range" name="pa" min="0" max="{{maxPowerAttackValue}}" value="0" class="slider auto-save" style="flex: 1"
+               onchange="this.nextElementSibling.value=this.value">
+        <input type="text" class="auto-save" name="power-attack" valuZe="0" disabled style="flex: 0 30; margin-left: 8px"/>
+        {{/if}}
+
+        {{#if canFlurryOfBlows}}
+        <div class="form-group">
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <span class="label-left">{{localize "D35E.FeatFlurryOfBlows"}}</span>
+                <input type="checkbox" class="stylized" data-feat="flurry-of-blows" name="flurry-of-blows"/>
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        {{/if}}
+    </div>
+    {{/unless}}
+
+    {{#if isRangedWeapon}}
+    <div class="form-group">
+        {{#if canManyshot}}
+        <label class="checkbox" style="margin-right: 8px; position: relative">
+            <span class="label-left">{{localize "D35E.FeatManyshot"}} (Arrows Count)</span>
+            <input type="checkbox" class="stylized" data-feat="manyshot" name="manyshot"
+                   onchange="enableDisableManyshotFeat()"/>
+            <span class="checkmark"></span>
+        </label>
+        <input type="range" name="manyshot-count-slider" disabled min="2" max="{{maxManyshotValue}}" value="2"
+               class="slider" style="flex: 1"
+               onchange="this.nextElementSibling.value=this.value;enableDisableManyshotFeat()">
+        <input type="text" name="manyshot-count" value="2" disabled style="flex: 0 30; margin-left: 8px"/>
+
+        {{/if}}
+    </div>
+    {{#if canGreaterManyshot}}
+    <div class="form-group">
+        <label class="checkbox" style="margin-right: 8px; position: relative">
+            <span class="label-left">{{localize "D35E.FeatGreaterManyshot"}} (Arrows Count)</span>
+            <input type="checkbox" class="stylized" data-feat="greater-manyshot" name="greater-manyshot"
+                   onchange="enableDisableManyshotFeat()"/>
+            <span class="checkmark"></span>
+        </label>
+        <input type="range" name="greater-manyshot-count-slider" disabled min="2" max="{{maxGreaterManyshotValue}}"
+               value="2" class="slider" style="flex: 1"
+               onchange="this.nextElementSibling.value=this.value;enableDisableManyshotFeat()">
+        <input type="text" name="greater-manyshot-count" value="2" disabled style="flex: 0 30; margin-left: 8px"/>
+
+    </div>
+    {{/if}}
+
+    {{#if canRapidShot}}
+    <div class="form-group">
+        <label class="checkbox" style="margin-right: 8px; position: relative">
+            <span class="label-left">{{localize "D35E.FeatRapidShot"}}</span>
+            <input type="checkbox" class="stylized" data-feat="rapid-shot" name="rapid-shot"
+                   onchange='enableDisableFullAttack(document.getElementsByName("ammunition-id")[0])'/>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    {{/if}}
+
+
+    {{/if}}
+
+
+
+    <div class="form-group">
+        <label class="block-header">{{localize "D35E.Conditionals"}}</label>
+    </div>
+    {{#each conditionals as |conditional|}}
+    <div class="form-group">
+        <label class="checkbox" style="margin-right: 8px; position: relative">
+            <span class="label-left">{{conditional.name}}</span>
+            <input type="checkbox" class="stylized" data-conditional-optional="{{conditional.name}}"
+                   name="conditional-{{conditional.name}}" data-type="conditional" {{#if conditional.default}}checked{{/if}}/>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    {{/each}}
+
+    {{/if}}
+    {{/if}}
+    {{!-- Flags --}}
+
+
+
+    <div class="form-group stacked">
+        <label class="block-header">{{localize "D35E.Misc"}}</label>
+    </div>
+
+    <div class="form-group">
+        {{#if hasAttack}}{{#if hasDamage}}
+        {{#if isNaturalAttack}}
+        <label class="checkbox" style="margin-right: 8px; position: relative">
+            <span class="label-left">{{localize "D35E.PrimaryAttack"}}</span>
+            <input type="checkbox" class="stylized" name="primary-attack" {{#if isPrimaryAttack}}checked{{/if}}/>
+            <span class="checkmark"></span>
+        </label>
+        {{/if}}
+
+        {{/if}}{{/if}}
+    </div>
+    {{#if hasAttack}}{{#if hasDamage}}
+    {{#unless isRangedWeapon}}
+    <div class="form-group">
+        <label>{{localize "D35E.WeaponFightingMode"}} {{#unless attackTypeSet}}<i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i>{{/unless}}</label>
+        <select name="twf-attack-mode" onchange="changeTWF(this)" {{#unless attackTypeSet}}class="auto-save"{{/unless}}>
+            {{#select attackType}}
+            {{#each twoWeaponAttackTypes as |label mode|}}
+            <option value="{{mode}}">{{localize label}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+        <script>
+            function changeTWF(select) {
+                let singleAttackLabel = '{{localize "D35E.SingleAttack"}}'
+                let offhandAttackLabel = '{{localize "D35E.OffhandAttack"}}'
+                var option = $('option:selected', select).attr('value');
+                if (option === 'offhand-light' || option === 'offhand-normal') {
+                    $('option:selected', select).closest("section").find("button[data-button='multi']").hide();
+                    $('option:selected', select).closest("section").find("button[data-button='normal']").text(offhandAttackLabel)
+                    $("select[data-type='dmg-mult']").val("0.5");
+                } else if (option === 'two-handed') {
+                    $('option:selected', select).closest("section").find("button[data-button='multi']").show();
+                    $('option:selected', select).closest("section").find("button[data-button='normal']").text(singleAttackLabel)
+                    $("select[data-type='dmg-mult']").val("1.5");
+                } else {
+                    $('option:selected', select).closest("section").find("button[data-button='multi']").show();
+                    $('option:selected', select).closest("section").find("button[data-button='normal']").text(singleAttackLabel)
+                    $("select[data-type='dmg-mult']").val("1");
+                }
+            }
+            $( document ).ready(function() {
+                changeTWF($("select[name='twf-attack-mode']"))
+            });
+        </script>
+    </div>
+    {{/unless}}
+    {{/if}}{{/if}}
+    {{#if hasDamage}}{{#if hasDamageAbility}}{{#unless isNaturalAttack}}
+    <div class="form-group select">
+        <label>{{localize "D35E.DamageAbility"}} <i class="fas fa-level-down-alt tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValueDependsOnTWF"}}</span></i></label>
+        <select name="damage-ability-multiplier" data-type="dmg-mult" >
+            {{#select data.item.ability.damageMult}}
+            <option value="0.5">x0.5</option>
+            <option value="1">x1</option>
+            <option value="1.5">x1.5</option>
+            <option value="2">x2</option>
+            {{/select}}
+        </select>
+    </div>{{/unless}}
+    {{/if}}{{/if}}
+
+    {{#if isRangedWeapon}}
+    <div class="form-group select">
+        <label>{{localize "D35E.LootTypeAmmo"}} <i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i></label>
+        <select name="ammunition-id" onchange="enableDisableFullAttack(this)" class="auto-save">
+            {{#select ammo}}
+                {{#if allowNoAmmo}}
+                <option value="none" data-ammo-count="9999" data-dmg-formula="">Default Unlimited Ammo</option>
+                {{/if}}
+                {{#each ammunition as |item iid|}}
+                <option value="{{item._id}}" data-attack="{{item.system.bonusAmmoAttack}}"
+                        data-note="{{item.system.bonusAmmoAttackNote}}" data-ammo-count="{{item.system.quantity}}"
+                        data-dmg-uid="{{item.system.bonusAmmoDamageUid}}"
+                        data-dmg-type="{{item.system.bonusAmmoDamageType}}"
+                        data-id="{{item.system.bonusAmmoDamageType}}"
+                        data-enh="{{item.system.bonusAmmoEnhancement}}"
+                        data-name="{{item.name}}"
+                        data-dmg-formula="{{item.system.bonusAmmoDamage}}">{{item.name}} ({{item.system.quantity}})
+                </option>
+                {{else}}
+
+                <option value="none" data-ammo-count="0" data-dmg-formula="">No Ammo</option>
+                {{/each}}
+            {{/select}}
+        </select>
+
+        <input type="hidden" name="ammo-dmg-formula"/>
+        <input type="hidden" name="ammo-dmg-type"/>
+        <input type="hidden" name="ammo-id"/>
+        <input type="hidden" name="ammo-dmg-uid"/>
+        <input type="hidden" name="ammo-dmg-attack"/>
+        <input type="hidden" name="ammo-attack"/>
+        <input type="hidden" name="ammo-note"/>
+        <input type="hidden" name="ammo-name"/>
+        <input type="hidden" name="ammo-enh"/>
+        <script>
+            function enableDisableManyshotFeat() {
+                if ($("input[data-feat='manyshot']")?.length)
+                    $("input[data-feat='greater-manyshot']").prop("disabled", $("input[data-feat='manyshot']").is(":checked"));
+                if ($("input[data-feat='greater-manyshot']")?.length)
+                    $("input[data-feat='manyshot']").prop("disabled", $("input[data-feat='greater-manyshot']").is(":checked"));
+
+                $("input[name='greater-manyshot-count-slider']").prop("disabled", !$("input[data-feat='greater-manyshot']").is(":checked"));
+                $("input[name='manyshot-count-slider']").prop("disabled", !$("input[data-feat='manyshot']").is(":checked"));
+                enableDisableFullAttack(document.getElementsByName("ammunition-id")[0])
+            }
+
+            function enableDisableFullAttack(select) {
+                var option = $('option:selected', select).attr('data-ammo-count');
+                var damage = $('option:selected', select).attr('data-dmg-formula');
+                var type = $('option:selected', select).attr('data-dmg-type');
+                var uid = $('option:selected', select).attr('data-dmg-uid');
+                var id = $('option:selected', select).attr('data-id');
+                var attack = $('option:selected', select).attr('data-attack');
+                var attackNote = $('option:selected', select).attr('data-note');
+                var attackName = $('option:selected', select).attr('data-name');
+                var enh = $('option:selected', select).attr('data-enh');
+                var arrowsCount = parseInt(option) || 0
+                var isManyshot = false;
+                var isGreaterManyshot = false;
+                var greaterManyshotCount = 0;
+                var manyshotCount = 0;
+                var baseExtraAttacks = {{extraAttacksCount}};
+                var isRapidShot = false;
+                var isFlurryOfBlows = false;
+                if ($("input[data-feat='rapid-shot']")?.length) {
+                    isRapidShot = $("input[data-feat='rapid-shot']").is(":checked");
+                }
+                if ($("input[data-feat='flurry-of-blows']")?.length) {
+                    isFlurryOfBlows = $("input[data-feat='flurry-of-blowst']").is(":checked");
+                }
+                if (isRapidShot) {
+                    baseExtraAttacks = baseExtraAttacks + 1;
+                }
+                if (isFlurryOfBlows) {
+                    baseExtraAttacks = baseExtraAttacks + 1;
+                }
+                if ($("input[data-feat='manyshot']")?.length) {
+                    isManyshot = $("input[data-feat='manyshot']").is(":checked");
+                    manyshotCount = parseInt($("input[name='manyshot-count']").val())
+                    if (isManyshot)
+                        baseExtraAttacks = baseExtraAttacks * manyshotCount;
+                }
+                if ($("input[data-feat='greater-manyshot']")?.length) {
+                    isGreaterManyshot = $("input[data-feat='greater-manyshot']").is(":checked");
+                    greaterManyshotCount = parseInt($("input[name='greater-manyshot-count']").val())
+                    if (isGreaterManyshot)
+                        baseExtraAttacks = baseExtraAttacks * greaterManyshotCount;
+                }
+                console.log('Attacks', baseExtraAttacks, isRapidShot, isFlurryOfBlows)
+                console.log( $('option:selected', select).closest(".window-content"))
+                $('option:selected', select).closest(".window-content").find("input[name='ammo-dmg-formula']").val(damage)
+                $('option:selected', select).closest(".window-content").find("input[name='ammo-dmg-type']").val(type)
+                $('option:selected', select).closest(".window-content").find("input[name='ammo-dmg-uid']").val(uid)
+                $('option:selected', select).closest(".window-content").find("input[name='ammo-attack']").val(attack)
+                $('option:selected', select).closest(".window-content").find("input[name='ammo-id']").val(id)
+                $('option:selected', select).closest(".window-content").find("input[name='ammo-note']").val(attackNote)
+                $('option:selected', select).closest(".window-content").find("input[name='ammo-name']").val(attackName)
+                $('option:selected', select).closest(".window-content").find("input[name='ammo-enh']").val(enh)
+                $('option:selected', select).closest(".window-content").find("button[data-button='multi']").prop("disabled", baseExtraAttacks > arrowsCount);
+                $('option:selected', select).closest(".window-content").find("button[data-button='normal']").prop("disabled", true);
+                console.log('D35E | Attack | Arrows Count ' + arrowsCount, arrowsCount === 0)
+                $('option:selected', select).closest(".window-content").find("button[data-button='normal']").prop("disabled", arrowsCount === 0);
+            }
+        </script>
+
+    </div>
+    {{/if}}
+
+    <div class="form-group">
+        {{#if allowMultipleUses}}
+        <label class="slider">Multiple Uses
+        </label>
+        <input type="range" name="use" min="1" max="{{multipleUsesMax}}" value="1" class="slider" style="flex: 1"
+               onchange="this.nextElementSibling.value=this.value">
+        <input type="text" name="useAmount" value="1" disabled style="flex: 0 30; margin-left: 8px"/>
+        {{/if}}
+    </div>
+
+    <div class="form-group">
+        {{#if isPower}}
+        <label class="slider">{{localize "D35E.AdditionalPowerPointsSpend"}} <i class="fas fa-info-circle tooltip">
+            <span class="tooltipcontent"><strong>{{localize "D35E.AdditionalPowerPointsSpend"}}</strong><br>{{localize "D35E.AdditionalPowerPointsSpendLimit"}}</span>
+
+        </i>
+        </label>
+        <input type="range" name="use" min="0" max="{{bonusPowerPointsMax}}" value="0" class="slider" style="flex: 1"
+               onchange="this.nextElementSibling.value=this.value">
+        <input type="text" name="useAmount" value="0" disabled style="flex: 0 30; margin-left: 8px"/>
+        {{/if}}
+    </div>
+
+
+    {{#if hasTemplate}}
+    <div class="form-group">
+        <label class="checkbox" style="margin-right: 8px; position: relative">
+            <span class="label-left">{{localize "D35E.MeasureTemplate"}}</span>
+            <input type="checkbox" class="stylized"  name="measure-template" checked/>
+            <span class="checkmark"></span>
+        </label>
+    </div>
+    {{/if}}
+
+
+    <div class="form-group">
+        <label>{{localize "D35E.RollMode"}} <i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i></label>
+        <select name="rollMode" class="auto-save">
+            {{#select rollMode}}
+            {{#each rollModes as |label mode|}}
+            <option value="{{mode}}">{{localize label}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+    <script>
+        $('.attack-form').closest("section").find("button[data-button='multi']").bind( "click", function() {
+            $( this ).prop('disabled', true);
+
+        });
+        $('.attack-form').closest("section").find("button[data-button='normal']").bind( "click", function() {
+            $( this ).prop('disabled', true);
+        });
+        if (game.settings.get("D35E", "saveAttackWindow")) {
+            $('.auto-save').savy('load',function(){
+                console.log("All fields from save are loaded");
+                $('.attack-form input').trigger('change')
+            },'{{id}}');
+            }
+        else {
+            $('.fa-history').hide()
+        }
+        {{#if isRangedWeapon}}
+        $('.attack-form').closest("section").find("button[data-button='normal']").prop('disabled', true);
+        $('.attack-form').closest("section").find("button[data-button='multi']").prop('disabled', true);
+        enableDisableFullAttack($('select[name="ammunition-id"]'))
+        {{/if}}
+
+
+    </script>
+    </section>
+    {{#if hasFeatsOrSummons}}
+    <section style="margin-left: 8px;">
+        {{#if hasFeats}}
+        <div class="form-group">
+            <label class="block-header">{{localize "D35E.AdditionalFeats"}}</label>
+        </div>
+
+        <div class="form-group">
+            <div class="flexcol">
+                {{#each weaponFeats as |feat|}}
+                <span class="tooltip">{{feat.combatChangeName}}
+                    <span class="tooltipcontent preview"><h1>{{feat.name}}</h1>{{{feat.getChatDescription}}}</span>
+                </span>
+                {{/each}}
+            </div>
+        </div>
+
+        {{#each weaponFeatsOptional as |feat|}}
+        <div class="form-group tooltip">
+            <span class="tooltipcontent preview"><h1>{{feat.name}}</h1>{{{feat.getChatDescription}}}</span>
+
+            <label class="checkbox" style="margin-right: 8px; position: relative">
+                <input type="checkbox" {{#unless feat.hasUseableChange}}disabled name="optional-{{feat.id}}"{{/unless}} class="stylized" data-feat-optional="{{feat.id}}"
+                       data-type="optional"/>
+                <span class="checkmark right"></span>
+                <span class="label-right" style="{{#unless feat.hasUseableChange}}opacity: 0.8{{/unless}}">{{feat.combatChangeName}} {{#if feat.isCharged}}({{feat.charges}} charges){{/if}}</span>
+            </label>
+            {{#if feat.system.combatChangesRange.max}}
+            <input type="range" name="optional-range-base-{{feat.id}}" min="0" max="{{feat.system.combatChangesRange.max}}" value="0" class="slider" style="flex: 1"
+                   onchange="this.nextElementSibling.value=this.value">
+            <input type="text" name="optional-range-{{feat.id}}" value="0" disabled style="flex: 0 30; margin-left: 8px"/>
+            {{/if}}
+        </div>
+            {{#if feat.system.combatChangesAdditionalRanges.hasAdditionalRanges}}
+            <div class="form-group">
+                {{#if feat.system.combatChangesAdditionalRanges.slider1.max}}
+                <span style="flex: 0; margin-right: 3px; opacity: 0.8">{{feat.system.combatChangesAdditionalRanges.slider1.name}}</span>
+                <input type="range" name="optional-range-base-1-{{feat.id}}" min="0" max="{{feat.system.combatChangesAdditionalRanges.slider1.max}}" value="0" class="slider" style="flex: 1"
+                       onchange="this.nextElementSibling.value=this.value">
+                <input type="text" name="optional-range-1-{{feat.id}}" value="0" disabled style="flex: 0 30; margin-left: 8px"/>
+                {{/if}}
+                {{#if feat.system.combatChangesAdditionalRanges.slider2.max}}
+                <span style="flex: 0; margin-right: 3px; opacity: 0.8">{{feat.system.combatChangesAdditionalRanges.slider2.name}}</span>
+                <input type="range" name="optional-range-base-2-{{feat.id}}" min="0" max="{{feat.system.combatChangesAdditionalRanges.slider2.max}}" value="0" class="slider" style="flex: 1"
+                       onchange="this.nextElementSibling.value=this.value">
+                <input type="text" name="optional-range-2-{{feat.id}}" value="0" disabled style="flex: 0 30; margin-left: 8px"/>
+                {{/if}}
+                {{#if feat.system.combatChangesAdditionalRanges.slider3.max}}
+                <span style="flex: 0; margin-right: 3px; opacity: 0.8">{{feat.system.combatChangesAdditionalRanges.slider3.name}}</span>
+                <input type="range" name="optional-range-base-3-{{feat.id}}" min="0" max="{{feat.system.combatChangesAdditionalRanges.slider3.max}}" value="0" class="slider" style="flex: 1"
+                       onchange="this.nextElementSibling.value=this.value">
+                <input type="text" name="optional-range-3-{{feat.id}}" value="0" disabled style="flex: 0 30; margin-left: 8px"/>
+                {{/if}}
+            </div>
+            {{/if}}
+        {{/each}}
+
+        {{/if}}
+
+        {{#if summonableMonsters}}
+        <div class="form-group">
+            <label class="block-header">{{localize "D35E.SummonMonster"}}</label>
+        </div>
+        <div class="form-group">
+            <label>{{localize "D35E.SelectMonster"}} <i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i></label>
+            <select name="selected-monster" class="auto-save" onchange="updateMonster(this)">
+                {{#select monster}}
+                {{#each summonableMonsters as |monster id|}}
+                <option value="{{monster.data.documentCollection}}:{{monster.data.documentId}}:{{monster.data.text}}" data-pack="{{monster.data.documentCollection}}" data-formula="{{monster.formula}}" data-id="{{monster.data.documentId}}">{{monster.data.text}} ({{monster.formula}})</option>
+                {{/each}}
+                {{/select}}
+            </select>
+            <input type="hidden" name="monster-collection"/>
+            <input type="hidden" name="monster-resultId"/>
+            <input type="hidden" name="monster-text"/>
+            <input type="hidden" name="monster-img"/>
+            <input type="hidden" name="monster-formula"/>
+        </div>
+        <div class="monster-summon-box" style="border-radius: 4px">
+            <h1 style="    white-space: nowrap;
+            text-overflow: ellipsis;" class="monster-name">Aboleth<span style="float: right;" class="monster-cr">CR2</span></h1>
+            <div>
+                <img class="monster-img" src="systems/D35E/icons/bestiary/token/aboleth.png" title="Abolethr" width="48" height="48" style="border: none; float: right;">
+                <em class="monster-align">Large Aberration, Lawful Evil</em><br>
+                <strong>{{ localize 'D35E.HitDice' }}:</strong> <span class="monster-hp">22 hp (11 HD)</span><br>
+                <strong>{{ localize 'D35E.Initiative' }}:</strong> <span class="monster-init">22</span><br>
+                <strong>{{ localize 'D35E.AC' }}:</strong> <span class="monster-ac">22</span><br>
+                <strong>{{ localize 'D35E.BAB' }}/{{ localize 'D35E.Grapple' }}:</strong> <span class="monster-bab">+11/+20</span></div><br>
+            </div>
+        </div>
+        <script>
+            async function updateMonster(select) {
+                var monster_pack = $('option:selected', select).attr('data-pack');
+                var mosnter_id = $('option:selected', select).attr('data-id');
+                var mosnter_formula = $('option:selected', select).attr('data-formula');
+                console.log(monster_pack, mosnter_id)
+                const __pack = game.packs.get(monster_pack);
+                const monster = await __pack.getDocument(mosnter_id);
+                const mdd = monster.system;
+
+                $('option:selected', select).closest("section").find("input[name='monster-collection']").val(monster_pack)
+                $('option:selected', select).closest("section").find("input[name='monster-resultId']").val(mosnter_id)
+                $('option:selected', select).closest("section").find("input[name='monster-text']").val(monster.name)
+                $('option:selected', select).closest("section").find("input[name='monster-img']").val(monster.img)
+                $('option:selected', select).closest("section").find("input[name='monster-formula']").val(mosnter_formula)
+
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-name").text(`${monster.name}`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-img").attr("src",`${monster.img}`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-cr").text(`CR${monster.system.details.totalCr}`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-align").text(`${CONFIG.D35E.actorSizes[monster.system.traits.actualSize]} ${monster.racialHD.name} ${monster.system.details.alignment}`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-hp").text(`${monster.system.attributes.hp.max} hp (${monster.system.attributes?.hd?.total || "Unknown"} HD)`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-ac").text(`${mdd.attributes.ac?.normal?.total || "Unknown"} (${mdd.attributes.ac?.touch?.total || "Unknown"} touch, ${mdd.attributes?.ac?.flatFooted.total || "Unknown"} flat-footed)`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-bab").text(`${mdd.attributes?.bab?.total || "Unknown"}/${mdd.attributes?.cmd?.total || "Unknown"}`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-init").text(`${mdd.attributes?.initiative?.total || "Unknown"}`)
+            }
+            updateMonster($('select[name="selected-monster"]'))
+
+        </script>
+        {{/if}}
+    </section>
+        {{/if}}
+    </div>
+</form>

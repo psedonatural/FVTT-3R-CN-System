@@ -1,0 +1,43 @@
+<div class="D35E chat-card item-card">
+    <header class="card-header flexrow">
+        <h3 class="item-name">{{name}}
+        </h3>
+    </header>
+
+    <div class="card-content item">
+        {{#if shouldDisplayTarget}}
+        {{#if secretText}}
+        <div style="padding: 0 5px;
+    background: rgba(53, 0, 121, 0.05);
+    border-top: 1px solid var(--color-border-dark-5);
+    border-bottom: 1px solid var(--color-border-dark-5);">
+            <h4>
+                {{#if isGM}}
+                {{#unless revealed}}
+                <button class="reveal-roll roll-display-toggle" data-id="{{id}}" style="float: right; float: right;
+    width: unset;
+    line-height: unset;
+    padding: 0 16px;
+    margin-top: 8px;
+    font-size: var(--font-size-13);"> Reveal
+                </button>
+                {{else}}
+                <button class="hide-roll roll-display-toggle" data-id="{{id}}" style="float: right; float: right;
+    font-size: 10px;
+    width: unset;
+    line-height: unset;
+    padding: 0 16px;
+    margin-top: 8px;
+    font-size: var(--font-size-13);"> Hide
+                </button>
+                {{/unless}}
+                {{/if}}
+            </h4>
+            <p>{{{secretText}}}</p>
+        </div>
+        {{/if}}
+        {{/if}}
+        {{{text}}}
+    </div>
+
+</div>

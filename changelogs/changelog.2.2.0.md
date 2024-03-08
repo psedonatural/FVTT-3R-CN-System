@@ -1,0 +1,21 @@
+# Issues fixed
+- [#1324](https://gitlab.com/dragonshorn/D35E/-/issues/1324) - Attack UI overlaps itslef
+- [#1319](https://gitlab.com/dragonshorn/D35E/-/issues/1319) - Players able to see roll details on Skill and Saving throw roll
+- [#1318](https://gitlab.com/dragonshorn/D35E/-/issues/1318) - combat changes not supporting @abilities."stat".mod
+- [#1315](https://gitlab.com/dragonshorn/D35E/-/issues/1315) - Conditional Modifiers don't apply if you change from "attack" to "damage"
+- [#1311](https://gitlab.com/dragonshorn/D35E/-/issues/1311) - Auras still ignoreing if friendly or Hostile
+- [#1309](https://gitlab.com/dragonshorn/D35E/-/issues/1309) - Bug temp buffs not removing self or triggering deactvating special actions
+- [#1307](https://gitlab.com/dragonshorn/D35E/-/issues/1307) - Base Weapon Type inheritance is confusing for Custom Weapons
+- [#1306](https://gitlab.com/dragonshorn/D35E/-/issues/1306) - Half-Plate Max Dex of 0 breaks
+- [#1305](https://gitlab.com/dragonshorn/D35E/-/issues/1305) - Auras not careing if friend or foe
+- [#1304](https://gitlab.com/dragonshorn/D35E/-/issues/1304) - Extra Attack Parts have incorrect model
+- [#1301](https://gitlab.com/dragonshorn/D35E/-/issues/1301) - Add @roundDelta to per round special actions for buffs to account for bigger time spans
+- [#1300](https://gitlab.com/dragonshorn/D35E/-/issues/1300) - Defender's dodge option means wrong AC computation (on concealment or incorporeal rolls)
+- [#1299](https://gitlab.com/dragonshorn/D35E/-/issues/1299) - Improve loading time of add item slideout by using indexes
+- [#1298](https://gitlab.com/dragonshorn/D35E/-/issues/1298) - FR: Ability to assign CR values using text fractions ( 1/4, 1/2, 1/3 )
+- [#1295](https://gitlab.com/dragonshorn/D35E/-/issues/1295) - V10 - Auras don't effect other tokens
+- [#1294](https://gitlab.com/dragonshorn/D35E/-/issues/1294) - Improved select of attack options
+- [#1293](https://gitlab.com/dragonshorn/D35E/-/issues/1293) - Run feat needs CS update
+- [#1292](https://gitlab.com/dragonshorn/D35E/-/issues/1292) - [BUG] @additionalPowerPointsUsed does not work in all fields of a psionic power
+- [#1291](https://gitlab.com/dragonshorn/D35E/-/issues/1291) - "object Promise" being seen in attack chat cards with Formula in attack notes
+- [#1290](https://gitlab.com/dragonshorn/D35E/-/issues/1290) - Weapon Item to Weapon Attack notes prepended with "undefined"

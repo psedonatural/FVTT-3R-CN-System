@@ -1,0 +1,107 @@
+<h3 class="gm-section">{{localize "D35E.ls.gmSettings"}}</h3>
+
+<!-- GM SETTINGS -->
+<div class="gm-settings" data-group="sidebar" data-tab="gm-settings">
+    <h3 class="gm-header"><i class="fas fa-id-card"></i> {{localize "D35E.ls.type"}} <i class="fas fa-info-circle help" onclick="$('.sheet-type-info').toggle();"></i></h3>
+    <div class="sheet-type-info">{{localize "D35E.ls.typeInfo"}}</div>
+    <div class="sheet-types">
+        <div class="flexrow">
+            <div class="flexcol"><h4 class="sheet-name">{{localize "D35E.ls.typeOfSheet"}}:</h4></div>
+            <div class="flexcol">
+                <select class="sheet-type" name="flags.D35E.lootsheettype">
+                    {{#select actor.flags.D35E.lootsheettype}}
+                    <option value="Loot">{{localize "D35E.ls.typeLoot"}}</option>
+                    <option value="Merchant">{{localize "D35E.ls.typeMerchant"}}</option>
+                    {{/select}}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="gm-header"><i class="fas fa-users"></i> {{localize "D35E.ls.permissions"}} <i class="fas fa-info-circle help" onclick="$('.permission-info').toggle();"></i></h3>
+    <div class="permission-info">{{localize "D35E.ls.permissionsInfo"}}</div>
+    {{#if actor.flags.loot.warning}}
+    <div class="warning">{{localize "ERROR.lsInvalidParentPermission"}}</div>
+    {{/if}}
+    {{#unless actor.flags.loot.warning}}
+    <ol class="permissions-list">
+        {{#each actor.flags.loot.players as |player p|}}
+        <li class="permission">
+            <input type="hidden" name="{{player.playerId}}" value="{{player.lootPermission}}" data-dtype="Number" actor="{{player.actorId}}"/>
+            <a class="permission-proficiency" title="{{player.lootPermissionDescription}}">{{{player.icon}}}</a>
+            <h4 class="permission-name">{{player.actor}} ({{player.name}})</h4>
+        </li>
+        {{/each}}
+        <div class="batch-update">{{localize "D35E.ls.batchUpdate"}}
+            <a class="permission-batch" title="{{localize "D35E.ls.permissionNoaccess"}}" data-perm="0"><i class="far fa-circle"></i></a>
+            <a class="permission-batch" title="{{localize "D35E.ls.permissionLimited"}}" data-perm="1"><i class="fas fa-eye"></i></a>
+            <a class="permission-batch" title="{{localize "D35E.ls.permissionObserver"}}" data-perm="3"><i class="fas fa-check"></i></a>
+        </div>
+    </ol>
+    {{/unless}}
+
+    {{#ifeq lootsheettype "Loot"}}
+    <h3 class="gm-header"><i class="fas fa-tools"></i> {{localize "D35E.ls.lsOptions"}}</h3>
+    <div class="flexrow">
+        <div class="flexcol"><h4>{{localize "D35E.ls.enableDragging"}} <i class="fas fa-info-circle help" title="{{localize "D35E.ls.enableDraggingTooltip"}}"></i></h4></div>
+        <div class="flexcol"><input name="flags.D35E.dragEnabled" type="checkbox" {{#if actor.flags.D35E.dragEnabled}}checked{{/if}} /></div>
+    </div>
+    <div class="flexrow">
+        <div class="flexcol"><h4>{{localize "D35E.ls.allowPlayerMovement"}} <i class="fas fa-info-circle help" title="{{localize "D35E.ls.enableDraggingTooltip"}}"></i></h4></div>
+        <div class="flexcol"><input name="flags.D35E.allowPlayerMovement" type="checkbox" {{#if actor.flags.D35E.allowPlayerMovement}}checked{{/if}} /></div>
+    </div>
+    <div class="flexrow">
+        <div class="flexcol"><h4>{{localize "D35E.ls.maxCapacity"}} <i class="fas fa-info-circle help" title="{{localize "D35E.ls.maxCapacityTooltip"}}"></i></h4></div>
+        <div class="flexcol"><input name="flags.D35E.maxCapacity" type="text" data-dtype="Number" placeholder="e.g. 10" value="{{actor.flags.D35E.maxCapacity}}"/></div>
+    </div>
+    <div class="flexrow">
+        <div class="flexcol"><h4>{{localize "D35E.ls.maxLoad"}} <i class="fas fa-info-circle help" title="{{localize "D35E.ls.maxLoadTooltip"}}"></i></h4></div>
+        <div class="flexcol"><input name="flags.D35E.maxLoad" type="text" data-dtype="Number" placeholder="e.g. 200" value="{{actor.flags.D35E.maxLoad}}"/></div>
+    </div>
+    <h3 class="gm-header"><i class="fas fa-coins"></i> {{localize "D35E.ls.coinDistribution"}}</h3>
+    <ol class="coins-list">
+        {{#each actor.flags.loot.currency as |c i|}}
+        <li class="denomination {{i}}">
+            <label>{{ lookup ../config.currencies i }}:</label>
+            <h4 class="denomination-value">{{c}} {{localize "D35E.ls.each"}}</h4>
+        </li>
+        {{/each}}
+    </ol>
+    <button class= "split-coins" type="split-coins" name="split-coins" value="1"><i class="fa fa-coins"></i> {{localize "D35E.ls.splitBy"}} {{actor.flags.loot.ownerCount}}</button>
+    {{/ifeq}}
+
+    {{#ifeq lootsheettype "Merchant"}}
+    <h3 class="gm-header"><i class="fas fa-balance-scale"></i> {{localize "D35E.ls.merchantSettings"}} <i class="fas fa-info-circle help" onclick="$('.merchant-settings-info').toggle();"></i></h3>
+    <div class="merchant-settings-info">{{localize "D35E.ls.merchantInfo"}}</div>
+    <div class="merchant-settings">
+        <div class="flexrow">
+            <div class="flexcol"><h4>{{localize "D35E.ls.rollableTable"}}: </h4></div>
+            <div class="flexcol">
+                <select style="width: 96px" class="sheet-rolltable" name="flags.D35E.rolltable">
+                    <option value="">{{localize "D35E.ls.chooseTable"}}</option>
+                    {{#select actor.flags.D35E.rolltable}}
+                    {{#each rolltables as |table i|}}
+                    <option value="{{table.uuid}}">{{table.name}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+        </div>
+        <div class="flexrow">
+            <div class="flexcol"><h4>{{localize "D35E.ls.shopQtyFormula"}}: </h4></div>
+            <div class="flexcol"><input name="flags.D35E.shopQty" type="text" data-dtype="String" placeholder="e.g. 1d20" value="{{actor.flags.D35E.shopQty}}"/></div>
+        </div>
+        <div class="flexrow">
+            <div class="flexcol"><h4>{{localize "D35E.ls.itemQtyFormula"}}: </h4></div>
+            <div class="flexcol"><input name="flags.D35E.itemQty" type="text" data-dtype="String" placeholder="e.g. 1d4" value="{{actor.flags.D35E.itemQty}}"/></div>
+        </div>
+
+        <div class="flexrow">
+            <div class="flexcol"><h4>{{localize "D35E.ls.shopStackSameName"}}: </h4></div>
+            <div class="flexcol"><input name="flags.D35E.shopStack" type="checkbox" data-dtype="Boolean" value="{{actor.flags.D35E.shopStack}}"  {{#if actor.flags.D35E.shopStack}}checked{{/if}}/></div>
+        </div>
+    </div>
+    <button class="update-inventory" type="update-inventory" name="update-inventory" value="1"><i class="fas fa-balance-scale"></i> {{localize "D35E.ls.updateShopInventory"}} </button>
+    {{/ifeq}}
+</div>
+

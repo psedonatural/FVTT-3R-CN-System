@@ -1,0 +1,19 @@
+# Issues fixed
+- [#1360](https://gitlab.com/dragonshorn/D35E/-/issues/1360) - Shot into melee is not substracted
+- [#1359](https://gitlab.com/dragonshorn/D35E/-/issues/1359) - Compendium Browser doesn't load any entries
+- [#1357](https://gitlab.com/dragonshorn/D35E/-/issues/1357) - Rest breaks on weapon ehancement with 0 enhancement bonus
+- [#1354](https://gitlab.com/dragonshorn/D35E/-/issues/1354) - Combat change "featAc" not working properly and stacking up
+- [#1352](https://gitlab.com/dragonshorn/D35E/-/issues/1352) - Wounding effect not working
+- [#1348](https://gitlab.com/dragonshorn/D35E/-/issues/1348) - Ammunition is not substracted when firing ranged weapons
+- [#1346](https://gitlab.com/dragonshorn/D35E/-/issues/1346) - Combat attack's attack bonus is missing
+- [#1344](https://gitlab.com/dragonshorn/D35E/-/issues/1344) - Auras that are toggled off continue to affect the actor
+- [#1342](https://gitlab.com/dragonshorn/D35E/-/issues/1342) - cannot cast spell from ring
+- [#1341](https://gitlab.com/dragonshorn/D35E/-/issues/1341) - Cast spells from Staffs not working
+- [#1340](https://gitlab.com/dragonshorn/D35E/-/issues/1340) - Smite not working on Paladin
+- [#1336](https://gitlab.com/dragonshorn/D35E/-/issues/1336) - Spell Browser
+- [#1333](https://gitlab.com/dragonshorn/D35E/-/issues/1333) - Adding feats to classes and races from the special features list isn't working
+- [#1332](https://gitlab.com/dragonshorn/D35E/-/issues/1332) - Saving Throws not visible on Class-Details tab
+- [#1331](https://gitlab.com/dragonshorn/D35E/-/issues/1331) - Spell cards not producing output
+- [#1327](https://gitlab.com/dragonshorn/D35E/-/issues/1327) - Bug: sizeMonkDamageRoll(@classes.monk.level,@size,@critMult)
+- [#1322](https://gitlab.com/dragonshorn/D35E/-/issues/1322) - Per Round Special actions Text action not working
+- [#1314](https://gitlab.com/dragonshorn/D35E/-/issues/1314) - Ammo not being deducted from item stack

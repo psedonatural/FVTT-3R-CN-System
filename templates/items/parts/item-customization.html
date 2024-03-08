@@ -1,0 +1,84 @@
+
+<h3 class="form-header" style="position: relative">{{localize "D35E.Source"}}
+</h3>
+
+    <div class="form-group">
+      <label>{{localize "D35E.Source"}}</label>
+      <input type="text" name="system.bookSource" value="{{data.system.bookSource}}" data-dtype="String"/>
+    </div>
+
+<h3 class="form-header" style="position: relative">{{localize "D35E.CustomAttributes"}}
+  <div class="form-group flexrow" style="float: right; position: relative; margin-right: 10px;">
+
+    <label>{{localize "D35E.LockCustomAttributes"}} </label>
+  <label class="checkbox" style="position: relative;">
+    <input type="checkbox" class="stylized" name="system.customAttributesLocked"  data-dtype="Boolean" {{checked data.system.customAttributesLocked}} />
+    <span class="checkmark"></span>
+  </label>
+  </div>
+</h3>
+<ol class="custom-fields form-group form-group-stacked" style="padding: 0">
+  {{#unless data.system.customAttributesLocked}}<a class="custom-field-control add"><i class="fas fa-plus"></i> {{localize "D35E.AddCustomAttribute"}}</a>{{/unless}}
+  {{#each data.system.customAttributes as |part a|}}
+  <li class="custom-field flexcol" data-custom-field="{{a}}">
+    <div class="flexrow" style="width: 100%;">
+    {{#if ../data.system.customAttributesLocked}}
+    <label>{{part.name}}</label>
+    {{else}}
+    <input type="text" name="system.customAttributes.{{a}}.name" placeholder="{{localize "D35E.Name"}}" value="{{part.name}}"/>
+    {{/if}}
+    {{#unless part.showOnDetails}}
+      {{#if part.selectList}}
+        <select name="system.customAttributes.{{a}}.value">
+          {{#select part.value }}
+              {{#each part.selectListArray as |target type|}}
+              <option value="{{type}}">{{target}}</option>
+              {{/each}}
+          {{/select}}
+        </select>
+      {{else}}
+        <input style="flex: 0 160px" type="text" name="system.customAttributes.{{a}}.value" placeholder="{{localize "D35E.Value"}}" value="{{part.value}}"/>
+      {{/if}}
+    {{else}}
+      <input style="flex: 0 160px" type="text" disabled value="{{part.value}}"/>
+    {{/unless}}
+  </div>
+    {{#unless ../data.system.customAttributesLocked}}
+    <div class="flexrow" style="width: 100%;">
+      <label>{{localize "D35E.CustomAttributeList"}} </label>
+      <input style="flex: 0 160px" type="text" name="system.customAttributes.{{a}}.selectList" placeholder="ex. Sword:sword|Dagger:dagger" value="{{part.selectList}}"/>
+
+    </div>
+      <div class="flexrow" style="width: 100%;">
+      <label>{{localize "D35E.ShowOnDescriptionPage"}} </label>
+      <label class="checkbox" style="position: relative;">
+        <input type="checkbox" class="stylized" name="system.customAttributes.{{a}}.showOnDetails"  data-dtype="Boolean" {{checked part.showOnDetails}} />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+      <div class="flexrow" style="width: 100%;">
+      <a class="custom-field-control delete" style="flex: 1; text-align: right"><i class="fas fa-minus"></i> Remove custom attribute</a>
+    </div>
+    {{/unless}}
+  </li>
+  {{/each}}
+</ol>
+{{#unless data.system.customAttributesLocked}}
+<div class="form-group">
+  <label>{{localize "D35E.UseNameFromFormula"}}</label>
+  <label class="checkbox" style="position: relative; flex: 0 20px">
+    <input type="checkbox" class="stylized" name="system.nameFromFormula" {{checked data.system.nameFromFormula}}/>
+    <span class="checkmark"></span>
+  </label>
+</div>
+<div class="form-group">
+  <label>{{localize "D35E.CustomNameFormula"}}</label>
+  <div class="form-fields">
+    <input type="text" name="system.nameFormula" value="{{data.system.nameFormula}}" placeholder="{{localize "D35E.Formula"}}"/>
+  </div>
+</div>
+{{else}}
+{{#if data.system.nameFromFormula}}
+<em>{{localize "D35E.UsesNameFromFormula"}}</em>
+{{/if}}
+{{/unless}}

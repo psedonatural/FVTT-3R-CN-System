@@ -1,0 +1,421 @@
+{
+    "initiative": "1d20 + @attributes.init.total + (@attributes.init.total / 100)",
+    "gridDistance": 5,
+    "download": "https://www.legaciesofthedragon.com/D35E/dnd35e.zip",
+    "templateVersion": 2,
+    "gridUnits": "ft",
+    "authors": [
+        {
+            "name": "Antoni 'Rughalt' Sobkowicz"
+        }
+    ],
+    "media": [
+        {
+            "url": "https://legaciesofthedragon.com/img/logo-dnd35e-bazaar.png",
+            "type": "cover"
+        }
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "path": "lang/en.json",
+            "name": "English"
+        },
+        {
+            "lang": "de",
+            "path": "lang/de.json",
+            "name": "German"
+        },
+        {
+            "lang": "es",
+            "path": "lang/es.json",
+            "name": "Spanish"
+        },
+        {
+            "lang": "fr",
+            "path": "lang/fr.json",
+            "name": "French"
+        },
+        {
+            "lang": "pt-BR",
+            "path": "lang/br.json",
+            "name": "Portugu\u00eas (Brasil)"
+        }
+    ],
+    "version": "2.4.3",
+    "esmodules": [
+        "D35E.js"
+    ],
+    "styles": [
+        "D35E.css"
+    ],
+    "description": "Implementation of 3.5 edition System Reference Document for Foundry VTT. Aiming to provide 100% SRD coverage.",
+    "packFolders": [
+        {
+            "name": "Characters and NPCs",
+            "sorting": "m",
+            "packs": [
+                "classes",
+                "racialfeatures",
+                "feats"
+            ],
+            "folders": [
+                {
+                    "name": "Abilities",
+                    "sorting": "a",
+                    "packs": [
+                        "class-abilities",
+                        "racial-abilities",
+                        "spelllike",
+                        "spell-schools-domains"
+                    ]
+                },
+                {
+                    "name": "Minions",
+                    "sorting": "a",
+                    "packs": [
+                        "minion",
+                        "minion-classes"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Monsters",
+            "sorting": "m",
+            "packs": [
+                "bestiary"
+            ],
+            "folders": [
+                {
+                    "name": "Monster Creation",
+                    "sorting": "a",
+                    "packs": [
+                        "racial-hd",
+                        "natural-attacks",
+                        "templates"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Equipment",
+            "sorting": "m",
+            "packs": [
+                "magicitems",
+                "weapons-and-ammo",
+                "armors-and-shields",
+                "items"
+            ],
+            "folders": [
+                {
+                    "name": "Item Creation",
+                    "sorting": "a",
+                    "packs": [
+                        "enhancements"
+                    ]
+                },
+                {
+                    "name": "Item Abilities",
+                    "sorting": "a",
+                    "packs": [
+                        "item-buffs"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Magic",
+            "sorting": "m",
+            "packs": [
+                "spells",
+                "powers"
+            ],
+            "folders": [
+                {
+                    "name": "Spell Components",
+                    "sorting": "a",
+                    "packs": [
+                        "commonbuffs",
+                        "spell-items",
+                        "common-auras"
+                    ]
+                }
+            ]
+        }
+    ],
+    "packs": [
+        {
+            "path": "./packs/classes",
+            "type": "Item",
+            "system": "D35E",
+            "name": "classes",
+            "label": "Classes"
+        },
+        {
+            "path": "./packs/minion-classes",
+            "type": "Item",
+            "system": "D35E",
+            "name": "minion-classes",
+            "label": "Minion Classes"
+        },
+        {
+            "path": "./packs/commonbuffs",
+            "type": "Item",
+            "system": "D35E",
+            "name": "commonbuffs",
+            "label": "Common Buffs"
+        },
+        {
+            "path": "./packs/spellItems",
+            "type": "Item",
+            "system": "D35E",
+            "name": "spell-items",
+            "label": "Spell Items"
+        },
+        {
+            "path": "./packs/commonauras",
+            "type": "Item",
+            "system": "D35E",
+            "name": "common-auras",
+            "label": "Common Auras"
+        },
+        {
+            "path": "./packs/itembuffs",
+            "type": "Item",
+            "system": "D35E",
+            "name": "item-buffs",
+            "label": "Item Buffs"
+        },
+        {
+            "path": "./packs/magic-items",
+            "type": "Item",
+            "system": "D35E",
+            "name": "magicitems",
+            "label": "Magic Items"
+        },
+        {
+            "path": "./packs/racialfeatures",
+            "type": "Item",
+            "system": "D35E",
+            "name": "racialfeatures",
+            "label": "Races"
+        },
+        {
+            "path": "./packs/racial-abilities",
+            "type": "Item",
+            "system": "D35E",
+            "name": "racial-abilities",
+            "label": "Racial Abilities"
+        },
+        {
+            "path": "./packs/natural-attacks",
+            "type": "Item",
+            "system": "D35E",
+            "name": "natural-attacks",
+            "label": "Natural Attacks"
+        },
+        {
+            "path": "./packs/class-abilities",
+            "type": "Item",
+            "system": "D35E",
+            "name": "class-abilities",
+            "label": "Class Abilities"
+        },
+        {
+            "path": "./packs/spell-like-abilities",
+            "type": "Item",
+            "system": "D35E",
+            "name": "spelllike",
+            "label": "Spell-Like Abilities"
+        },
+        {
+            "path": "./packs/spells",
+            "type": "Item",
+            "system": "D35E",
+            "name": "spells",
+            "label": "Spells"
+        },
+        {
+            "path": "./packs/spell-school-domain",
+            "type": "Item",
+            "system": "D35E",
+            "name": "spell-schools-domains",
+            "label": "Spell Schools and Domains"
+        },
+        {
+            "path": "./packs/templates",
+            "type": "Item",
+            "system": "D35E",
+            "name": "templates",
+            "label": "Templates"
+        },
+        {
+            "path": "./packs/powers",
+            "type": "Item",
+            "system": "D35E",
+            "name": "powers",
+            "label": "Powers"
+        },
+        {
+            "path": "./packs/feats",
+            "type": "Item",
+            "system": "D35E",
+            "name": "feats",
+            "label": "Feats"
+        },
+        {
+            "path": "./packs/items",
+            "type": "Item",
+            "system": "D35E",
+            "name": "items",
+            "label": "Items"
+        },
+        {
+            "path": "./packs/armors-and-shields",
+            "type": "Item",
+            "system": "D35E",
+            "name": "armors-and-shields",
+            "label": "Armor and Shields"
+        },
+        {
+            "path": "./packs/enhancements",
+            "type": "Item",
+            "system": "D35E",
+            "name": "enhancements",
+            "label": "Enhancements"
+        },
+        {
+            "path": "./packs/weapons-and-ammo",
+            "type": "Item",
+            "system": "D35E",
+            "name": "weapons-and-ammo",
+            "label": "Weapons and Ammo"
+        },
+        {
+            "path": "./packs/racial-hd",
+            "type": "Item",
+            "system": "D35E",
+            "name": "racialhd",
+            "label": "Racial HD"
+        },
+        {
+            "path": "./packs/materials",
+            "type": "Item",
+            "system": "D35E",
+            "name": "materials",
+            "label": "Materials"
+        },
+        {
+            "path": "./packs/damage-types",
+            "type": "Item",
+            "system": "D35E",
+            "name": "damage-types",
+            "label": "Damage Types"
+        },
+        {
+            "path": "./packs/srd-rules",
+            "type": "JournalEntry",
+            "system": "D35E",
+            "name": "srd-rules",
+            "label": "SRD Rules Extended Descriptions"
+        },
+        {
+            "path": "./packs/sample-macros",
+            "type": "Macro",
+            "system": "D35E",
+            "name": "sample-macros",
+            "label": "Sample Macros"
+        },
+        {
+            "path": "./packs/roll-tables",
+            "type": "RollTable",
+            "system": "D35E",
+            "name": "roll-tables",
+            "label": "Roll Tables"
+        },
+        {
+            "path": "./packs/item-roll-tables",
+            "type": "RollTable",
+            "system": "D35E",
+            "name": "item-roll-tables",
+            "label": "Item Roll Tables"
+        },
+        {
+            "path": "./packs/summoning-roll-tables",
+            "type": "RollTable",
+            "system": "D35E",
+            "name": "summoning-roll-tables",
+            "label": "Summoning Roll Tables"
+        },
+        {
+            "path": "./packs/bestiary",
+            "type": "Actor",
+            "system": "D35E",
+            "name": "bestiary",
+            "label": "Bestiary"
+        },
+        {
+            "path": "./packs/minions",
+            "type": "Actor",
+            "system": "D35E",
+            "name": "minion",
+            "label": "Minions (Familiars, Animal Companions)"
+        },
+        {
+            "path": "./packs/sample-chars",
+            "type": "Actor",
+            "system": "D35E",
+            "name": "sample-chars",
+            "label": "Sample Characters"
+        },
+        {
+            "path": "./packs/summon",
+            "type": "Actor",
+            "system": "D35E",
+            "name": "summon",
+            "label": "Summoned Bestiary"
+        },
+        {
+            "path": "./packs/traps",
+            "type": "Actor",
+            "system": "D35E",
+            "name": "traps",
+            "label": "Traps"
+        },
+        {
+            "path": "./packs/conditions",
+            "type": "JournalEntry",
+            "system": "D35E",
+            "name": "conditions",
+            "label": "Conditions"
+        },
+        {
+            "path": "./packs/documentation",
+            "type": "JournalEntry",
+            "system": "D35E",
+            "name": "docs",
+            "label": "Documentation"
+        },
+        {
+            "path": "./packs/scenes",
+            "type": "Scene",
+            "system": "D35E",
+            "name": "scenes",
+            "label": "Scenes"
+        }
+    ],
+    "scripts": [],
+    "secondaryTokenAttribute": null,
+    "name": "D35E",
+    "id": "D35E",
+    "socket": true,
+    "url": "https://www.legaciesofthedragon.com",
+    "title": "3.5e SRD",
+    "primaryTokenAttribute": "attributes.hp",
+    "manifest": "https://www.legaciesofthedragon.com/D35E/system.json",
+    "compatibility": {
+        "minimum": "11.309",
+        "verified": "11.311"
+    }
+}

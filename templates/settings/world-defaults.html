@@ -1,0 +1,69 @@
+<form autocomplete="off" onsubmit="event.preventDefault();">
+<div class="flexrow" style="">
+    {{#each skillsets as |skill s|}}
+        <div class="form-group flexrow" style="flex: 400px; margin: 0; padding-left: 4px; padding-right: 4px">
+            <label>{{skill}}</label>
+            <select style="flex: 100px" name="worldDefaults.skills.{{s}}">
+                {{#select (lookup ../settings.worldDefaults.skills s)}}
+                <option value="">{{localize "D35E.Show"}}</option>
+                <option value="hide">{{localize "D35E.Hide"}}</option>
+                {{/select}}
+            </select>
+        </div>
+    {{/each}}
+    </div>
+    <table>
+        <thead>
+        {{#each fields as |v|}}
+        <th>{{v}}</th>
+        {{/each}}
+        <th class="entry-control"><a class="entry-control add-entry"><i class="fas fa-plus"></i></a></th>
+        </thead>
+        <tbody>
+        {{#each entries as |entry index|}}
+        <tr class="entry" data-index="{{index}}">
+            {{#each entry as |v k|}}
+            {{#with v}}
+            {{#if (eq (lookup v 1) "Boolean") }}
+            <td>
+
+                <select class="custom-skill" style="flex: 100px" name="{{index}}-{{k}}" data-index="{{k}}" data-dtype="{{1}}">
+                    {{#select (lookup v 0)}}
+                    <option value="true">{{localize "D35E.True"}}</option>
+                    <option value="false">{{localize "D35E.False"}}</option>
+                    {{/select}}
+                </select>
+            </td>
+            {{/if}}
+            {{#if (eq (lookup v 1) "Attribute") }}
+            <td>
+
+                <select class="custom-skill" style="flex: 100px" name="{{index}}-{{k}}" data-index="{{k}}" data-dtype="{{1}}">
+                    {{#select (lookup v 0)}}
+                    {{#each ../../abilities as |abl a|}}
+                    <option value="{{a}}">{{abl}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </td>
+            {{/if}}
+            {{#if (eq (lookup v 1) "String") }}
+                <td><input type="text" data-index="{{k}}" value="{{0}}" data-dtype="{{1}}" name="{{index}}-{{k}}" /></td>
+            {{/if}}
+            {{/with}}
+            {{/each}}
+            <td class="entry-control"><a class="entry-control delete-entry"><i class="fas fa-minus"></i></a></td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+  <div class="form-group">
+    <button type="button" name="reset">
+      <i class="fas fa-undo"></i> {{localize 'SETTINGS.Reset'}}
+    </button>
+    <button type="submit" name="submit" >
+      <i class="far fa-save"></i> {{localize 'SETTINGS.Save'}}
+    </button>
+  </div>
+</form>

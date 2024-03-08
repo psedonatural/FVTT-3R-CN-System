@@ -1,0 +1,56 @@
+<form onkeydown="return event.key != 'Enter';">
+
+    <div class="flexrow" >
+        <label>宝藏水平</label>
+        <select id="treasureQuality" name="choices">
+            {{#select curQuality}}
+            <option value="mundane">贫乏</option>
+            <option value="minor">少量</option>
+            <option value="medium">中等</option>
+            <option value="major">大量</option>
+            {{/select}}
+        </select>
+    </div>
+
+    <div class="flexrow" style="margin-top: 4px">
+        <label>物品类型</label>
+        <select id="treasureType" name="choices">
+            {{#select curType}}
+            {{#each allowedItemTypes}}
+                <option value="{{id}}">{{description}}</option>
+            {{/each}}          
+            {{/select}}
+        </select>
+    </div>
+
+    <div class="flexrow" style="margin-top: 4px" >
+        <label>量</label>
+        <input type="number" id="treasureAmount" value="{{curAmount}}"></input>
+    </div>
+
+    <div class="flexrow" style="margin-top: 4px" >
+        <label class="checkbox">
+            <input type="checkbox" id="identified" name="identified" {{checked identified}}/> {{localize "D35E.Identified"}}
+        </label>
+    </div>
+    
+
+    <em style="opacity: 0.7">生成器将会根据你所选类型，尽可能多的在你所选的非玩家角色中创建物品。</em>
+
+    <button style="margin-top: 8px" class="addTreasure" type=button>添加宝藏</button>
+     
+        <div class="flexrow" style="margin-top: 4px;">
+            <label class="block-header">宝藏生成目录</label>
+        </div>
+        <ul style="list-style-type: none;">
+        {{#each treasures}}
+        <li  data-index={{@index}}>
+            <span>{{treasureAmount}} X </span><div  class="treasureRow">{{treasureTypeDesc}} - {{treasureQualityDesc}} {{#unless identified}}- unidentified{{/unless}}<a class="delTreasure">             
+                <i class="fas fa-trash"></i></a></div>
+            
+        </li>
+        {{/each}}
+    </ul>
+
+    <button style="margin-top: 8px" class="genTreasure" type=button>创建财宝</button>
+</form> 

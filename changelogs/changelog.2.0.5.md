@@ -1,0 +1,20 @@
+# Issues fixed
+- [#1201](https://gitlab.com/dragonshorn/D35E/-/issues/1201) - Change how $ replacement in special actions behaves
+- [#1200](https://gitlab.com/dragonshorn/D35E/-/issues/1200) - Bug - V10: Can't neither delete custom skills nor add points to them.
+- [#1199](https://gitlab.com/dragonshorn/D35E/-/issues/1199) - Bug - V10: Can't drop any buff into "Special actions (advanced)".
+- [#1198](https://gitlab.com/dragonshorn/D35E/-/issues/1198) - Compendium tab has broken styles
+- [#1195](https://gitlab.com/dragonshorn/D35E/-/issues/1195) - V10 Drag and drop Spells in the Spell List configuration of classes doesn't work.
+- [#1194](https://gitlab.com/dragonshorn/D35E/-/issues/1194) - v10 - drag'n drop in inventory or spellbook : duplicates item
+- [#1192](https://gitlab.com/dragonshorn/D35E/-/issues/1192) - V10 Can't remove created Skills like crafting and can't remove custom attributes in items.
+- [#1188](https://gitlab.com/dragonshorn/D35E/-/issues/1188) - V10 Drag&Drop for spells into inventory to create scrolls/potions/wands not working
+- [#1181](https://gitlab.com/dragonshorn/D35E/-/issues/1181) - Better information message for "spell resistance"
+- [#1179](https://gitlab.com/dragonshorn/D35E/-/issues/1179) - v10 - Problem with drag and drops to populate full attacks with single/natural attacks
+- [#1178](https://gitlab.com/dragonshorn/D35E/-/issues/1178) - v10 - Cause fear spell macro does not function properly
+- [#1171](https://gitlab.com/dragonshorn/D35E/-/issues/1171) - Cant Link People to Their Minons
+- [#1161](https://gitlab.com/dragonshorn/D35E/-/issues/1161) - Cant equip items on a character sheet
+- [#1155](https://gitlab.com/dragonshorn/D35E/-/issues/1155) - Improve Monster not working
+- [#1154](https://gitlab.com/dragonshorn/D35E/-/issues/1154) - Magic Weapon, Greater buff not working as intended
+- [#1137](https://gitlab.com/dragonshorn/D35E/-/issues/1137) - FR: Add an option for Buffs to emit light
+- [#1131](https://gitlab.com/dragonshorn/D35E/-/issues/1131) - no spell resistance button on fireball
+- [#1118](https://gitlab.com/dragonshorn/D35E/-/issues/1118) - [[Bug]] Levels over 20 grant attacks beyond the max of 4
+- [#1109](https://gitlab.com/dragonshorn/D35E/-/issues/1109) - [Minor Spell Error] Scorching Ray Incorrect

@@ -1,0 +1,144 @@
+<div class="D35E chat-card defense-card" data-actor-id="{{actor._id}}" {{#if tokenId}}data-token-id="{{tokenId}}"{{/if}}>
+  <header class="card-header flexrow">
+    <h3 class="actor-name">{{name}} - Defenses</h3>
+  </header>
+
+  <div>
+    {{#if ac}}
+    <div class="defense ac">
+      <table>
+        <tr>
+          <th>{{localize "D35E.ACNormal"}}</th>
+          <th>{{localize "D35E.ACTouch"}}</th>
+          <th>{{localize "D35E.ACFlatFooted"}}</th>
+        </tr>
+        <tr>
+          <td>{{ac.normal}}</td>
+          <td>{{ac.touch}}</td>
+          <td>{{ac.flatFooted}}</td>
+        </tr>
+      </table>
+    </div>
+
+    {{#if ac.notes}}
+    <div class="flexcol property-group">
+      <label>{{localize "D35E.ACNotes"}}</label>
+      <div class="flexrow">
+        {{#each ac.notes as |v|}}
+        <span class="tag">{{{v}}}</span>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{#if cmd}}
+    <div class="defense cmd">
+      <table>
+        <tr>
+          <th>{{localize "D35E.CMDAbbr"}}</th>
+          <th>{{localize "D35E.CMDFlatFooted"}}</th>
+        </tr>
+        <tr>
+          <td>{{cmd.normal}}</td>
+          <td>{{cmd.flatFooted}}</td>
+        </tr>
+      </table>
+    </div>
+
+    {{#if cmd.notes}}
+    <div class="flexcol property-group">
+      <label>{{localize "D35E.CMDNotes"}}</label>
+      <div class="flexrow">
+        {{#each cmd.notes as |v|}}
+        <span class="tag">{{{v}}}</span>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{#if misc.sr}}
+    <div class="defense misc">
+      <table>
+        <tr>
+          <th>{{localize "D35E.SpellResistance"}}</th>
+        </tr>
+        <tr>
+          <td>{{misc.sr}}</td>
+        </tr>
+      </table>
+    </div>
+
+    {{#if misc.srNotes}}
+    <div class="flexcol property-group">
+      <label>{{localize "D35E.SpellResistanceNotes"}}</label>
+      <div class="flexrow">
+        {{#each misc.srNotes as |v|}}
+        <span class="tag">{{{v}}}</span>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+    {{/if}}
+
+    {{#if misc.drNotes}}
+    <div class="flexcol property-group">
+      <label>{{localize "D35E.DamRed"}}</label>
+      <div class="flexrow">
+        {{#each misc.drNotes as |v|}}
+        <span class="tag">{{{v}}}</span>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+
+    {{#if misc.energyResistance}}
+    <div class="flexcol property-group">
+      <label>{{localize "D35E.EnRes"}}</label>
+      <div class="flexrow">
+        {{#each misc.energyResistance as |v|}}
+        <span class="tag">{{{v}}}</span>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+
+    {{#if regen}}
+    <div class="defense regen">
+      <table>
+        <tr>
+          <th>{{localize "D35E.Regeneration"}}</th>
+          <th>{{localize "D35E.FastHealing"}}</th>
+        </tr>
+        <tr>
+          <td>{{#if regen.regen}}{{regen.regen}}{{else}}{{localize "D35E.NonApplicable"}}{{/if}}</td>
+          <td>{{#if regen.fastHealing}}{{regen.fastHealing}}{{else}}{{localize "D35E.NonApplicable"}}{{/if}}</td>
+        </tr>
+      </table>
+    </div>
+    {{/if}}
+    
+    <div class="saving-throws flexrow">
+      <button data-action="save" data-save="fort">{{localize "D35E.SavingThrowFort"}}</button>
+      <button data-action="save" data-save="ref">{{localize "D35E.SavingThrowRef"}}</button>
+      <button data-action="save" data-save="will">{{localize "D35E.SavingThrowWill"}}</button>
+    </div>
+  </div>
+
+  <footer class="card-footer">
+    {{#if hasProperties}}
+    {{#each properties as |prop|}}
+    <div class="flexcol property-group gm-sensitive">
+      <label>{{prop.header}}</label>
+      <div class="flexrow">
+        {{#each prop.value as |v|}}
+        <span class="tag">{{{v}}}</span>
+        {{/each}}
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </footer>
+</div>
+

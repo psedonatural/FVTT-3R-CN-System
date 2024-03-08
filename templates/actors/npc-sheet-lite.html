@@ -1,0 +1,66 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  
+  {{!-- NPC Sheet Header --}}
+  <header class="sheet-header flexrow">
+    <div class="profile" >
+    <img src="{{actor.img}}" title="{{actor.name}}" data-edit="img"/>
+    <img src="{{actor.system.tokenImg}}" class="token-image"  data-edit="system.tokenImg">
+    </div>
+    
+    <div class="header-details flexcol">
+      <div class="header-top flexrow">
+        <h1 class="charname">
+          <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'D35E.CharacterName' }}"/>
+        </h1>
+        
+        <div class="charlevel">
+          <div class="level">
+            <label>CR</label>
+            <input name="system.details.cr" type="text" value="{{labels.cr}}" placeholder="1"/>
+          </div>
+          <div class="experience">
+            <span>{{system.details.xp.value}} XP</span>
+          </div>
+        </div>
+      </div>
+      
+      {{!-- Attributes --}}
+      <ul class="attributes flexrow">
+        <li class="attribute health tooltip">
+          <div class="tooltipcontent">
+            @attributes.hp.value : {{system.attributes.hp.value}}<br/>
+            @attributes.hp.max : {{system.attributes.hp.max}}<br/>
+            @attributes.hp.temp : {{system.attributes.hp.temp}}<br/>
+            @attributes.hp.nonlethal : {{system.attributes.hp.nonlethal}}
+            
+            {{#if sourceDetails.system.attributes.hp.max.length}}
+            <br/><br/>{{ localize 'D35E.FromSources' }}:<br/>
+            {{#each sourceDetails.system.attributes.hp.max as |src|}}
+            {{src.name}}: {{src.value}}<br/>
+            {{/each}}
+            {{/if}}
+          </div>
+          <h4 class="attribute-name box-title">{{ localize 'D35E.Health' }}</h4>
+          <div class="attribute-value multiple">
+            <input name="system.attributes.hp.value" type="text" value="{{system.attributes.hp.value}}"
+            data-dtype="String" placeholder="10"/>
+            <span class="sep"> / </span>
+            <div class="attribute">{{system.attributes.hp.max}}</div>
+          </div>
+          <footer class="attribute-footer">
+            <input name="system.attributes.hp.temp" type="text" class="temphp" placeholder="+{{ localize 'D35E.TempShort' }}"
+            value="{{#if system.attributes.hp.temp}}{{system.attributes.hp.temp}}{{/if}}" data-dtype="Number"/>
+            <input name="system.attributes.hp.nonlethal" type="text" class="temphp" placeholder="{{ localize 'D35E.Nonlethal' }}"
+            value="{{#if system.attributes.hp.nonlethal}}{{system.attributes.hp.nonlethal}}{{/if}}" data-dtype="Number"/>
+            <input name="system.attributes.hp.base" type="text" value="{{#if system.attributes.hp.base}}{{system.attributes.hp.base}}{{/if}}"
+                                                              data-dtype="Number" placeholder="{{ localize 'D35E.Base' }}"/>
+          </footer>
+        </li>
+      </ul>
+    </div>
+  </header>
+  
+  <section class="primary-body">
+  </section>
+  
+</form>

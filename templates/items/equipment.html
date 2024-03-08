@@ -1,0 +1,269 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Item Sheet Header --}}
+  <div class="flexrow" style="flex: 0">
+    <div class="sheet-header-profile">
+      <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+    </div>
+
+    <header class="sheet-header flexrow">
+    <div class="header-details flexrow">
+      {{#if isGM}}
+      <h3 class="charname">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h3>
+
+      <h3 class="charname">
+        <input name="system.unidentified.name" type="text" value="{{data.system.unidentified.name}}" placeholder="{{localize "D35E.UnidentifiedName"}}"/>
+      </h3>
+      {{else}}
+      {{#if showUnidentifiedData}}
+      <h1 class="charname">
+        <input name="system.unidentified.name" type="text" value="{{itemName}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h1>
+      {{else}}
+      <h1 class="charname">
+        <input name="name" type="text" value="{{itemName}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h1>
+      {{/if}}
+      {{/if}}
+
+      <div class="item-subtitle">
+        <h4 class="item-type">{{localize "D35E.Item"}}</h4>
+        <span class="item-status">{{itemStatus}}</span>
+      </div>
+
+      <ul class="summary">
+        <li>
+          {{itemType}}
+        </li>
+        <li>
+          {{#unless showUnidentifiedData}}{{labels.equipmentSubtype}}{{/unless}}
+        </li>
+        <li>
+          {{#if hasMultipleSlots}}{{#unless showUnidentifiedData}}{{labels.slot}}{{/unless}}{{/if}}
+        </li>
+      </ul>
+    </div>
+  </header>
+  </div>
+
+
+  {{#if material.uniqueId}}
+  <section class="original-weapon-box flexrow material-box" style="flex: 0;">
+
+    <div class="sheet-header-small">
+      <img class="" src="{{data.system.material.img}}" title="{{data.system.material.name}}"/>
+    </div>
+    <div class="flexrow">
+      <h3 class="origin-weapon-name">
+        <strong>{{localize "D35E.Material"}}</strong> {{data.system.material.name}}
+      </h3>
+      <a class="btn blue-button view-details-material" style="height: 40px; flex: 0 100px; width: 100px; text-align: center; line-height: 40px; font-family: 'Nodesto'; font-size: 18px;">View details</a>
+    </div>
+  </section>
+  {{/if}}
+
+  {{!-- Item Sheet Navigation --}}
+  <section class="sheet-content flexcol">
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="description">{{ localize "D35E.Description" }}</a>
+    <a class="item" data-tab="details">{{ localize "D35E.Details" }}</a>
+    {{#unless showUnidentifiedData}}
+      <a class="item" data-tab="configuration" style="flex: 0 150px;">{{ localize "D35E.Configuration" }}</a>
+    {{/unless}}
+  </nav>
+
+  {{!-- Item Sheet Body --}}
+  <section class="primary-body">
+
+    {{!-- Description Tab --}}
+    {{> "systems/D35E/templates/items/parts/item-description.html"}}
+
+    {{!-- Details Tab --}}
+    <div class="tab details" data-group="primary" data-tab="details">
+      <h3 class="form-header">{{localize "D35E.Details"}}</h3>
+
+      {{!-- Equipment Type --}}
+      {{#unless showUnidentifiedData}}
+      <div class="form-group">
+        <label>{{localize "D35E.Category"}}</label>
+        <select name="system.equipmentType">
+          {{#select data.system.equipmentType}}
+          {{#each equipmentCategories.types as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+      {{/unless}}
+
+      {{!-- Equipment Subtype --}}
+      {{#unless showUnidentifiedData}}<div class="form-group">
+        <label>{{localize "D35E.Type"}}</label>
+        <select name="system.equipmentSubtype">
+          {{#select data.system.equipmentSubtype}}
+          {{#each equipmentCategories.subTypes as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+
+      {{!-- Material Type --}}
+      <div class="form-group">
+        <label>{{localize "D35E.Material"}}</label>
+        <select name="system.selectedMaterial">
+          {{#select material.uniqueId}}
+          <option value="none">{{localize "D35E.NoMaterial"}}</option>
+          {{#each materials as |material type|}}
+          <option value="{{material.system.uniqueId}}">{{material.name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+      {{/unless}}
+    
+
+      {{!-- Equipment Slot --}}
+      {{#unless showUnidentifiedData}}{{#if hasMultipleSlots}}
+      <div class="form-group">
+        <label>{{localize "D35E.Slot"}}</label>
+        <select name="system.slot">
+          {{#select data.system.slot}}
+          {{#each equipmentSlots as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+      {{else}}
+      <input type="hidden" name="system.slot" value="{{data.system.slot}}" />
+      {{/if}}
+      {{/unless}}
+
+      {{!-- Equipment Status --}}
+      <div class="form-group stacked">
+        <label>{{localize "D35E.EquipmentStatus"}}</label>
+        {{#if data.system.curseActive}}
+        <label class="checkbox">
+          <input type="checkbox" name="system.equipped" disabled {{checked data.system.equipped}}/> {{localize "D35E.Equipped"}} ({{localize "D35E.Cursed"}})
+        </label>
+        {{else}}
+        <label class="checkbox">
+          <input type="checkbox" name="system.equipped" {{checked data.system.equipped}}/> {{localize "D35E.Equipped"}}
+        </label>
+        {{/if}}
+        <label class="checkbox">
+          <input type="checkbox" name="system.masterwork" {{checked data.system.masterwork}}/> {{localize "D35E.Masterwork"}}
+        </label>
+        {{#if isGM}}
+        <label class="checkbox">
+          <input type="checkbox" name="system.identified" {{checked data.system.identified}}/> {{localize "D35E.Identified"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.cursed" {{checked data.system.cursed}}/> {{localize "D35E.Cursed"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.curseActive" {{checked data.system.curseActive}}/> {{localize "D35E.CurseActive"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.identifiedCurse" {{checked data.system.identifiedCurse}}/> {{localize "D35E.CurseIdentified"}}
+        </label>
+        {{/if}}
+      </div>
+
+      {{#if showArmorData}}
+      {{!-- Armor Class --}}
+      <div class="form-group">
+        <label>{{localize "D35E.ArmorClass"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.armor.value" value="{{data.system.armor.value}}" data-dtype="Number"/>
+        </div>
+      </div>
+
+      {{!-- Enhancement Bonus --}}
+      <div class="form-group">
+        <label>{{localize "D35E.EnhancementBonus"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.armor.enh" value="{{data.system.armor.enh}}" data-dtype="Number"/>
+        </div>
+      </div>
+
+
+      {{/if}}
+
+      {{#unless showUnidentifiedData}}
+      {{!-- Dexterity Modifier --}}
+      <div class="form-group">
+        <label>{{localize "D35E.MaxDexterityModifier"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.armor.dex" value="{{data.system.armor.dex}}" placeholder="{{localize "D35E.Unlimited"}}"/>
+        </div>
+      </div>
+
+      {{!-- Armor Check Penalty --}}
+      <div class="form-group">
+        <label>{{localize "D35E.ArmorCheckPenalty"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.armor.acp" value="{{data.system.armor.acp}}" data-dtype="Number" placeholder="0"/>
+        </div>
+      </div>
+
+      {{!-- Spell Failure --}}
+      <div class="form-group">
+        <label>{{localize "D35E.ArcaneSpellFailure"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.spellFailure" value="{{data.system.spellFailure}}" data-dtype="Number" placeholder="0"/>
+        </div>
+      </div>
+
+      <h3 class="form-header">{{localize "D35E.EquipmentUsage"}}</h3>
+
+      {{!-- Item Activation Template --}}
+      {{> "systems/D35E/templates/items/parts/item-activation.html"}}
+
+      <h3 class="form-header">{{localize "D35E.Action"}}</h3>
+
+      {{!-- Item Action Template --}}
+      {{> "systems/D35E/templates/items/parts/item-action.html"}}
+
+      <h3 class="form-header">{{localize "D35E.MeasureTemplate"}}</h3>
+
+      {{!-- Item Measure Template --}}
+      {{> "systems/D35E/templates/items/parts/item-template.html"}}
+
+      <h3 class="form-header">{{localize "D35E.Senses"}}</h3>
+      {{> "systems/D35E/templates/items/parts/item-senses.html"}}
+
+      <h3 class="form-header">{{localize "D35E.LightItemLight"}}</h3>
+      {{> "systems/D35E/templates/items/parts/item-light.html"}}
+      {{/unless}}
+    </div>
+
+    {{!-- Changes Tab --}}
+    {{#unless showUnidentifiedData}}
+
+    <div class="tab flexcol active" data-group="primary" data-tab="configuration">
+      <nav class="sheet-navigation tabs subtabs configuration" data-group="configuration">
+        {{#each registeredTabs as |tab|}}
+        <a class="item" data-tab="{{tab.id}}">{{tab.name}}</a>
+        {{/each}}
+      </nav>
+
+    
+      <div class="flexrow configuration-container" style="overflow: hidden; height: 100%">
+        <section class="configuration-body" style="display: block; height: 100%">
+          {{#each registeredTabs as |tab|}}
+          <div class="tab configuration-group flexcol" data-group="configuration" data-tab="{{tab.id}}">
+            {{> (lookup tab 'sheet') ..}}
+          </div>
+          {{/each}}
+        </section>
+      </div>
+    </div>
+    {{/unless}}
+  </section>
+  </section>
+</form>

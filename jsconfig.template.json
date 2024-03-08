@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "ES2022"],
+    "allowJs": true,
+    "checkJs": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@actor/*": ["./module/actor/*"],
+      "@item/*": ["./module/item/*"],
+      "@combat/*": ["./module/combat/*"],
+      "@component/*": ["./module/components/*"],
+      "@config": ["./module/config.js"]
+    },
+    "types": ["@league-of-foundry-developers/foundry-vtt-types"]
+  },
+  "include": ["**/*.js", "**/*.d.ts"],
+  "exclude": ["node_modules", "dist", "foundry"]
+}

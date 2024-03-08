@@ -1,0 +1,329 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Item Sheet Header --}}
+  <div class="flexrow" style="flex: 0">
+    <div class="sheet-header-profile">
+      <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+    </div>
+
+    <header class="sheet-header flexrow">
+
+    <div class="header-details flexrow">
+      <div class="flexcol">
+      {{#if isGM}}
+      <h3 class="charname">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h3>
+
+      <h3 class="charname">
+        <input name="system.unidentified.name" type="text" value="{{data.system.unidentified.name}}" placeholder="{{localize "D35E.UnidentifiedName"}}"/>
+      </h3>
+      {{else}}
+      {{#if showUnidentifiedData}}
+      <h1 class="charname">
+        <input name="system.unidentified.name" type="text" value="{{itemName}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h1>
+      {{else}}
+      <h1 class="charname">
+        <input name="name" type="text" value="{{itemName}}" placeholder="{{localize "D35E.ItemName"}}"/>
+      </h1>
+      {{/if}}
+      {{/if}}
+      </div>
+
+      <div class="item-subtitle">
+        <h4 class="item-type">{{localize "D35E.Item"}}</h4>
+        <span class="item-status">{{itemStatus}}</span>
+      </div>
+
+      <ul class="summary">
+        <li>
+          {{itemType}}
+        </li>
+        <li>
+          {{labels.weaponType}}
+        </li>
+        <li>
+          {{labels.weaponSubtype}}
+        </li>
+      </ul>
+
+    </div>
+  </header>
+  </div>
+
+  {{#if material.uniqueId}}
+  <section class="original-weapon-box flexrow material-box" style="flex: 0;">
+
+    <div class="sheet-header-small">
+      <img class="" src="{{materialMetadata.img}}" title="{{materialMetadata.name}}"/>
+    </div>
+    <div class="flexrow">
+      <h3 class="origin-weapon-name">
+        <strong>{{localize "D35E.Material"}}</strong> {{materialMetadata.name}}
+      </h3>
+      <a class="btn blue-button view-details-material" style="height: 40px; flex: 0 100px; width: 100px; text-align: center; line-height: 40px; font-family: 'Nodesto'; font-size: 18px;">View details</a>
+    </div>
+  </section>
+  {{/if}}
+
+  <section class="sheet-content flexcol sheet-weapon" style="{{#if material.uniqueId}}min-height: 335px; height: 335px{{/if}}">
+  {{!-- Item Sheet Navigation --}}
+  <nav class="sheet-navigation tabs" data-group="primary">
+    <a class="item active" data-tab="description">{{ localize "D35E.Description" }}</a>
+    <a class="item" data-tab="details">{{ localize "D35E.Details" }}</a>
+    {{#unless showUnidentifiedData}}
+    <a class="item" data-tab="configuration" style="flex: 0 150px;">{{ localize "D35E.Configuration" }}</a>
+    {{/unless}}
+  </nav>
+
+  {{!-- Item Sheet Body --}}
+  <section class="primary-body">
+
+    {{!-- Description Tab --}}
+    {{> "systems/D35E/templates/items/parts/item-description.html"}}
+
+    {{!-- Details Tab --}}
+    <div class="tab details" data-group="primary" data-tab="details">
+      <h3 class="form-header">武器详情</h3>
+
+      {{!-- Material Type --}}
+      <div class="form-group">
+        <label>{{localize "D35E.Material"}}</label>
+        <select name="system.selectedMaterial">
+          {{#select material.uniqueId}}
+          <option value="none">{{localize "D35E.NoMaterial"}}</option>
+          {{#each materials as |material type|}}
+            <option value="{{material.system.uniqueId}}">{{material.name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+
+
+      {{!-- Weapon Type --}}
+      <div class="form-group">
+        <label>{{localize "D35E.Category"}}</label>
+        <select name="system.weaponType">
+          {{#select data.system.weaponType}}
+          {{#each weaponCategories.types as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      {{!-- Weapon Subtype --}}
+      <div class="form-group">
+        <label>{{localize "D35E.Type"}}</label>
+        <select name="system.weaponSubtype">
+          {{#select data.system.weaponSubtype}}
+          {{#each weaponCategories.subTypes as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>{{localize "D35E.Base"}} {{localize "D35E.Type"}}</label>
+        <input style="flex: 1" type="text" name="system.baseWeaponType" value="{{data.system.baseWeaponType}}" data-dtype="String"/>
+      </div>
+
+      {{!-- Weapon Size --}}
+      <div class="form-group">
+        <label>{{localize "D35E.WeaponSize"}}</label>
+        <select name="system.weaponData.size">
+          {{#select data.system.weaponData.size}}
+          {{#each config.actorSizes as |name type|}}
+          <option value="{{type}}">{{name}}</option>
+          {{/each}}
+          {{/select}}
+        </select>
+      </div>
+
+      {{!-- Equipment Status --}}
+      <div class="form-group stacked">
+        <label>{{localize "D35E.EquipmentStatus"}}</label>
+        {{#if data.system.curseActive}}
+        <label class="checkbox">
+          <input type="checkbox" name="system.equipped" disabled {{checked data.system.equipped}}/> {{localize "D35E.Equipped"}} ({{localize "D35E.Cursed"}})
+        </label>
+        {{else}}
+        <label class="checkbox">
+          <input type="checkbox" name="system.equipped" {{checked data.system.equipped}}/> {{localize "D35E.Equipped"}}
+        </label>
+        {{/if}}
+        {{#if isGM}}
+        <label class="checkbox">
+          <input type="checkbox" name="system.identified" {{checked data.system.identified}}/> {{localize "D35E.Identified"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.cursed" {{checked data.system.cursed}}/> {{localize "D35E.Cursed"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.curseActive" {{checked data.system.curseActive}}/> {{localize "D35E.CurseActive"}}
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="system.identifiedCurse" {{checked data.system.identifiedCurse}}/> {{localize "D35E.CurseIdentified"}}
+        </label>
+        {{/if}}
+        <label class="checkbox">
+          <input type="checkbox" name="system.masterwork" {{checked data.system.masterwork}}/> {{localize "D35E.Masterwork"}}
+        </label>
+      </div>
+
+      {{#unless showUnidentifiedData}}
+      {{!-- Weapon Properties --}}
+      <div class="form-group stacked weapon-properties">
+        <label>{{localize "D35E.WeaponProperties"}}</label>
+      </div>
+      <div class="flexrow">
+        {{#each config.weaponProperties as |name prop|}}
+        <div class="toggle">
+          <input id="{{../randomUuid}}-data.properties.{{prop}}" type="checkbox" name="system.properties.{{prop}}" {{checked (lookup ../data.system.properties prop)}}/>
+          <label for="{{../randomUuid}}-data.properties.{{prop}}">{{#if (lookup ../data.system.properties prop)}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{ name }}</label>
+        </div>
+        {{/each}}
+      </div>
+
+      {{#if isRanged}}
+      <div class="form-group">
+        <label>{{localize "D35E.Range"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.weaponData.range" value="{{data.system.weaponData.range}}" data-dtype="Number"/>
+        </div>
+      </div>
+      {{/if}}
+
+      <div class="form-group">
+        <label>{{localize "D35E.EnhancementBonus"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.enh" value="{{data.system.enh}}" data-dtype="Number" placeholder="0"/>
+        </div>
+      </div>
+
+      {{!-- Weapon Bonus Attack Formula --}}
+      <div class="form-group">
+        <label>{{localize "D35E.BonusAttackFormula"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.weaponData.attackFormula" value="{{data.system.weaponData.attackFormula}}" placeholder="{{localize "D35E.BonusAttackFormula"}}"/>
+        </div>
+      </div>
+
+      {{!-- Weapon Damage --}}
+      <div class="form-group">
+        <label>{{localize "D35E.BaseWeaponDamage"}} ({{localize "D35E.ActorSizeMedium"}})</label>
+        <div class="form-fields">
+          <input type="text" name="system.weaponData.damageRoll" value="{{data.system.weaponData.damageRoll}}" placeholder="{{localize "D35E.DamageRoll"}}"/>
+          <select name="system.weaponData.damageTypeId">
+            {{#select data.system.weaponData.damageTypeId}}
+            <option value="">{{localize "D35E.Custom"}}</option>
+            {{#each damageTypes as |damage type|}}
+            <option value="{{damage.system.uniqueId}}">{{damage.name}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+          {{#unless data.system.weaponData.damageTypeId}}
+          <input type="text" name="system.weaponData.damageType" value="{{data.system.weaponData.damageType}}" placeholder="{{localize "D35E.DamageType"}}"/>
+          {{/unless}}
+        </div>
+      </div>
+
+      {{!-- Weapon Bonus Damage Formula --}}
+      <div class="form-group">
+        <label>{{localize "D35E.BonusDamageFormula"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.weaponData.damageFormula" value="{{data.system.weaponData.damageFormula}}" placeholder="{{localize "D35E.BonusDamageFormula"}}"/>
+        </div>
+      </div>
+
+      {{!-- Weapon Critical Damage --}}
+      <div class="form-group">
+        <label>{{localize "D35E.BaseWeaponCritical"}}</label>
+        <div class="form-fields">
+          <input type="text" name="system.weaponData.critRange" value="{{data.system.weaponData.critRange}}" placeholder="20"/>
+          <input type="text" name="system.weaponData.critMult" value="{{data.system.weaponData.critMult}}" placeholder="2"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>{{localize "D35E.WeaponDamageAlignment"}}</label>
+      </div>
+      <div class="flexrow">
+        <div class="form-group" style="flex: 1">
+          <div class="toggle" style="width: 125px">
+            <input id="{{randomUuid}}-data.weaponData.alignment.good" type="checkbox" name="system.weaponData.alignment.good" {{checked data.system.weaponData.alignment.good}}/>
+            <label style="width: 125px" for="{{randomUuid}}-data.weaponData.alignment.good">{{#if data.system.weaponData.alignment.good}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize "D35E.AlignmentGood"}}</label>
+          </div>
+        </div>
+        <div class="form-group" style="flex: 1">
+          <div class="toggle" style="width: 125px">
+            <input id="{{randomUuid}}-data.weaponData.alignment.evil" type="checkbox" name="system.weaponData.alignment.evil" {{checked data.system.weaponData.alignment.evil}}/>
+            <label style="width: 125px" for="{{randomUuid}}-data.weaponData.alignment.evil">{{#if data.system.weaponData.alignment.evil}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize "D35E.AlignmentEvil"}}</label>
+          </div>
+        </div>
+        <div class="form-group" style="flex: 1">
+          <div class="toggle" style="width: 125px">
+            <input id="{{randomUuid}}-data.weaponData.alignment.chaotic" type="checkbox" name="system.weaponData.alignment.chaotic" {{checked data.system.weaponData.alignment.chaotic}}/>
+            <label style="width: 125px" for="{{randomUuid}}-data.weaponData.alignment.chaotic">{{#if data.system.weaponData.alignment.chaotic}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize "D35E.AlignmentChaotic"}}</label>
+          </div>
+        </div>
+        <div class="form-group" style="flex: 1">
+          <div class="toggle">
+            <input id="{{randomUuid}}-data.weaponData.alignment.lawful" type="checkbox" name="system.weaponData.alignment.lawful" {{checked data.system.weaponData.alignment.lawful}}/>
+            <label style="width: 125px" for="{{randomUuid}}-data.weaponData.alignment.lawful">{{#if data.system.weaponData.alignment.lawful}}<i class="far fa-check-square"></i>{{else}}<i class="far fa-square"></i>{{/if}}{{localize "D35E.AlignmentLawful"}}</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group stacked">
+        <label>{{localize "D35E.AttackNotes"}}</label>
+        <textarea type="text" name="system.attackNotes">{{data.system.attackNotes}}</textarea>
+      </div>
+      <div class="form-group stacked">
+        <label>{{localize "D35E.EffectNotes"}}</label>
+        <textarea type="text" name="system.effectNotes">{{data.system.effectNotes}}</textarea>
+      </div>
+
+      <h3 class="form-header">{{localize "D35E.LightItemLight"}}</h3>
+      {{> "systems/D35E/templates/items/parts/item-light.html"}}
+      {{/unless}}
+    </div>
+
+    {{!-- Changes Tab --}}
+    {{!-- Changes Tab --}}
+    {{#unless showUnidentifiedData}}
+
+    <div class="tab flexcol active" data-group="primary" data-tab="configuration">
+      <nav class="sheet-navigation tabs subtabs configuration" data-group="configuration">
+        {{#each registeredTabs as |tab|}}
+        <a class="item" data-tab="{{tab.id}}">{{tab.name}}</a>
+        {{/each}}
+      </nav>
+
+
+      <div class="flexrow configuration-container" style="overflow: hidden; height: 100%">
+        <section class="configuration-body" style="display: block; height: 100%">
+          {{#each registeredTabs as |tab|}}
+          <div class="tab configuration-group flexcol" data-group="configuration" data-tab="{{tab.id}}">
+            {{> (lookup tab 'sheet') ..}}
+          </div>
+          {{/each}}
+        </section>
+      </div>
+    </div>
+    {{/unless}}
+  </section>
+  </section>
+
+<!--  {{#unless showUnidentifiedData}}-->
+<!--  {{#if owner}}-->
+<!--  <div class="form-group">-->
+<!--    <button type="button" name="create-attack">{{localize "D35E.CreateAttack"}}</button>-->
+<!--  </div>-->
+<!--  {{/if}}-->
+<!--  {{/unless}}-->
+</form>
