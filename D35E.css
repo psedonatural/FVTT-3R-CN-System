@@ -1074,17 +1074,17 @@
 }
 .D35E.sheet.actor .sheet-header .hd label {
   display: inline;
-  font-size: 28px;
+  font-size: 20px;
   text-align: right;
   /*!*挑战等级和HD*!*/
 }
 .D35E.sheet.actor .sheet-header .hd input {
   display: inline;
   width: 36px;
-  font-size: 26px;
+  font-size: 20px;
   text-align: center;
   flex: 0 0 40px;
-  height: 44px;
+  height: 40px;
   /*怪物卡生命值大小*/
 }
 .D35E.sheet.actor .sheet-header .charlevel {
@@ -1108,7 +1108,7 @@
 }
 .D35E.sheet.actor .sheet-header .charlevel .level input {
   display: inline;
-  width: 36px;
+  width: 35px;
   font-size: 24px;
   text-align: center;
 }
@@ -1209,7 +1209,7 @@
 }
 .D35E.sheet.actor ul.attributes li.attribute.high {
   height: 80px;
-  width: 55px;
+  width: 50px;
   /*角色等级数值框宽度*/
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value {
@@ -3872,6 +3872,11 @@
 .D35E.sheet.actor.character .sheet-header .charlevel .level {
   height: 28px;
   line-height: 16px;
+  width: 234px; /* 设置容器的宽度 */
+  white-space: nowrap; /* 防止文本换行 */
+  overflow: hidden; /* 隐藏溢出的文本 */
+  text-overflow: ellipsis; /* 用省略号表示溢出的文本 */
+  /*限制右上角职业文本显示区域*/
 }
 .D35E.sheet.actor.character .sheet-header .charlevel .experience input[type="text"] {
   width: 80px;
@@ -3990,7 +3995,7 @@
   padding: 0 0 0 6px;
 }
 .D35E.sheet.actor.npc .race-container .race {
-  flex: 0 0 32px;
+  flex: 0 0 22px;
   background-size: contain;
   line-height: 22px;
   text-align: center;
@@ -4045,13 +4050,14 @@
   padding: 0 0 0 6px;
 }
 .D35E.sheet.actor.npc .material-container .material {
-  flex: 0 0 22px;
+  flex: 0 0 30px;
   background-size: contain;
-  line-height: 24px;
+  line-height: 22px;
   text-align: center;
   vertical-align: baseline;
   margin-right: 4px;
   height: 22px;
+  /*物品材料部分*/
 }
 .D35E.sheet.actor.npc .material-container .material.rollable:hover {
   background-image: url("../../icons/svg/d20-black.svg") !important;

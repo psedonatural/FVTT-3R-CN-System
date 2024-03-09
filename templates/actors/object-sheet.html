@@ -9,7 +9,7 @@
       </h1>
       <div class="hd flexcol" style="flex: 0 0 100px;">
         <div class="flexrow" style=" line-height: 32px;">
-          <label style="line-height: 34px; margin-right: 4px">{{ localize 'D35E.HP' }}</label>
+          <label style="line-height: 34px; font-size: 15px; margin-right: 4px">{{ localize 'D35E.HP' }}</label>
           <input style="height: 32px; line-height: 32px; font-size: 24px" type="text" disabled value="{{system.attributes.hp.value}}" placeholder="0"
                  data-dtype="Number"/>
         </div>
@@ -21,7 +21,7 @@
       </div>
       <div class="hd flexcol" style="flex: 0 0 110px;">
         <div class="flexrow" style=" line-height: 32px;">
-          <label style="line-height: 34px; margin-right: 4px">{{ localize 'D35E.AC' }}</label>
+          <label style="line-height: 34px; font-size: 15px; margin-right: 4px">{{ localize 'D35E.AC' }}</label>
           <input style="height: 32px; line-height: 32px; font-size: 24px" type="text" disabled value="{{system.attributes.ac.normal.total}}" placeholder="1"
                  data-dtype="Number"/>
         </div>
@@ -37,7 +37,7 @@
       </h1>
       <div class="hd flexcol" style="flex: 0 0 168px;">
         <div class="flexrow" style=" line-height: 32px;">
-          <label style="line-height: 34px; margin-right: 4px">{{ localize 'D35E.BreakDC' }}</label>
+          <label style="line-height: 34px; font-size: 15px; margin-right: 4px">{{ localize 'D35E.BreakDC' }}</label>
           <input style="height: 32px; line-height: 32px; font-size: 24px" type="text" disabled value="{{system.details.breakDC.total}}" placeholder="1"
                  data-dtype="Number"/>
         </div>
@@ -49,7 +49,7 @@
       </div>
       <div class="hd flexcol" style="flex: 0 0 168px;">
         <div class="flexrow" style=" line-height: 32px;">
-          <label style="line-height: 34px; margin-right: 4px">{{ localize 'D35E.Hardness' }}</label>
+          <label style="line-height: 34px; font-size: 15px; margin-right: 4px">{{ localize 'D35E.Hardness' }}</label>
           <input style="height: 32px; line-height: 32px; font-size: 24px" type="text" disabled value="{{system.attributes.hardness.total}}" placeholder="1"
                  data-dtype="Number"/>
         </div>
@@ -102,7 +102,7 @@
           <div class="inventory-group flexcol {{#if attacks.misc.initial}}active{{/if}}" data-group="attacks" data-tab="{{sid}}">
             <ol class="inventory-list sub-scroll scroll-attacks">
               <li class="inventory-header flexrow">
-                <h3 class="item-name flexrow">Attacks and Features</h3>
+                <h3 class="item-name flexrow">攻击和特性</h3>
 
 
                 <div class="item-detail item-actions"><span>{{ localize 'D35E.ActionPlural' }}</span></div>
