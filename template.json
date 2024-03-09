@@ -1,7 +1,7 @@
 {
   "Actor": {
     "types": [
-      "Character",
+      "character",
       "npc",
       "trap",
       "object"
