@@ -2558,7 +2558,7 @@
   border-radius: 4px;
   line-height: 34px;
   font-family: "OSbold","Nodesto", "Signika", "Palatino Linotype", serif;
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
   /*怪物卡HD大小，职业生命值多少*/
 }
@@ -2574,9 +2574,10 @@
 }
 .D35E.sheet.item .sheet-header ul.attributes li.attribute .attribute-value input {
   display: inline;
+  font-family: "OSregular","Nodesto", "Signika", "Palatino Linotype", serif;
   max-width: 80%;
   margin: 0;
-  font-size: 34px;
+  font-size: 32px;
   height: 36px;
   /*职业生命值窗口大小*/
 }
@@ -3871,7 +3872,7 @@
 }
 .D35E.sheet.actor.character .sheet-header .charlevel .level {
   height: 28px;
-  line-height: 16px;
+  line-height: 32px;
   width: 234px; /* 设置容器的宽度 */
   white-space: nowrap; /* 防止文本换行 */
   overflow: hidden; /* 隐藏溢出的文本 */
@@ -6260,7 +6261,8 @@ h3 {
 }
 .d35ecustom .sheet.item .header-details h1 input {
   color: #2C606D;
-  margin: 0px 12px;
+  margin: 19px 4px;
+  /*职业名字窗口位置*/
 }
 .d35ecustom .level-up-data .window-header {
   background: url("icons/background/paper.png"), url("ui/parchment.jpg") repeat;
