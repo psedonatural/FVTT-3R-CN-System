@@ -1,15 +1,15 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
     {{!-- Item Sheet Header --}}
-    <div class="flexrow">
+    <div class="flexrow" style="flex: 0">
         <div class="sheet-header-profile">
-            <img class="profile" src="{{item.img}}" title="{{item.name}}" data-edit="img"/>
+            <img class="profile" src="{{item.img}}"  title="{{item.name}}" data-edit="img"/>
         </div>
 
         <header class="sheet-header flexrow">
-        <div class="header-details flexrow">
+            <div class="header-details flexrow">
             <h1 class="charname">
-                <input name="name" type="text" value="{{item.name}}" placeholder="{{localize "D35E.ItemName"}}"/>
+                <input name="name" type="text" value="{{item.name}}"  style="top: -15px; position: relative; height: 50px;" placeholder="{{localize "D35E.ItemName"}}"/>
             </h1>
         </div>
     </header>

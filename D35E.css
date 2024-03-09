@@ -1137,7 +1137,7 @@
   width: 48%;
 }
 .D35E.sheet.actor h4.box-title {
-  line-height: 17px;
+  line-height: 20px;
   margin: 4px 8px 2px;
   font-size: 15px;
   border-bottom: 1px solid #b5b3a4;
@@ -1214,7 +1214,7 @@
 }
 .D35E.sheet.actor ul.attributes li.attribute .attribute-value {
   height: 28px;
-  line-height: 24px;
+  line-height: 17px;
   font-size: 18px;
   /*战斗属性和豁免*/
 }
@@ -2521,6 +2521,8 @@
 }
 .D35E.sheet.item .sheet-header {
   flex: 1;
+  height: 122px;
+  /*种族表排版*/
 }
 .D35E.sheet.item .sheet-header img.profile {
   border: 2px solid #000;
@@ -2607,9 +2609,10 @@
 }
 .D35E.sheet.item .tag-list {
   list-style: none;
-  margin: 0;
+  margin: 8px 0px;
   padding: 0;
   text-align: left;
+  /*专长tag位置*/
 }
 .D35E.sheet.item .tag-list li {
   font-family: "OSregular","Signika", "Palatino Linotype", serif;
@@ -6258,10 +6261,12 @@ h3 {
 }
 .d35ecustom .sheet.item .header-details h1 {
   padding: 0;
+  height: 40px;
+  /*职业名字高低*/
 }
 .d35ecustom .sheet.item .header-details h1 input {
   color: #2C606D;
-  margin: 19px 4px;
+  margin: 8px 4px;
   /*职业名字窗口位置*/
 }
 .d35ecustom .level-up-data .window-header {

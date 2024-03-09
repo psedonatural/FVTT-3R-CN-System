@@ -26,7 +26,7 @@
                 <span class="tooltipcontent">@classes.{{item.data.tag}}.level : {{data.systemlevels}}</span>
                 <h4 class="attribute-name box-title">{{localize "D35E.BaseHD"}}</h4>
                 <div class="attribute-value">
-                    <input type="text" name="system.levels" value="{{data.system.levels}}" placeholder="{{localize " D35E.Level"}}"
+                    <input type="text" name="system.levels" value="{{data.system.levels}}" placeholder="{{localize "等级"}}"
                     data-dtype="Number"/>
                 </div>
                 <footer class="attribute-footer">
@@ -38,7 +38,7 @@
                 <span class="tooltipcontent">@classes.{{item.data.tag}}.level : {{data.systemlevels}}</span>
                 <h4 class="attribute-name box-title">{{localize "D35E.Level"}}</h4>
                 <div class="attribute-value">
-                    <input type="text" name="system.levels" value="{{data.system.levels}}" placeholder="{{localize " D35E.Level"}}"
+                    <input type="text" name="system.levels" value="{{data.system.levels}}" placeholder="{{localize "等级"}}"
                     data-dtype="Number"/>
                 </div>
                 <footer class="attribute-footer">
@@ -171,7 +171,7 @@
                             </div>
 
                             <div>
-                                <h2 class="p1" style="margin-top: 1rem">Class Features</h2>
+                                <h2 class="p1" style="margin-top: 1rem">职业特性</h2>
                                 {{#each abilitiesDescription as |item i|}}
                                 <div class="progression-ability-description">
                                     <strong>{{item.name}}:</strong> {{{item.description}}}
@@ -513,7 +513,7 @@
                             <div class="form-group">
                                 <label>{{localize "D35E.NonActiveClassAbilities"}}</label><a class="entry-selector"
                                                                                              for="system.nonActiveClassAbilities"
-                                                                                             data-fields="{{localize " D35E.Level"}};Ability;Description"
+                                                                                             data-fields="{{localize "等级"}};能力;描述)"
                                 data-dtypes="Number;String;String"><i class="fas fa-edit"></i></a>
                             </div>
                         </div>

@@ -108,9 +108,9 @@
         {{#if canPowerAttack}}
         <label class="slider">猛力攻击 <i class="fas fa-history tooltip" style="color: lightgray;"><span class="tooltipcontent">{{localize "D35E.ValuePersisted"}}</span></i>
         </label>
-        <input type="range" name="pa" min="0" max="{{maxPowerAttackValue}}" value="0" class="slider auto-save" style="flex: 1"
+        <input type="range" name="pa" min="0" max="{{maxPowerAttackValue}}" value="0" class="slider auto-save" style="flex: 1;color: white;background: transparent"
                onchange="this.nextElementSibling.value=this.value">
-        <input type="text" class="auto-save" name="power-attack" valuZe="0" disabled style="flex: 0 30; margin-left: 8px"/>
+        <input type="text" class="auto-save" name="power-attack" valuZe="0" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
         {{/if}}
 
         {{#if canFlurryOfBlows}}
