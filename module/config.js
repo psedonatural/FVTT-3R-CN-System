@@ -1178,9 +1178,9 @@ D35E.buffTargets = {
   },
   "spellcastingAbility": {
     "_label": "D35E.BuffSpellbookSpellcastingAbility",
-    "scaPrimary": "一号",
-    "scaSecondary": "二号",
-    "scaTetriary": "三号",
+    "scaPrimary": "第一页",
+    "scaSecondary": "第二页",
+    "scaTetriary": "第三页",
     "scaSpelllike": "类法术"
   },
   "misc": {

@@ -117,7 +117,7 @@ export class ItemUse {
         actor.items.filter(
           (o) =>
             o.type === "feat" &&
-            (getOriginalNameIfExists(o) === "Multiweapon Fighting" || o.system.changeFlags.multiweaponAttack)
+            (getOriginalNameIfExists(o) === "多武器战斗Multiweapon Fighting" || o.system.changeFlags.multiweaponAttack)
         ).length > 0,
       hasTwoImprovedWeaponFightingFeat =
         actor.items.filter((o) => o.type === "feat" && getOriginalNameIfExists(o) === "精通双武器战斗Improved Two-Weapon Fighting")

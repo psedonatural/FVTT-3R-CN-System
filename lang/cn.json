@@ -699,7 +699,7 @@
     "D35E.CastsLeft": "准备法术",
     "D35E.CasterLevelOffset": "施法者等级调整",
     "D35E.CasterLevelCheck": "施法者等级检定",
-    "D35E.CasterLevel": "施法者等级",
+    "D35E.CasterLevel": "法术等级",
     "D35E.CasterLevelBonusFormula": "施法者等级加值",
     "D35E.CasterLevelNotes": "施法者等级描述",
     "D35E.Domain": "领域",
@@ -1689,7 +1689,7 @@
 	"D35E.ConvertToLoot": "转变为战利品(棋子)",
 	"D35E.CustomTreasureGenerator": "生成自定义宝藏 (棋子)",
 	"D35E.EncounterGenerator": "生成遭遇",
-	"D35E.EntrySelector": "添加规格",
+	"D35E.EntrySelector": "添加标签/描述",
 	"D35E.True": "启用",
     "D35E.False": "停用",
 	"D35E.Feat": "专长",
@@ -1870,6 +1870,7 @@
     "D35E.Vision": "视觉",
     "D35E.BaseBreakDC": "基础击破DC",
     "D35E.ActorSheetPFNPCObject": "物品棋子",
+    "D35E.ShortDescription": "简述",
 	"D35E.DamagePoolInfo": "启用伤害池，使得状态能在吸收一定伤害后失效（例如法师的石肤术）。为了让其能正常运作，该状态还必须提供伤害减免或能量抗力。 "
 	
 }
