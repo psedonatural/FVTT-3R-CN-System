@@ -110,7 +110,7 @@
         </label>
         <input type="range" name="pa" min="0" max="{{maxPowerAttackValue}}" value="0" class="slider auto-save" style="flex: 1;color: white;background: transparent"
                onchange="this.nextElementSibling.value=this.value">
-        <input type="text" class="auto-save" name="power-attack" valuZe="0" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+        <input type="text" class="auto-save" name="power-attack" valuZe="0" disabled style="flex: 0 30;color: white;  margin-left: 8px; text-align: center"/>
         {{/if}}
 
         {{#if canFlurryOfBlows}}
@@ -137,7 +137,7 @@
         <input type="range" name="manyshot-count-slider" disabled min="2" max="{{maxManyshotValue}}" value="2"
                class="slider" style="flex: 1;color: white;background: transparent"
                onchange="this.nextElementSibling.value=this.value;enableDisableManyshotFeat()">
-        <input type="text" name="manyshot-count" value="2" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+        <input type="text" name="manyshot-count" value="2" disabled style="flex: 0 30;color: white; margin-left: 8px; text-align: center"/>
 
         {{/if}}
     </div>
@@ -152,7 +152,7 @@
         <input type="range" name="greater-manyshot-count-slider" disabled min="2" max="{{maxGreaterManyshotValue}}"
                value="2" class="slider" style="flex: 1;color: white;background: transparent"
                onchange="this.nextElementSibling.value=this.value;enableDisableManyshotFeat()">
-        <input type="text" name="greater-manyshot-count" value="2" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+        <input type="text" name="greater-manyshot-count" value="2" disabled style="flex: 0 30;color: white; margin-left: 8px; text-align: center"/>
 
     </div>
     {{/if}}
@@ -374,7 +374,7 @@
         </label>
         <input type="range" name="use" min="1" max="{{multipleUsesMax}}" value="1" class="slider" style="flex: 1;color: white;background: transparent"
                onchange="this.nextElementSibling.value=this.value">
-        <input type="text" name="useAmount" value="1" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+        <input type="text" name="useAmount" value="1" disabled style="flex: 0 30;color: white; margin-left: 8px; text-align: center"/>
         {{/if}}
     </div>
 
@@ -387,7 +387,7 @@
         </label>
         <input type="range" name="use" min="0" max="{{bonusPowerPointsMax}}" value="0" class="slider" style="flex: 1;color: white;background: transparent"
                onchange="this.nextElementSibling.value=this.value">
-        <input type="text" name="useAmount" value="0" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+        <input type="text" name="useAmount" value="0" disabled style="flex: 0 30;color: white; margin-left: 8px; text-align: center"/>
         {{/if}}
     </div>
 
@@ -469,7 +469,7 @@
             {{#if feat.system.combatChangesRange.max}}
             <input type="range" name="optional-range-base-{{feat.id}}" min="0" max="{{feat.system.combatChangesRange.max}}" value="0" class="slider" style="flex: 1;color: white;background: transparent"
                    onchange="this.nextElementSibling.value=this.value">
-            <input type="text" name="optional-range-{{feat.id}}" value="0" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+            <input type="text" name="optional-range-{{feat.id}}" value="0" disabled style="flex: 0 30;color: white; margin-left: 8px; text-align: center"/>
             {{/if}}
         </div>
             {{#if feat.system.combatChangesAdditionalRanges.hasAdditionalRanges}}
@@ -478,19 +478,19 @@
                 <span style="flex: 0; margin-right: 3px; opacity: 0.8">{{feat.system.combatChangesAdditionalRanges.slider1.name}}</span>
                 <input type="range" name="optional-range-base-1-{{feat.id}}" min="0" max="{{feat.system.combatChangesAdditionalRanges.slider1.max}}" value="0" class="slider" style="flex: 1;color: white;background: transparent"
                        onchange="this.nextElementSibling.value=this.value">
-                <input type="text" name="optional-range-1-{{feat.id}}" value="0" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+                <input type="text" name="optional-range-1-{{feat.id}}" value="0" disabled style="flex: 0 30;color: white; margin-left: 8px; text-align: center"/>
                 {{/if}}
                 {{#if feat.system.combatChangesAdditionalRanges.slider2.max}}
                 <span style="flex: 0; margin-right: 3px; opacity: 0.8">{{feat.system.combatChangesAdditionalRanges.slider2.name}}</span>
                 <input type="range" name="optional-range-base-2-{{feat.id}}" min="0" max="{{feat.system.combatChangesAdditionalRanges.slider2.max}}" value="0" class="slider" style="flex: 1;color: white;background: transparent"
                        onchange="this.nextElementSibling.value=this.value">
-                <input type="text" name="optional-range-2-{{feat.id}}" value="0" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+                <input type="text" name="optional-range-2-{{feat.id}}" value="0" disabled style="flex: 0 30;color: white; margin-left: 8px; text-align: center"/>
                 {{/if}}
                 {{#if feat.system.combatChangesAdditionalRanges.slider3.max}}
                 <span style="flex: 0; margin-right: 3px; opacity: 0.8">{{feat.system.combatChangesAdditionalRanges.slider3.name}}</span>
                 <input type="range" name="optional-range-base-3-{{feat.id}}" min="0" max="{{feat.system.combatChangesAdditionalRanges.slider3.max}}" value="0" class="slider" style="flex: 1;color: white;background: transparent"
                        onchange="this.nextElementSibling.value=this.value">
-                <input type="text" name="optional-range-3-{{feat.id}}" value="0" disabled style="flex: 0 30;color: black; background: whit; margin-left: 8px; text-align: center"/>
+                <input type="text" name="optional-range-3-{{feat.id}}" value="0" disabled style="flex: 0 30;color: white; margin-left: 8px; text-align: center"/>
                 {{/if}}
             </div>
             {{/if}}

@@ -306,7 +306,7 @@
   margin: 0 2px 0 0;
   margin-left: 13px;
   padding: 0 2px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 16px;
   border: 1px solid #999;
   border-radius: 3px;
@@ -5559,11 +5559,11 @@ h3 {
 }
 .d35ecustom .window-app.dialog .window-content input,
 .d35ecustom .window-app.dialog .window-content select {
-  color: black;
-  background: white;
+  color: ghostwhite;
+  background: transparent;
 }
 .d35ecustom .window-app.dialog .window-content select {
-  background-color: white;
+  background-color: transparent;
 }
 .d35ecustom .window-app.dialog .window-content label.block-header::after {
   border-top: 1px solid #75514b !important;
