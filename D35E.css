@@ -2411,11 +2411,12 @@
   border-top-right-radius: 0;
   overflow: visible;
   height: 100%;
-  width: 400px;
+  width: 520px;
   position: absolute;
   right: 0;
   background: url("ui/parchment.jpg") repeat;
   padding: 8px;
+  /*获得物品表的宽度*/
 }
 .D35E.sheet.actor .item-add-overlay .item-add-list .item-add-label {
   flex: 0;
@@ -2661,6 +2662,7 @@
 }
 .D35E.sheet.item .primary-body .tab {
   padding: 0 5px;
+  /*法术页排版修复*/
 }
 .D35E.sheet.item .primary-body .detailsbox {
   background-color: rgba(255, 255, 255, 0.2);
@@ -3918,13 +3920,15 @@
   padding: 0 0 0 6px;
 }
 .D35E.sheet.actor.character .sheet-header .race-container .race {
-  flex: 0 0 32px;
+  flex: 0 0 22px;
+  white-space: nowrap;
   background-size: contain;
   line-height: 22px;
   text-align: center;
   vertical-align: baseline;
   margin-right: 4px;
   height: 22px;
+  /*角色卡种族小图标*/
 }
 .D35E.sheet.actor.character .sheet-header .race-container .race.rollable:hover {
   background-image: url("../../icons/svg/d20-black.svg") !important;
