@@ -1,3 +1,5 @@
-2024/03/12-14:58:56.493 e1c Recovering log #480
-2024/03/12-14:58:56.496 e1c Delete type=0 #480
-2024/03/12-14:58:56.496 e1c Delete type=3 #479
+2024/03/13-23:55:18.362 5b0c Recovering log #490
+2024/03/13-23:55:18.362 5b0c Level-0 table #492: started
+2024/03/13-23:55:18.364 5b0c Level-0 table #492: 26101 bytes OK
+2024/03/13-23:55:18.366 5b0c Delete type=0 #490
+2024/03/13-23:55:18.366 5b0c Delete type=3 #489

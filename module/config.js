@@ -931,13 +931,13 @@ D35E.weaponProperties = {
 };
 
 D35E.weaponEnhancementProperties = {
-  "thr": "D35E.WeaponPropThrown",
-  "kee": "D35E.WeaponPropKeen",
-  "dis": "D35E.WeaponPropDistance",
-  "mnk": "D35E.WeaponPropKi",
-  "spd": "D35E.WeaponPropSpeed",
-  "def": "D35E.WeaponPropDefending",
-  "inc": "D35E.Incorporeal",
+  "thr": "投掷",
+  "kee": "锐锋",
+  "dis": "及远",
+  "mnk": "真气",
+  "spd": "追击",
+  "def": "护体",
+  "inc": "幽冥",
 };
 
 // Spell Components

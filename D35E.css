@@ -351,10 +351,11 @@
 }
 .D35E.sheet .window-content {
   overflow-y: hidden;
-  padding: 5px;
+  padding: 4px;
   background: url("ui/parchment.jpg") repeat;
   font-size: 13px;
   color: #191813;
+  /*物品窗口边缘*/
 }
 .D35E.sheet .window-content form {
   height: 100%;
