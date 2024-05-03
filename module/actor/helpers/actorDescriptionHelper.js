@@ -43,7 +43,7 @@ export class ActorDescriptionHelper {
                     label = `${speed} ${speeds[speed].total} ft.`
                 }
                 if (firstLabel) {
-                    label = label + `(${speeds[speed].total / 5} squares)`
+                    label = label + `(${speeds[speed].total / 5} 格)`
                     firstLabel = false;
                 }
                 speedLabels.push(label);

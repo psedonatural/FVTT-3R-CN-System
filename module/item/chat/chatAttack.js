@@ -113,7 +113,7 @@ export class ChatAttack {
     let critType = 0;
     if ((d20.total >= this.critRange && !critical) || (d20.total === 20 && critical)) critType = 1;
     else if (d20.total === 1) critType = 2;
-    descriptionParts.unshift({ value: `${d20.total}`, roll: d20.formula, name: `Attack Roll` });
+    descriptionParts.unshift({ value: `${d20.total}`, roll: d20.formula, name: `攻击检定` });
     // Add tooltip
     let tooltip = "";
     for (let descriptionPart of descriptionParts) {

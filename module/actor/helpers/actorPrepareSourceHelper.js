@@ -20,22 +20,22 @@ export class ActorPrepareSourceHelper {
     sourceDetails["system.attributes.bab.total"] = [];
 
     // Add base values to certain bonuses
-    sourceDetails["system.attributes.ac.normal.total"].push({ name: "Base", value: 10 });
-    sourceDetails["system.attributes.ac.touch.total"].push({ name: "Base", value: 10 });
-    sourceDetails["system.attributes.ac.flatFooted.total"].push({ name: "Base", value: 10 });
-    sourceDetails["system.attributes.cmd.total"].push({ name: "Base", value: 10 });
-    sourceDetails["system.attributes.cmd.flatFootedTotal"].push({ name: "Base", value: 10 });
+    sourceDetails["system.attributes.ac.normal.total"].push({ name: "基础", value: 10 });
+    sourceDetails["system.attributes.ac.touch.total"].push({ name: "基础", value: 10 });
+    sourceDetails["system.attributes.ac.flatFooted.total"].push({ name: "基础", value: 10 });
+    sourceDetails["system.attributes.cmd.total"].push({ name: "基础", value: 10 });
+    sourceDetails["system.attributes.cmd.flatFootedTotal"].push({ name: "基础", value: 10 });
     for (let [a, abl] of Object.entries(actorData.system.abilities)) {
-      sourceDetails[`system.abilities.${a}.total`].push({ name: "Base", value: abl.value });
+      sourceDetails[`system.abilities.${a}.total`].push({ name: "基础", value: abl.value });
       // Add ability penalty, damage and drain
       if (abl.damage != null && abl.damage !== 0) {
         sourceDetails[`system.abilities.${a}.total`].push({
-          name: "Ability Damage",
+          name: "属性伤害",
           value: `-${Math.floor(Math.abs(abl.damage) / 2)}`,
         });
       }
       if (abl.drain != null && abl.drain !== 0) {
-        sourceDetails[`system.abilities.${a}.total`].push({ name: "Ability Drain", value: -Math.abs(abl.drain) });
+        sourceDetails[`system.abilities.${a}.total`].push({ name: "属性吸取", value: -Math.abs(abl.drain) });
       }
     }
 

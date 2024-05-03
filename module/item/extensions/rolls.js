@@ -370,21 +370,21 @@ export class ItemRolls {
         parts.push({
           base: "@ablDamage",
           extra: [],
-          damageType: "Ability",
+          damageType: "属性",
           damageTypeUid: parts[0].damageTypeUid,
         });
       else if (rollData.critMult !== 1)
         parts.push({
           base: "@ablDamage * @critMult",
           extra: [],
-          damageType: `Ability (${rollData.ablMult || 1})`,
+          damageType: `属性 (${rollData.ablMult || 1})`,
           damageTypeUid: parts[0].damageTypeUid,
         });
       else if (rollData.ablDamage !== 0)
         parts.push({
           base: "@ablDamage",
           extra: [],
-          damageType: "Ability",
+          damageType: "属性",
           damageTypeUid: parts[0].damageTypeUid,
         });
     }
@@ -394,14 +394,14 @@ export class ItemRolls {
         parts.push({
           base: "@item.enh * @critMult",
           extra: [],
-          damageType: "Enhancement",
+          damageType: "增强",
           damageTypeUid: parts[0].damageTypeUid,
         });
       else
         parts.push({
           base: "@item.enh",
           extra: [],
-          damageType: "Enhancement",
+          damageType: "增强",
           damageTypeUid: parts[0].damageTypeUid,
         });
     }
@@ -412,14 +412,14 @@ export class ItemRolls {
         parts.push({
           base: "@attributes.damage.general * @critMult",
           extra: [],
-          damageType: "General",
+          damageType: "通用",
           damageTypeUid: parts[0].damageTypeUid,
         });
       else
         parts.push({
           base: "@attributes.damage.general",
           extra: [],
-          damageType: "General",
+          damageType: "通用",
           damageTypeUid: parts[0].damageTypeUid,
         });
     }
@@ -429,14 +429,14 @@ export class ItemRolls {
         parts.push({
           base: "@attributes.damage.weapon * @critMult",
           extra: [],
-          damageType: "Weapon",
+          damageType: "武器",
           damageTypeUid: parts[0].damageTypeUid,
         });
       else
         parts.push({
           base: "@attributes.damage.weapon",
           extra: [],
-          damageType: "Weapon",
+          damageType: "武器",
           damageTypeUid: parts[0].damageTypeUid,
         });
     } else if (rollData.attributes.damage.spell !== 0 && ["msak", "rsak", "spellsave"].includes(itemData.actionType)) {

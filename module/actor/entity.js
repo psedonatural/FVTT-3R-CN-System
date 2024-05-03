@@ -1979,18 +1979,22 @@ export class ActorPF extends Actor {
           saveRollFormula += `+ ${bonus['value']}`;
           bonus['name'] = bonus['sourceName'];
         }
-      }
+      }saveRollFormula
       rollData.savingThrowBonus = savingThrowBonus;
       rollData.savingThrowManualBonus = savingThrowManualBonus;
       rollData.savingThrowAbilityBonus = savingThrowAbilityBonus;
+      // 如果 savingThrowManualBonus 是数值，直接加到公式中
+      if (typeof savingThrowManualBonus === 'number' || typeof savingThrowManualBonus === 'string' && !isNaN(Number(savingThrowManualBonus))) {
+        saveRollFormula += `+ ${Number(savingThrowManualBonus)}`;
+      }
 
       let roll = new Roll35e(saveRollFormula, rollData).roll();
 
       let modifiersList = duplicate(savingThrowSourceDetails);
       modifiersList.unshift(
-          {value: roll.terms[0].results[0].result, name: 'Skill Roll'});
-      if (savingThrowManualBonus) modifiersList.push(
-          {value: savingThrowManualBonus, name: 'Situational Modifier'});
+          {value: roll.terms[0].results[0].result, name: '技能检定'});
+      if (savingThrowManualBonus)modifiersList.push(
+          {value: savingThrowManualBonus, name: '环境加值'});
       modifiersList.push(...(rollData.featSavingThrowList || []));
 
       rollData.rollTotal = roll.total;
@@ -2300,13 +2304,13 @@ export class ActorPF extends Actor {
         let abilityModIndex = skillSourceDetails.findIndex(
             (o) => o.name === 'Ability Modifier');
         if (abilityModIndex !== -1) {
-          skillSourceDetails[abilityModIndex].name = `Ability Modifier (${CONFIG.D35E.abilities[rollAbility]})`;
+          skillSourceDetails[abilityModIndex].name = `属性调整 (${CONFIG.D35E.abilities[rollAbility]})`;
           skillSourceDetails[abilityModIndex].value = this.system.abilities[rollAbility].mod;
         }
       }
       if (skillManualBonus) {
         skillSourceDetails.push(
-            {value: skillManualBonus, name: 'Situational Modifier'});
+            {value: skillManualBonus, name: '环境加值'});
       }
       for (let skillDetail of skillSourceDetails) {
         skillRollFormula += `+ ${skillDetail.value}`;
@@ -2337,7 +2341,7 @@ export class ActorPF extends Actor {
       let modifiersList = duplicate(skillSourceDetails);
       if (!take20 && !take10) {
         modifiersList.unshift(
-            {value: roll.terms[0].results[0].result, name: 'Skill Roll'});
+            {value: roll.terms[0].results[0].result, name: '技能检定'});
       }
       modifiersList.push(...(rollData.featSkillBonusList || []));
 
