@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7681ca67-4bf5-4291-b1fa-c13361411485" name="默认变更列表" comment="2024.5.4">
+    <list default="true" id="7681ca67-4bf5-4291-b1fa-c13361411485" name="默认变更列表" comment="2024.5.24">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D35E.css" beforeDir="false" afterPath="$PROJECT_DIR$/D35E.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lang/cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/lang/cn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/module/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/LOCK" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/LOCK" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000011.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000012.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000013.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000014.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000015.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000016.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000026.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000027.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000028.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000029.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000030.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/bestiary/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/bestiary/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/bestiary/LOCK" beforeDir="false" afterPath="$PROJECT_DIR$/packs/bestiary/LOCK" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/bestiary/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/bestiary/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/bestiary/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/bestiary/LOG.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/class-abilities/000505.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/class-abilities/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/class-abilities/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/class-abilities/LOCK" beforeDir="false" afterPath="$PROJECT_DIR$/packs/class-abilities/LOCK" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/class-abilities/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/class-abilities/LOG" afterDir="false" />
@@ -36,6 +26,7 @@
       <change beforePath="$PROJECT_DIR$/packs/commonauras/LOCK" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonauras/LOCK" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/commonauras/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonauras/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/commonauras/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonauras/LOG.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/commonbuffs/000453.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/commonbuffs/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonbuffs/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/commonbuffs/LOCK" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonbuffs/LOCK" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/commonbuffs/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonbuffs/LOG" afterDir="false" />
@@ -136,6 +127,8 @@
       <change beforePath="$PROJECT_DIR$/packs/spellItems/LOCK" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spellItems/LOCK" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/spellItems/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spellItems/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/spellItems/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spellItems/LOG.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/spells/000031.ldb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packs/spells/000339.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/spells/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spells/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/spells/LOCK" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spells/LOCK" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/spells/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spells/LOG" afterDir="false" />
@@ -249,6 +242,15 @@
       <workItem from="1715869128687" duration="1249000" />
       <workItem from="1716183736149" duration="3164000" />
       <workItem from="1716528108177" duration="212000" />
+      <workItem from="1716528367117" duration="55000" />
+      <workItem from="1717060754504" duration="166000" />
+      <workItem from="1717061279108" duration="7298000" />
+      <workItem from="1717953025931" duration="721000" />
+      <workItem from="1718115363515" duration="479000" />
+      <workItem from="1718522803872" duration="77000" />
+      <workItem from="1722875083703" duration="146000" />
+      <workItem from="1722875786553" duration="764000" />
+      <workItem from="1724429946470" duration="221000" />
     </task>
     <task id="LOCAL-00001" summary="2024.03.08">
       <created>1709973152611</created>
@@ -383,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714771847982</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="2024.5.24">
+      <created>1716528409483</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716528409483</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -411,6 +420,7 @@
     <MESSAGE value="2024.03.19" />
     <MESSAGE value="2024.3.19-2" />
     <MESSAGE value="2024.5.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024.5.4" />
+    <MESSAGE value="2024.5.24" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024.5.24" />
   </component>
 </project>

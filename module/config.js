@@ -982,6 +982,7 @@ D35E.spellLevels = {
   7: "D35E.SpellLevel7",
   8: "D35E.SpellLevel8",
   9: "D35E.SpellLevel9",
+  10: "D35E.SpellLevel10",
 };
 
 /* -------------------------------------------- */
