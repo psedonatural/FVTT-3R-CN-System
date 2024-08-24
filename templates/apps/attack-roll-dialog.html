@@ -549,10 +549,10 @@
                 $('option:selected', select).closest("section").find(".monster-summon-box .monster-img").attr("src",`${monster.img}`)
                 $('option:selected', select).closest("section").find(".monster-summon-box .monster-cr").text(`CR${monster.system.details.totalCr}`)
                 $('option:selected', select).closest("section").find(".monster-summon-box .monster-align").text(`${CONFIG.D35E.actorSizes[monster.system.traits.actualSize]} ${monster.racialHD.name} ${monster.system.details.alignment}`)
-                $('option:selected', select).closest("section").find(".monster-summon-box .monster-hp").text(`${monster.system.attributes.hp.max} hp (${monster.system.attributes?.hd?.total || "Unknown"} HD)`)
-                $('option:selected', select).closest("section").find(".monster-summon-box .monster-ac").text(`${mdd.attributes.ac?.normal?.total || "Unknown"} (${mdd.attributes.ac?.touch?.total || "Unknown"} touch, ${mdd.attributes?.ac?.flatFooted.total || "Unknown"} flat-footed)`)
-                $('option:selected', select).closest("section").find(".monster-summon-box .monster-bab").text(`${mdd.attributes?.bab?.total || "Unknown"}/${mdd.attributes?.cmd?.total || "Unknown"}`)
-                $('option:selected', select).closest("section").find(".monster-summon-box .monster-init").text(`${mdd.attributes?.initiative?.total || "Unknown"}`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-hp").text(`${monster.system.attributes.hp.max} hp (${monster.system.attributes?.hd?.total || "未知"} HD)`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-ac").text(`${mdd.attributes.ac?.normal?.total || "未知"} (${mdd.attributes.ac?.touch?.total || "未知"} 接触, ${mdd.attributes?.ac?.flatFooted.total || "未知"} 措手不及)`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-bab").text(`${mdd.attributes?.bab?.total || "未知"}/${mdd.attributes?.cmd?.total || "未知"}`)
+                $('option:selected', select).closest("section").find(".monster-summon-box .monster-init").text(`${mdd.attributes?.init?.total || "未知"}`)
             }
             updateMonster($('select[name="selected-monster"]'))
 

@@ -104,15 +104,15 @@ export class ItemSpellHelper {
     let components = [];
     for (let [key, value] of Object.entries(getProperty(sourceItem, "system.components") || {})) {
       if (key === "value" && value.length > 0) components.push(...value.split(reSplit));
-      else if (key === "verbal" && value) components.push("V");
-      else if (key === "somatic" && value) components.push("S");
-      else if (key === "material" && value) components.push("M");
-      else if (key === "focus" && value) components.push("F");
+      else if (key === "verbal" && value) components.push("言语");
+      else if (key === "somatic" && value) components.push("姿势");
+      else if (key === "material" && value) components.push("材料");
+      else if (key === "focus" && value) components.push("器材");
     }
-    if (getProperty(sourceItem, "system.components.divineFocus") === 1) components.push("DF");
+    if (getProperty(sourceItem, "system.components.divineFocus") === 1) components.push("法器");
     const df = getProperty(sourceItem, "system.components.divineFocus");
     // Sort components
-    const componentsOrder = ["V", "S", "M", "F", "DF"];
+    const componentsOrder = ["言语", "姿势", "材料", "器材", "法器"];
     components.sort((a, b) => {
       let index = [componentsOrder.indexOf(a), components.indexOf(b)];
       if (index[0] === -1 && index[1] === -1) return 0;
@@ -121,13 +121,13 @@ export class ItemSpellHelper {
       return index[0] - index[1];
     });
     components = components.map((o) => {
-      if (o === "M") {
-        if (df === 2) o = "M/DF";
+      if (o === "材料") {
+        if (df === 2) o = "材料/法器";
         if (getProperty(sourceItem, "system.materials.value"))
           o = `${o} (${getProperty(sourceItem, "system.materials.value")})`;
       }
-      if (o === "F") {
-        if (df === 3) o = "F/DF";
+      if (o === "器材") {
+        if (df === 3) o = "器材/法器";
         if (getProperty(sourceItem, "system.materials.focus"))
           o = `${o} (${getProperty(sourceItem, "system.materials.focus")})`;
       }
@@ -160,11 +160,11 @@ export class ItemSpellHelper {
       const rangeUnit = getProperty(sourceItem, "system.range.units");
       const rangeValue = getProperty(sourceItem, "system.range.value");
 
-      if (rangeUnit != null && rangeUnit !== "none") {
+      if (rangeUnit != null && rangeUnit !== "无") {
         label.range = (CONFIG.D35E.distanceUnits[rangeUnit] || "").toLowerCase();
-        if (rangeUnit === "close") label.range = `${label.range} (25 ft. + 5 ft./2 levels)`;
-        else if (rangeUnit === "medium") label.range = `${label.range} (100 ft. + 10 ft./level)`;
-        else if (rangeUnit === "long") label.range = `${label.range} (400 ft. + 40 ft./level)`;
+        if (rangeUnit === "close") label.range = `${label.range} (25英尺+5英尺/2等级)`;
+        else if (rangeUnit === "medium") label.range = `${label.range} (100英尺+10英尺/等级)`;
+        else if (rangeUnit === "long") label.range = `${label.range} (400英尺+40英尺/等级)`;
         else if (["ft", "mi"].includes(rangeUnit)) {
           if (!rangeValue) label.range = "";
           else label.range = `${rangeValue} ${label.range}`;
@@ -184,12 +184,12 @@ export class ItemSpellHelper {
         ? CONFIG.D35E.savingThrowTypes[getProperty(sourceItem, "system.save.type")]
         : getProperty(sourceItem, "system.save.description") || "";
       if (savingThrowDescription) label.savingThrow = savingThrowDescription;
-      else label.savingThrow = "none";
+      else label.savingThrow = "无";
 
       const sr = getProperty(sourceItem, "system.sr");
-      label.sr = sr === true ? "yes" : "no";
+      label.sr = sr === true ? "可" : "不可";
       const pr = getProperty(sourceItem, "system.pr");
-      label.pr = pr === true ? "yes" : "no";
+      label.pr = pr === true ? "可" : "不可";
 
       if (getProperty(sourceItem, "system.range.units") !== "personal") renderData.useDCandSR = true;
     }
@@ -200,26 +200,64 @@ export class ItemSpellHelper {
     return renderData;
   }
 
+  // static getSpellDuration(durationData, level = 1) {
+  //   let durationLabel = "";
+  //   game.D35E.logger.log(durationData)
+  //   let needRounds = !["", "inst", "perm", "seeText","seeText","spec"].includes(durationData.units);
+  //   if (!needRounds || !durationData.value) {
+  //     durationLabel = CONFIG.D35E.timePeriodsSpells[durationData.units];
+  //   } else {
+  //     let isPerLevel = (durationData.value?.toString() ?? "").indexOf("@cl") !== -1;
+  //     if (isPerLevel) {
+  //       durationLabel =
+  //         Roll35e.safeRoll(durationData.value, { cl: level }).total +
+  //         " " +
+  //         CONFIG.D35E.timePeriodsSpells[durationData.units];
+  //     } else {
+  //       let isSpecial = ["spec"].includes(durationData.units);
+  //       if (isSpecial) durationLabel = durationData.value;
+  //       else durationLabel = durationData.value + " " + CONFIG.D35E.timePeriodsSpells[durationData.units];
+  //     }
+  //   }
+  //   if (durationData.dismissable) durationLabel = durationLabel + " (D)";
+  //   return durationLabel;
+  // }
+
   static getSpellDuration(durationData, level = 1) {
     let durationLabel = "";
-    game.D35E.logger.log(durationData)
-    let needRounds = !["", "inst", "perm", "seeText","spec"].includes(durationData.units);
-    if (!needRounds || !durationData.value) {
-      durationLabel = CONFIG.D35E.timePeriodsSpells[durationData.units];
+    game.D35E.logger.log(durationData); // 记录 durationData，便于调试
+
+    // 检查是否为特殊持续时间
+    if (["spec"].includes(durationData.units)) {
+      // 如果是特殊持续时间，则直接使用 value 作为标签
+      durationLabel = durationData.value;
     } else {
-      let isPerLevel = (durationData.value?.toString() ?? "").indexOf("@cl") !== -1;
-      if (isPerLevel) {
-        durationLabel =
-          Roll35e.safeRoll(durationData.value, { cl: level }).total +
-          " " +
-          CONFIG.D35E.timePeriodsSpells[durationData.units];
+      // 判断是否需要基于轮次计算持续时间
+      let needRounds = !["", "inst", "perm", "seeText"].includes(durationData.units);
+
+      if (!needRounds || !durationData.value) {
+        // 如果不需要轮次计算或没有提供持续时间值，则直接使用单位作为标签
+        durationLabel = CONFIG.D35E.timePeriodsSpells[durationData.units];
       } else {
-        let isSpecial = ["spec"].includes(durationData.units);
-        if (isSpecial) durationLabel = durationData.value;
-        else durationLabel = durationData.value + " " + CONFIG.D35E.timePeriodsSpells[durationData.units];
+        // 检查持续时间值是否与等级相关
+        let isPerLevel = (durationData.value?.toString() ?? "").indexOf("@cl") !== -1;
+        if (isPerLevel) {
+          // 如果与等级相关，则计算持续时间并拼接单位
+          durationLabel = Roll35e.safeRoll(durationData.value, { cl: level }).total +
+              " " +
+              CONFIG.D35E.timePeriodsSpells[durationData.units];
+        } else {
+          // 否则，拼接 value 和单位
+          durationLabel = durationData.value + " " + CONFIG.D35E.timePeriodsSpells[durationData.units];
+        }
       }
     }
-    if (durationData.dismissable) durationLabel = durationLabel + " (D)";
+
+    // 如果持续时间可驱散，则在标签后添加 "(D)"
+    if (durationData.dismissable) {
+      durationLabel += " (可消解)";
+    }
+
     return durationLabel;
   }
 
