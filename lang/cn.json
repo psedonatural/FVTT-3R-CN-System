@@ -1487,7 +1487,7 @@
     "D35E.GenericCarryLabelKg": "{0} 千克",
     "D35E.ConcealmentBase": "基本隐藏",
     "D35E.Encumbrance": "累赘",
-    "D35E.Gear": "齿轮",
+    "D35E.Gear": "装备",
     "D35E.NotLimited": "无限制",
     "SETTINGS.D35ERollConfigLabel": "设置默认检定规则",
     "SETTINGS.D35ERollConfigName": "默认检定规则",
@@ -1874,6 +1874,7 @@
     "D35E.ShortDescription": "简述",
     "D35E.WeaponPropNonLethalNoPenalty": "非致命攻击无减值",
     "D35E.TreatAttackAsNaturalAttack": "视为天生攻击",
+    "D35E.NoChange": "未选择",
 	"D35E.DamagePoolInfo": "启用伤害池，使得状态能在吸收一定伤害后失效（例如法师的石肤术）。为了让其能正常运作，该状态还必须提供伤害减免或能量抗力。 "
 	
 }
