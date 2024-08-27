@@ -293,6 +293,13 @@
             "label": "Weapons and Ammo"
         },
         {
+            "path": "./packs/subspecies",
+            "type": "Item",
+            "system": "D35E",
+            "name": "subspecies",
+            "label": "Subspecies"
+        },
+        {
             "path": "./packs/racial-hd",
             "type": "Item",
             "system": "D35E",

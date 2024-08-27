@@ -596,7 +596,7 @@ Hooks.on("renderSidebarTab", async (app, html) => {
       }
       html.find(".drgh-encounter-browser").remove();
       let button = $(
-          `<button class='drgh-encounter-browser' style="${style}">Compendium Browser</button>`
+          `<button class='drgh-encounter-browser' style="${style}">合集资源搜索器</button>`
       );
       button.on("click", () => {
         game.D35E.compendiumBrowser.render(true);

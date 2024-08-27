@@ -1,5 +1,5 @@
-2024/08/26-22:46:19.790 56dc Recovering log #792
-2024/08/26-22:46:19.790 56dc Level-0 table #794: started
-2024/08/26-22:46:19.791 56dc Level-0 table #794: 2395 bytes OK
-2024/08/26-22:46:19.794 56dc Delete type=0 #792
-2024/08/26-22:46:19.794 56dc Delete type=3 #791
+2024/08/27-21:34:51.102 243c Recovering log #816
+2024/08/27-21:34:51.102 243c Level-0 table #818: started
+2024/08/27-21:34:51.106 243c Level-0 table #818: 56608 bytes OK
+2024/08/27-21:34:51.112 243c Delete type=0 #816
+2024/08/27-21:34:51.112 243c Delete type=3 #815

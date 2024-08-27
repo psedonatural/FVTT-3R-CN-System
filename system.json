@@ -155,6 +155,7 @@
         "summon",
         "scenes",
         "docs",
+        "subspecies",
         "traps"
       ],
       "folders": []
@@ -166,7 +167,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "classes",
-      "label": "Classes",
+      "label": "职业Classes",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -178,7 +179,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "minion-classes",
-      "label": "Minion Classes",
+      "label": "追随者职业Minion Classes",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -190,7 +191,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "commonbuffs",
-      "label": "Common Buffs",
+      "label": "通用状态Common Buffs",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -202,7 +203,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "spell-items",
-      "label": "Spell Items",
+      "label": "法术物品Spell Items",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -214,7 +215,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "common-auras",
-      "label": "Common Auras",
+      "label": "光环Common Auras",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -226,7 +227,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "item-buffs",
-      "label": "Item Buffs",
+      "label": "物品状态Item Buffs",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -238,7 +239,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "magicitems",
-      "label": "Magic Items",
+      "label": "魔法物品Magic Items",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -250,7 +251,19 @@
       "type": "Item",
       "system": "D35E",
       "name": "racialfeatures",
-      "label": "Races",
+      "label": "种族Races",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "path": "packs/subspecies",
+      "type": "Item",
+      "system": "D35E",
+      "name": "subspecies",
+      "label": "亚种Subspecies",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -262,7 +275,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "racial-abilities",
-      "label": "Racial Abilities",
+      "label": "种族能力Racial Abilities",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -274,7 +287,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "natural-attacks",
-      "label": "Natural Attacks",
+      "label": "天生攻击Natural Attacks",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -286,7 +299,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "class-abilities",
-      "label": "Class Abilities",
+      "label": "职业能力Class Abilities",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -298,7 +311,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "spelllike",
-      "label": "Spell-Like Abilities",
+      "label": "类法术能力Spell-Like Abilities",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -310,7 +323,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "spells",
-      "label": "Spells",
+      "label": "法术Spells",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -322,7 +335,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "spell-schools-domains",
-      "label": "Spell Schools and Domains",
+      "label": "法术学派与领域Spell Schools and Domains",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -334,7 +347,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "templates",
-      "label": "Templates",
+      "label": "模板Templates",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -346,7 +359,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "powers",
-      "label": "Powers",
+      "label": "灵能Powers",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -358,7 +371,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "feats",
-      "label": "Feats",
+      "label": "专长Feats",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -370,7 +383,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "items",
-      "label": "Items",
+      "label": "物品Items",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -382,7 +395,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "armors-and-shields",
-      "label": "Armor and Shields",
+      "label": "护甲和盾牌Armor and Shields",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -394,7 +407,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "enhancements",
-      "label": "Enhancements",
+      "label": "附魔Enhancements",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -406,7 +419,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "weapons-and-ammo",
-      "label": "Weapons and Ammo",
+      "label": "武器Weapons",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -418,7 +431,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "racialhd",
-      "label": "Racial HD",
+      "label": "种族生命骰Racial HD",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -430,7 +443,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "materials",
-      "label": "Materials",
+      "label": "材料Materials",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -442,7 +455,7 @@
       "type": "Item",
       "system": "D35E",
       "name": "damage-types",
-      "label": "Damage Types",
+      "label": "伤害类型Damage Types",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -454,7 +467,7 @@
       "type": "JournalEntry",
       "system": "D35E",
       "name": "srd-rules",
-      "label": "SRD Rules Extended Descriptions",
+      "label": "SRD规则SRD Rules Extended Descriptions",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -466,7 +479,7 @@
       "type": "Macro",
       "system": "D35E",
       "name": "sample-macros",
-      "label": "Sample Macros",
+      "label": "简易宏Sample Macros",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -478,7 +491,7 @@
       "type": "RollTable",
       "system": "D35E",
       "name": "roll-tables",
-      "label": "Roll Tables",
+      "label": "随机表Roll Tables",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -490,7 +503,7 @@
       "type": "RollTable",
       "system": "D35E",
       "name": "item-roll-tables",
-      "label": "Item Roll Tables",
+      "label": "物品随机表Item Roll Tables",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -502,7 +515,7 @@
       "type": "RollTable",
       "system": "D35E",
       "name": "summoning-roll-tables",
-      "label": "Summoning Roll Tables",
+      "label": "召唤表Summoning Roll Tables",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -514,7 +527,7 @@
       "type": "Actor",
       "system": "D35E",
       "name": "bestiary",
-      "label": "Bestiary",
+      "label": "怪物图鉴Bestiary",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -526,7 +539,7 @@
       "type": "Actor",
       "system": "D35E",
       "name": "minion",
-      "label": "Minions (Familiars, Animal Companions)",
+      "label": "追随者Minions (Familiars, Animal Companions)",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -538,7 +551,7 @@
       "type": "Actor",
       "system": "D35E",
       "name": "sample-chars",
-      "label": "Sample Characters",
+      "label": "预设角色Sample Characters",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -550,7 +563,7 @@
       "type": "Actor",
       "system": "D35E",
       "name": "summon",
-      "label": "Summoned Bestiary",
+      "label": "召唤图鉴Summoned Bestiary",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -562,7 +575,7 @@
       "type": "Actor",
       "system": "D35E",
       "name": "traps",
-      "label": "Traps",
+      "label": "陷阱Traps",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -574,7 +587,7 @@
       "type": "JournalEntry",
       "system": "D35E",
       "name": "conditions",
-      "label": "Conditions",
+      "label": "状态Conditions",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -586,7 +599,7 @@
       "type": "JournalEntry",
       "system": "D35E",
       "name": "docs",
-      "label": "Documentation",
+      "label": "教程Documentation",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -598,7 +611,7 @@
       "type": "Scene",
       "system": "D35E",
       "name": "scenes",
-      "label": "Scenes",
+      "label": "场景Scenes",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
