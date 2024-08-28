@@ -1286,6 +1286,7 @@ D35E.languages = {
 };
 
 D35E.creatureTypes = {
+  "nonetype": "D35E.nonetype",
   "aberration": "D35E.CreatureTypeAberration",
   "animal": "D35E.CreatureTypeAnimal",
   "construct": "D35E.CreatureTypeConstruct",

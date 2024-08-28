@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7681ca67-4bf5-4291-b1fa-c13361411485" name="默认变更列表" comment="2024.8.27">
+    <list default="true" id="7681ca67-4bf5-4291-b1fa-c13361411485" name="默认变更列表" comment="2024.8.28">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/D35E.js" beforeDir="false" afterPath="$PROJECT_DIR$/D35E.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lang/cn.json" beforeDir="false" afterPath="$PROJECT_DIR$/lang/cn.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/module/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/LOG.old" afterDir="false" />
@@ -35,7 +35,6 @@
       <change beforePath="$PROJECT_DIR$/packs/enhancements/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/enhancements/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/enhancements/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/enhancements/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/enhancements/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/enhancements/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/feats/000313.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/feats/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/feats/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/feats/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/feats/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/feats/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/feats/LOG.old" afterDir="false" />
@@ -60,18 +59,15 @@
       <change beforePath="$PROJECT_DIR$/packs/minions/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minions/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/minions/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minions/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/minions/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minions/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/natural-attacks/000009.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/natural-attacks/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/natural-attacks/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/natural-attacks/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/natural-attacks/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/natural-attacks/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/natural-attacks/LOG.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/powers/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/powers/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/powers/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/powers/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/powers/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/powers/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racial-abilities/000009.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/racial-abilities/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-abilities/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/racial-abilities/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-abilities/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/racial-abilities/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-abilities/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racial-hd/000009.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/racial-hd/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-hd/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/racial-hd/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-hd/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/racial-hd/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-hd/LOG.old" afterDir="false" />
@@ -90,7 +86,6 @@
       <change beforePath="$PROJECT_DIR$/packs/scenes/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/scenes/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/scenes/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/scenes/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/scenes/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/scenes/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spell-like-abilities/000009.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/spell-like-abilities/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-like-abilities/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/spell-like-abilities/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-like-abilities/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/spell-like-abilities/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-like-abilities/LOG.old" afterDir="false" />
@@ -109,11 +104,9 @@
       <change beforePath="$PROJECT_DIR$/packs/summon/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summon/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/summon/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summon/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/summon/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summon/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/summoning-roll-tables/000293.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/summoning-roll-tables/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summoning-roll-tables/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/summoning-roll-tables/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summoning-roll-tables/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/summoning-roll-tables/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summoning-roll-tables/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/templates/000009.ldb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/templates/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/templates/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/templates/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/templates/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/templates/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/templates/LOG.old" afterDir="false" />
@@ -123,9 +116,6 @@
       <change beforePath="$PROJECT_DIR$/packs/weapons-and-ammo/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/weapons-and-ammo/CURRENT" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/weapons-and-ammo/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/weapons-and-ammo/LOG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packs/weapons-and-ammo/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/weapons-and-ammo/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system.json" beforeDir="false" afterPath="$PROJECT_DIR$/system.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system.json.temp" beforeDir="false" afterPath="$PROJECT_DIR$/system.json.temp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/apps/senses-config.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/apps/senses-config.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +219,9 @@
       <workItem from="1724685665980" duration="404000" />
       <workItem from="1724689902068" duration="1616000" />
       <workItem from="1724744382389" duration="2475000" />
-      <workItem from="1724771724509" duration="1709000" />
+      <workItem from="1724771724509" duration="1741000" />
+      <workItem from="1724818224837" duration="1809000" />
+      <workItem from="1724862332105" duration="614000" />
     </task>
     <task id="LOCAL-00001" summary="2024.03.08">
       <created>1709973152611</created>
@@ -399,7 +391,14 @@
       <option name="project" value="LOCAL" />
       <updated>1724702328785</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="2024.8.28">
+      <created>1724781852576</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1724781852576</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,6 +430,7 @@
     <MESSAGE value="2024.8.24" />
     <MESSAGE value="2024.8.25" />
     <MESSAGE value="2024.8.27" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024.8.27" />
+    <MESSAGE value="2024.8.28" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024.8.28" />
   </component>
 </project>
