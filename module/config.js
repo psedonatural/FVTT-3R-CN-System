@@ -10,14 +10,14 @@ D35E.re = {
  * The set of Ability Scores used within the system
  * @type {Object}
  */
-D35E.abilities = {
-  "str": "D35E.AbilityStr",
-  "dex": "D35E.AbilityDex",
-  "con": "D35E.AbilityCon",
-  "int": "D35E.AbilityInt",
-  "wis": "D35E.AbilityWis",
-  "cha": "D35E.AbilityCha"
-};
+// D35E.abilities = {
+//   "str": "D35E.AbilityStr",
+//   "dex": "D35E.AbilityDex",
+//   "con": "D35E.AbilityCon",
+//   "int": "D35E.AbilityInt",
+//   "wis": "D35E.AbilityWis",
+//   "cha": "D35E.AbilityCha"
+// };
 
 D35E.abilities = {
   "str": "D35E.AbilityStr",

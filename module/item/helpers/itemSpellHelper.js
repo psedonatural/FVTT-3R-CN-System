@@ -160,7 +160,13 @@ export class ItemSpellHelper {
       const rangeUnit = getProperty(sourceItem, "system.range.units");
       const rangeValue = getProperty(sourceItem, "system.range.value");
 
-      if (rangeUnit != null && rangeUnit !== "无") {
+      // 首先检查rangeUnit是否为"spec"
+      if (rangeUnit === "spec") {
+        // 如果是"spec"，则直接将值作为字符显示
+        label.range = rangeValue;
+
+      } else if (rangeUnit != null && rangeUnit !== "无") {
+        // 如果不是"spec"，并且rangeUnit不是null或"无"，则执行单位转换逻辑
         label.range = (CONFIG.D35E.distanceUnits[rangeUnit] || "").toLowerCase();
         if (rangeUnit === "close") label.range = `${label.range} (25英尺+5英尺/2等级)`;
         else if (rangeUnit === "medium") label.range = `${label.range} (100英尺+10英尺/等级)`;
@@ -170,7 +176,10 @@ export class ItemSpellHelper {
           else label.range = `${rangeValue} ${label.range}`;
         }
       }
+
     }
+
+
     // Set area label
     {
       const area = getProperty(sourceItem, "system.spellArea");
@@ -200,6 +209,8 @@ export class ItemSpellHelper {
     return renderData;
   }
 
+
+
   // static getSpellDuration(durationData, level = 1) {
   //   let durationLabel = "";
   //   game.D35E.logger.log(durationData)
@@ -223,6 +234,8 @@ export class ItemSpellHelper {
   //   return durationLabel;
   // }
 
+
+// 持续时间
   static getSpellDuration(durationData, level = 1) {
     let durationLabel = "";
     game.D35E.logger.log(durationData); // 记录 durationData，便于调试

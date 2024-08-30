@@ -120,6 +120,27 @@
 .visionperm-hidden:not(.combatant) {
   display: none !important;
 }
+/* -----------------更改链接蓝色------------------------ */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+
+.content-link {
+  color: #6b0000;
+  border: none !important;
+  text-decoration: underline !important;
+  background-color: transparent !important;
+  box-sizing: border-box;
+  user-select: text;
+  cursor: pointer;
+  padding: 0px 1px !important;
+  border-radius: 0px !important; /* 注意：虽然边框被隐藏了，但圆角仍然可以保留，这取决于你的设计需求 */
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+/*.content-link:hover {*/
+/*  text-decoration: underline !important; !* 鼠标悬停时添加下划线 *!*/
+/*}*/
 /* ----------------------------------------- */
 /*  All D&D5e Apps                           */
 /* ----------------------------------------- */

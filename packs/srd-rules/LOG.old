@@ -1,5 +1,5 @@
-2024/08/30-01:10:18.219 51c Recovering log #837
-2024/08/30-01:10:18.220 51c Level-0 table #839: started
-2024/08/30-01:10:18.221 51c Level-0 table #839: 19229 bytes OK
-2024/08/30-01:10:18.225 51c Delete type=0 #837
-2024/08/30-01:10:18.225 51c Delete type=3 #836
+2024/08/30-20:41:48.594 5aec Recovering log #849
+2024/08/30-20:41:48.596 5aec Level-0 table #851: started
+2024/08/30-20:41:48.598 5aec Level-0 table #851: 49383 bytes OK
+2024/08/30-20:41:48.601 5aec Delete type=0 #849
+2024/08/30-20:41:48.601 5aec Delete type=3 #847
