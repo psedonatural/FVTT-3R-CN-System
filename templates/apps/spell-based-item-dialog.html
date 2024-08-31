@@ -6,13 +6,13 @@
         <div class="flexcol">
         <label>{{feat.data.name}}</label>
             <span style="opacity: 0.8; margin-left: 0.25rem">{{localize "D35E.CasterLevel"}}</span></div>
-            <input type="text" name="caster-level" value="" class="auto-save" placeholder="e.g. 20, use lowest if left empty"/>
+            <input type="text" name="caster-level" value="" class="auto-save" placeholder="如果为空则是此法术可行的最低值"/>
     </div>
     {{#if isSpell}}
     <hr style="    opacity: 0.2;
     border-bottom: none;">
     <div class="form-group">
-        <label>Scroll Type</label>
+        <label>卷轴类型</label>
         <select name="scroll-type">
           <option value="arcane">{{localize "D35E.Arcane"}}</option>
           <option value="divine">{{localize "D35E.Divine"}}</option>

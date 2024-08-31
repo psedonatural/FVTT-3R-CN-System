@@ -5,7 +5,7 @@
     </style>
     <div class="flexrow">
 
-        <label>Encounter Roll Table</label>
+        <label>遭遇表</label>
         <select id="choicesCompendium" name="choices">
             {{#each tables}}
             <option value="{{id}}">{{name}}</option>
@@ -14,22 +14,22 @@
     </div>
 
     <div class="flexrow" style="margin-top: 4px" >
-        <label>Target EL</label>
+        <label>目标等级</label>
         <input type="number" id="ELTarget"></input>
     </div>
 
-    <em style="opacity: 0.7">Generator will try to create encounter list from selected Roll Table matching as closely to target EL as possible.</em>
+    <em style="opacity: 0.7">生成器会尽量生成目标等级的遭遇</em>
 
-    <button style="margin-top: 8px" class="MonsterButton" type=button>Generate Encounter</button>
+    <button style="margin-top: 8px" class="MonsterButton" type=button>生成遭遇</button>
     <div class="encounter-block" style="margin-top: 4px; display: none">
         <div class="flexrow">
-            <h2 class="block-header">Generated Encounter</h2>
+            <h2 class="block-header">生成遭遇</h2>
         </div>
         <div class="flexrow">
-            Generated encounter EL <span id="ELGoesHere"></span>
+            遭遇等级 <span id="ELGoesHere"></span>
         </div>
         <div class="flexrow" style="margin-top: 4px;">
-            <label class="block-header">Monsters in encounter</label>
+            <label class="block-header">遭遇怪物</label>
         </div>
         <fieldset id="putMonstersHere" style="padding: 0; border: 0" >
 

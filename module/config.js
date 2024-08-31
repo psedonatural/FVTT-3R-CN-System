@@ -499,6 +499,7 @@ D35E.equipmentTypes = {
     "_label": "D35E.Misc",
     "wondrous": "D35E.EquipTypeWondrousItem",
     "clothing": "D35E.EquipTypeClothing",
+    "artifact": "D35E.EquipTypeArtifact",
     "other": "D35E.Other",
   },
 };
@@ -537,16 +538,16 @@ D35E.lootTypes = {
 
 D35E.magicAuraByLevel = {
   "spell": [
-    { power: "faint", level: 1 },
-    { power: "moderate", level: 4 },
-    { power: "strong", level: 7 },
-    { power: "overwhelming", level: 10 },
+    { power: "弱小", level: 1 },
+    { power: "中等", level: 4 },
+    { power: "强大", level: 7 },
+    { power: "刺目", level: 10 },
   ],
   "item": [
-    { power: "faint", level: 1 },
-    { power: "moderate", level: 6 },
-    { power: "strong", level: 12 },
-    { power: "overwhelming", level: 21 },
+    { power: "弱小", level: 1 },
+    { power: "中等", level: 6 },
+    { power: "强大", level: 12 },
+    { power: "刺目", level: 21 },
   ],
 };
 

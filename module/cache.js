@@ -75,7 +75,7 @@ const _CheckSettingsForPackName = (packName, settingData) => {
 export const buildCache = async function() {
 
     //game.D35E.logger.log("Building Caches for compendiums...")
-    ui.notifications.info(`Building Caches for compendiums...`);
+    ui.notifications.info(`正在构建合集缓存（请稍后）...`);
 
     const additionalCachedCompendiums_classAbilities = game.settings.get("D35E", "additionalCachedCompendiums_classAbilities");
     const additionalCachedCompendiums_racialAbilities = game.settings.get("D35E", "additionalCachedCompendiums_racialAbilities");
@@ -143,6 +143,6 @@ export const buildCache = async function() {
         }
     };
 
-    ui.notifications.info(`Building Caches for compendiums finished!`);
+    ui.notifications.info(`构建合集缓存完成！`);
     //game.D35E.logger.log("Building Caches for finished!")
 }

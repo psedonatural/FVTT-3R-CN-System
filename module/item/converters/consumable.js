@@ -21,21 +21,21 @@ export class ItemConsumableConverter {
 
         // Set name
         if (type === "wand") {
-            data.name = `Wand of ${origData.name}`;
+            data.name = `魔杖(${origData.name})`;
             data.img = "systems/D35E/icons/items/magic/generated/wand-low.png";
             system.price = Math.max(0.5, slcl[0]) * slcl[1] * 750;
             system.hardness = 5;
             system.hp.max = 5;
             system.hp.value = 5;
         } else if (type === "potion") {
-            data.name = `Potion of ${origData.name}`;
+            data.name = `药水(${origData.name})`;
             data.img = "systems/D35E/icons/items/potions/generated/med.png";
             system.price = Math.max(0.5, slcl[0]) * slcl[1] * 50;
             system.hardness = 1;
             system.hp.max = 1;
             system.hp.value = 1;
         } else if (type === "scroll") {
-            data.name = `Scroll of ${origData.name}`;
+            data.name = `卷轴(${origData.name})`;
             data.img = "systems/D35E/icons/items/magic/generated/scroll.png";
             system.price = Math.max(0.5, slcl[0]) * slcl[1] * 25;
             system.hardness = 0;
@@ -49,14 +49,14 @@ export class ItemConsumableConverter {
             system.hp.max = 5;
             system.hp.value = 5;
         } else if (type === "tattoo") {
-            data.name = `Tattoo of ${origData.name}`;
+            data.name = `灵纹( ${origData.name})`;
             data.img = "systems/D35E/icons/items/magic/generated/tattoo.png";
             system.price = Math.max(0.5, slcl[0]) * slcl[1] * 50;
             system.hardness = 1;
             system.hp.max = 1;
             system.hp.value = 1;
         } else if (type === "powerstone") {
-            data.name = `Power Stone of ${origData.name}`;
+            data.name = `灵能石(${origData.name})`;
             data.img = "systems/D35E/icons/items/magic/generated/crystal.png";
             system.price = Math.max(0.5, slcl[0]) * slcl[1] * 25;
             system.hardness = 0;

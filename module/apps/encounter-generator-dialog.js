@@ -8,7 +8,7 @@ export class EncounterGeneratorDialog extends FormApplication {
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             id: "encounter-generator",
-            title: "Encounter Generator",
+            title: "遭遇生成器",
             template: "systems/D35E/templates/apps/encounter-generator-dialog.html",
             width: "auto",
             height: "auto",
@@ -20,10 +20,10 @@ export class EncounterGeneratorDialog extends FormApplication {
 
     async loadCompendium() {//is the Bestiary compendium loaded?, No? Load it
         if (game.D35E.compendiumBrowser.entityType !== 'Actor' || game.D35E.compendiumBrowser._data.loaded === false) {
-            ui.notifications.info("Initializing Encounter Generator...")
+            ui.notifications.info("正在启动遭遇生成器（请稍后）...")
             game.D35E.compendiumBrowser.entityType = 'Actor';
             await game.D35E.compendiumBrowser.loadData();
-            ui.notifications.info("Encounter Generator ready!");
+            ui.notifications.info("遭遇生成器已就绪！!");
         }
     }
     async getCompendiumTables(){

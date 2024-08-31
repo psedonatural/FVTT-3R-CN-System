@@ -692,6 +692,8 @@
 .encounter-roller .flex-container {
   display: flex;
 }
+
+/*生成窗口*/
 .encounter-roller .flex-container > div {
   width: 144px;
   margin: 2px;
@@ -706,17 +708,19 @@
   line-height: 32px;
   font-size: 14px;
 }
+/*让父级窗口固定*/
 .encounter-roller .flex-container > div.column {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  height: 100%;
-  width: 100%;
+  height: 54px;
+  width: 200px;
 }
+/*修改让图标更居中*/
 .encounter-roller .flex-container > div.image {
   font-family: nodesto;
-  width: 64px;
-  margin: 0px;
+  width: 54px;
+  margin: 8px;
   text-align: left;
 }
 .encounter-roller .flex-container > div.column > div.row {
@@ -724,19 +728,25 @@
   height: 64px;
   width: 100%;
 }
+/*调整三个窗口让它们居中*/
 .encounter-roller .flex-container > div.column > div.row > div.body {
   font-family: "Signika", sans-serif;
+  white-space: nowrap;
+  width: 27%;
   font-size: 13px;
-  padding-left: 24px;
-  text-align: right;
+  padding-left: 0px;
+  text-align: center;
 }
+/*CR的位置*/
 .encounter-roller .flex-container > div.cr {
-  height: 64px;
-  width: 64px;
+  height: 54px;
+  width: 20%;
+  white-space: nowrap;
   margin: 0px;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 64px;
   font-family: nodesto;
+  text-align: left;
 }
 #portrait-bar-handle {
   position: relative;
@@ -5362,11 +5372,19 @@ h3 {
   text-shadow: 0 0 10px #2C606D !important;
   color: #2C606D !important;
 }
+
+/*让随机表文本更居中*/
 .d35ecustom .encounter-roller .head {
   background: none;
+  height: 64px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  line-height: 30px;
   color: #2C606D;
-  font-size: 19px;
+  font-size: 17px;
 }
+
 .d35ecustom .item-list .item-image {
   border-radius: 2px !important;
 }

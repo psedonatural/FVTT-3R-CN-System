@@ -3890,7 +3890,7 @@ export class ActorPF extends Actor {
                   parseInt(obj.system.level) * 2 - 1, 0);
             }
             ui.notifications.warn(
-                `Spell added despite not being in a spell list for class.`);
+                `该法术没有存在于此职业法术表中（它仍然会被添加进去）`);
           }
         }
       }
@@ -5070,19 +5070,19 @@ export class ActorPF extends Actor {
       buttons: {
         potion: {
           icon: '<i class="fas fa-prescription-bottle"></i>',
-          label: 'Potion',
+          label: '药水',
           callback: (html) => this.createConsumableSpell(itemData, 'potion',
               html),
         },
         scroll: {
           icon: '<i class="fas fa-scroll"></i>',
-          label: 'Scroll',
+          label: '卷轴',
           callback: (html) => this.createConsumableSpell(itemData, 'scroll',
               html),
         },
         wand: {
           icon: '<i class="fas fa-magic"></i>',
-          label: 'Wand',
+          label: '魔杖',
           callback: (html) => this.createConsumableSpell(itemData, 'wand',
               html),
         },
@@ -5104,19 +5104,19 @@ export class ActorPF extends Actor {
       buttons: {
         potion: {
           icon: '<i class="fas fa-prescription-bottle"></i>',
-          label: 'Tattoo',
+          label: '灵纹',
           callback: (html) => this.createConsumableSpell(itemData, 'tattoo',
               html),
         },
         scroll: {
           icon: '<i class="fas fa-scroll"></i>',
-          label: 'Power Stone',
+          label: '灵能石',
           callback: (html) => this.createConsumableSpell(itemData, 'powerstone',
               html),
         },
         wand: {
           icon: '<i class="fas fa-magic"></i>',
-          label: 'Dorje',
+          label: '灵杖',
           callback: (html) => this.createConsumableSpell(itemData, 'dorje',
               html),
         },
@@ -5134,17 +5134,17 @@ export class ActorPF extends Actor {
       buttons: {
         potion: {
           icon: '',
-          label: 'Wild Shape',
+          label: '野性变身',
           callback: () => this.createWildShapeBuff(itemData),
         },
         scroll: {
           icon: '',
-          label: 'Polymorph',
+          label: '变形术',
           callback: () => this.createPolymorphBuff(itemData),
         },
         wand: {
           icon: '',
-          label: 'Alter Self',
+          label: '变身术',
           callback: () => this.createAlterSelfBuff(itemData),
         },
         // lycantrophy: {

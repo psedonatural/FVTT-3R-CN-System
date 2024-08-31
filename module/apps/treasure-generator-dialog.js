@@ -136,7 +136,7 @@ export class TreasureGeneratorDialog extends FormApplication {
   async genTreasure() {
     let selectedNpcTokens = canvas.tokens.controlled.filter((t) => game.actors.get(t.data.actorId).data.type === "npc");
     if (selectedNpcTokens.length !== 1) {
-      ui.notifications.info(`Please select a token and one only`);
+      ui.notifications.info(`请选择1个（仅选择1个）棋子`);
       return;
     }
     let token = selectedNpcTokens[0];
@@ -247,7 +247,7 @@ export class TreasureGeneratorDialog extends FormApplication {
     }
     actor.groupItems();
     actor.refresh();
-    ui.notifications.info(`Treasure generation finished`);
+    ui.notifications.info(`宝藏生成完成！`);
   }
 
   activateListeners(html) {

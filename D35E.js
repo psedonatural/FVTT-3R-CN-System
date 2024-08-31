@@ -1229,7 +1229,7 @@ Hooks.on("getSceneControlButtons", (controls) => {
             });
             await canvas.scene.updateEmbeddedDocuments("Token", [{ _id: token.id }]);
           }
-          ui.notifications.info(`Converted to Loot`);
+          ui.notifications.info(`转为战利品`);
         },
         button: true,
       },
@@ -1250,7 +1250,7 @@ Hooks.on("getSceneControlButtons", (controls) => {
           )) {
             await genTreasureFromToken(token);
           }
-          ui.notifications.info(`Treasure generation finished`);
+          ui.notifications.info(`宝藏生成完成！`);
         },
         button: true,
       }
