@@ -1,122 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7681ca67-4bf5-4291-b1fa-c13361411485" name="默认变更列表" comment="2024.9.1-miss">
+    <list default="true" id="7681ca67-4bf5-4291-b1fa-c13361411485" name="默认变更列表" comment="2024.10.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/armors-and-shields/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/armors-and-shields/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/000009.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/bestiary/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/bestiary/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/bestiary/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/bestiary/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/class-abilities/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/class-abilities/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/class-abilities/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/class-abilities/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/class-abilities/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/class-abilities/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/classes/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/classes/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/classes/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/classes/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/classes/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/classes/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/commonauras/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonauras/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/commonauras/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonauras/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/commonauras/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonauras/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/commonbuffs/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonbuffs/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/commonbuffs/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonbuffs/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/commonbuffs/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/commonbuffs/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/conditions/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/conditions/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/conditions/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/conditions/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/conditions/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/conditions/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/damage-types/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/damage-types/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/damage-types/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/damage-types/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/damage-types/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/damage-types/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/documentation/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/documentation/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/documentation/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/documentation/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/documentation/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/documentation/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/enhancements/000499.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/enhancements/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/enhancements/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/enhancements/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/enhancements/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/enhancements/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/enhancements/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/feats/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/feats/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/feats/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/feats/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/feats/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/feats/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/item-roll-tables/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/item-roll-tables/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/item-roll-tables/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/item-roll-tables/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/item-roll-tables/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/item-roll-tables/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/itembuffs/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/itembuffs/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/itembuffs/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/itembuffs/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/itembuffs/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/itembuffs/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/items/000221.ldb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/items/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/items/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/items/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/items/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/items/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/items/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/magic-items/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/magic-items/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/magic-items/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/magic-items/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/magic-items/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/magic-items/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/materials/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/materials/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/materials/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/materials/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/materials/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/materials/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/minion-classes/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minion-classes/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/minion-classes/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minion-classes/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/minion-classes/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minion-classes/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/minions/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minions/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/minions/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minions/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/minions/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/minions/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/natural-attacks/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/natural-attacks/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/natural-attacks/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/natural-attacks/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/natural-attacks/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/natural-attacks/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/powers/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/powers/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/powers/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/powers/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/powers/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/powers/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racial-abilities/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-abilities/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racial-abilities/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-abilities/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racial-abilities/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-abilities/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racial-hd/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-hd/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racial-hd/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-hd/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racial-hd/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racial-hd/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racialfeatures/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racialfeatures/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racialfeatures/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racialfeatures/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/racialfeatures/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/racialfeatures/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/roll-tables/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/roll-tables/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/roll-tables/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/roll-tables/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/roll-tables/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/roll-tables/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/sample-chars/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/sample-chars/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/sample-chars/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/sample-chars/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/sample-chars/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/sample-chars/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/sample-macros/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/sample-macros/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/sample-macros/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/sample-macros/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/sample-macros/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/sample-macros/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/scenes/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/scenes/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/scenes/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/scenes/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/scenes/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/scenes/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spell-like-abilities/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-like-abilities/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spell-like-abilities/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-like-abilities/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spell-like-abilities/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-like-abilities/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spell-school-domain/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-school-domain/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spell-school-domain/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-school-domain/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spell-school-domain/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spell-school-domain/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spellItems/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spellItems/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spellItems/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spellItems/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spellItems/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spellItems/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spells/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spells/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spells/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spells/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/spells/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/spells/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/srd-rules/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/srd-rules/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/srd-rules/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/srd-rules/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/srd-rules/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/srd-rules/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/summon/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summon/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/summon/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summon/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/summon/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summon/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/summoning-roll-tables/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summoning-roll-tables/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/summoning-roll-tables/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summoning-roll-tables/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/summoning-roll-tables/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/summoning-roll-tables/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/templates/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/templates/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/templates/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/templates/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/templates/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/templates/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/traps/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/traps/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/traps/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/traps/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/traps/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/traps/LOG.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/weapons-and-ammo/CURRENT" beforeDir="false" afterPath="$PROJECT_DIR$/packs/weapons-and-ammo/CURRENT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/weapons-and-ammo/LOG" beforeDir="false" afterPath="$PROJECT_DIR$/packs/weapons-and-ammo/LOG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packs/weapons-and-ammo/LOG.old" beforeDir="false" afterPath="$PROJECT_DIR$/packs/weapons-and-ammo/LOG.old" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +24,7 @@
     <option name="projectConfigVersion" value="5" />
   </component>
   <component name="ProjectId" id="2dRWkhRxF7FbbcF7xVFn38vsUyj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -155,6 +42,19 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Phyrexians\AppData\Local\FoundryVTT\Data\systems\D35E" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -243,6 +143,9 @@
       <workItem from="1726597596986" duration="42000" />
       <workItem from="1726597721679" duration="1000000" />
       <workItem from="1726600012134" duration="6000" />
+      <workItem from="1727761729113" duration="104000" />
+      <workItem from="1727761842751" duration="67000" />
+      <workItem from="1727761918243" duration="965000" />
     </task>
     <task id="LOCAL-00001" summary="2024.03.08">
       <created>1709973152611</created>
@@ -489,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1725134600485</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="2024.10.1">
+      <created>1727761608439</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1727761608439</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,6 +439,7 @@
     <MESSAGE value="2024.9.1-2" />
     <MESSAGE value="2024.9.1-3" />
     <MESSAGE value="2024.9.1-miss" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024.9.1-miss" />
+    <MESSAGE value="2024.10.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024.10.1" />
   </component>
 </project>
